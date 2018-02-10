@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="2" failures="0" name="AS.My_Maven_Project.MavenTest" time="8.566" errors="0" skipped="0">
+  <properties>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="JOB_NAME" value="MC_ELC"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="windows_tracing_logfile" value="C:\BVTBin\Tests\installpackage\csilogfile.log"/>
+    <property name="NUMBER_OF_PROCESSORS" value="2"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="JENKINS_HOME" value="D:\Jenkins_folder"/>
+    <property name="HUDSON_SERVER_COOKIE" value="ff033330cf869338"/>
+    <property name="POM_ARTIFACTID" value="My_Maven_Project"/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="sun.boot.class.path" value="D:\ThisJava\lib\resources.jar;D:\ThisJava\lib\rt.jar;D:\ThisJava\lib\sunrsasign.jar;D:\ThisJava\lib\jsse.jar;D:\ThisJava\lib\jce.jar;D:\ThisJava\lib\charsets.jar;D:\ThisJava\lib\jfr.jar;D:\ThisJava\classes"/>
+    <property name="EXECUTOR_NUMBER" value="0"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="POM_DISPLAYNAME" value="My_Maven_Project"/>
+    <property name="NODE_LABELS" value="master"/>
+    <property name="TEMP" value="C:\Windows\TEMP"/>
+    <property name="java.runtime.version" value="1.8.0_151-b12"/>
+    <property name="WINSW_SERVICE_ID" value="Jenkins"/>
+    <property name="user.name" value="ANDREY-PC$"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="CommonProgramW6432" value="C:\Program Files\Common Files"/>
+    <property name="ProgramFiles" value="C:\Program Files (x86)"/>
+    <property name="user.language" value="en"/>
+    <property name="JOB_BASE_NAME" value="MC_ELC"/>
+    <property name="RUN_CHANGES_DISPLAY_URL" value="http://localhost:8080/job/MC_ELC/11/display/redirect?page=changes"/>
+    <property name="BUILD_DISPLAY_NAME" value="#11"/>
+    <property name="sun.boot.library.path" value="D:\ThisJava\bin"/>
+    <property name="LOCALAPPDATA" value="C:\Windows\system32\config\systemprofile\AppData\Local"/>
+    <property name="java.version" value="1.8.0_151"/>
+    <property name="PROCESSOR_LEVEL" value="6"/>
+    <property name="user.timezone" value="Europe/Helsinki"/>
+    <property name="USERNAME" value="ANDREY-PC$"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="Java_Home" value="D:\ThisJava"/>
+    <property name="NODE_NAME" value="master"/>
+    <property name="PROCESSOR_ARCHITEW6432" value="AMD64"/>
+    <property name="java.endorsed.dirs" value="D:\ThisJava\lib\endorsed"/>
+    <property name="BUILD_ID" value="11"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="maven.conf" value="D:\Jenkins_folder\tools\hudson.tasks.Maven_MavenInstallation\myMaven\conf"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="ESET_OPTIONS" value="                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               "/>
+    <property name="org.slf4j.simpleLogger.defaultLogLevel" value="info"/>
+    <property name="user.country" value="US"/>
+    <property name="ALLUSERSPROFILE" value="C:\ProgramData"/>
+    <property name="java.home" value="D:\ThisJava"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="os.version" value="6.1"/>
+    <property name="RUN_DISPLAY_URL" value="http://localhost:8080/job/MC_ELC/11/display/redirect"/>
+    <property name="POM_VERSION" value="0.0.1-SNAPSHOT"/>
+    <property name="TMP" value="C:\Windows\TEMP"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.version" value="25.151-b12"/>
+    <property name="user.variant" value=""/>
+    <property name="JOB_DISPLAY_URL" value="http://localhost:8080/job/MC_ELC/display/redirect"/>
+    <property name="CommonProgramFiles(x86)" value="C:\Program Files (x86)\Common Files"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="FP_NO_HOST_CHECK" value="NO"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="CommonProgramFiles" value="C:\Program Files (x86)\Common Files"/>
+    <property name="ComSpec" value="C:\Windows\system32\cmd.exe"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="POM_PACKAGING" value="jar"/>
+    <property name="user.script" value=""/>
+    <property name="SERVICE_ID" value="Jenkins"/>
+    <property name="COMPUTERNAME" value="ANDREY-PC"/>
+    <property name="POM_GROUPID" value="AS"/>
+    <property name="user.home" value="C:\Windows\system32\config\systemprofile"/>
+    <property name="PUBLIC" value="C:\Users\Public"/>
+    <property name="BUILD_TAG" value="jenkins-MC_ELC-11"/>
+    <property name="JENKINS_SERVER_COOKIE" value="ff033330cf869338"/>
+    <property name="HUDSON_URL" value="http://localhost:8080/"/>
+    <property name="ProgramData" value="C:\ProgramData"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="USERPROFILE" value="C:\Windows\system32\config\systemprofile"/>
+    <property name="CLASSPATH" value=""/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="java.library.path" value="D:\ThisJava\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\Jenkins_folder\tools\hudson.tasks.Maven_MavenInstallation\myMaven/bin;D:\ThisJava/bin;D:\ThisJava/bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\OpenVPN\bin;D:\Flash\chromedriver_win32;;."/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="APPDATA" value="C:\Windows\system32\config\systemprofile\AppData\Roaming"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="maven.home" value="D:\Jenkins_folder\tools\hudson.tasks.Maven_MavenInstallation\myMaven"/>
+    <property name="java.class.path" value="D:\Jenkins_folder\plugins\maven-plugin\WEB-INF\lib\maven35-agent-1.12-alpha-1.jar;D:\Jenkins_folder\tools\hudson.tasks.Maven_MavenInstallation\myMaven\boot\plexus-classworlds-2.5.2.jar;D:\Jenkins_folder\tools\hudson.tasks.Maven_MavenInstallation\myMaven/conf/logging"/>
+    <property name="sun.java.command" value="jenkins.maven3.agent.Maven35Main D:\Jenkins_folder\tools\hudson.tasks.Maven_MavenInstallation\myMaven D:\Jenkins_folder\war\WEB-INF\lib\remoting-3.10.2.jar D:\Jenkins_folder\plugins\maven-plugin\WEB-INF\lib\maven35-interceptor-1.12-alpha-1.jar D:\Jenkins_folder\plugins\maven-plugin\WEB-INF\lib\maven3-interceptor-commons-1.12-alpha-1.jar 59069"/>
+    <property name="Path" value="D:\ThisJava/bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\OpenVPN\bin;D:\Flash\chromedriver_win32;"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PROCESSOR_ARCHITECTURE" value="x86"/>
+    <property name="PATH+JDK" value="D:\ThisJava/bin"/>
+    <property name="PROCESSOR_IDENTIFIER" value="Intel64 Family 6 Model 23 Stepping 6, GenuineIntel"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.os.patch.level" value="Service Pack 1"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="M2_HOME" value="D:\Jenkins_folder\tools\hudson.tasks.Maven_MavenInstallation\myMaven"/>
+    <property name="java.io.tmpdir" value="C:\Windows\TEMP\"/>
+    <property name="OS" value="Windows_NT"/>
+    <property name="HUDSON_HOME" value="D:\Jenkins_folder"/>
+    <property name="PATH+MAVEN" value="D:\Jenkins_folder\tools\hudson.tasks.Maven_MavenInstallation\myMaven/bin"/>
+    <property name="ProgramFiles(x86)" value="C:\Program Files (x86)"/>
+    <property name="BUILD_URL" value="http://localhost:8080/job/MC_ELC/11/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="SystemRoot" value="C:\Windows"/>
+    <property name="windows_tracing_flags" value="3"/>
+    <property name="java.ext.dirs" value="D:\ThisJava\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="user.dir" value="D:\New_Eclipse_Oxy\AS_MavenProject"/>
+    <property name="JOB_URL" value="http://localhost:8080/job/MC_ELC/"/>
+    <property name="USERDOMAIN" value="WORKGROUP"/>
+    <property name="line.separator" value="
+"/>
+    <property name="MAVEN_HOME" value="D:\Jenkins_folder\tools\hudson.tasks.Maven_MavenInstallation\myMaven"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="BUILD_NUMBER" value="11"/>
+    <property name="BASE" value="D:\Jenkins_folder"/>
+    <property name="JENKINS_URL" value="http://localhost:8080/"/>
+    <property name="PROCESSOR_REVISION" value="1706"/>
+    <property name="ProgramW6432" value="C:\Program Files"/>
+    <property name="windir" value="C:\Windows"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="SystemDrive" value="C:"/>
+    <property name="maven3.interceptor" value="D:\Jenkins_folder\plugins\maven-plugin\WEB-INF\lib\maven35-interceptor-1.12-alpha-1.jar"/>
+    <property name="WORKSPACE" value="D:\Jenkins_folder\workspace\MC_ELC"/>
+    <property name="maven3.interceptor.common" value="D:\Jenkins_folder\plugins\maven-plugin\WEB-INF\lib\maven3-interceptor-commons-1.12-alpha-1.jar"/>
+    <property name="WINSW_EXECUTABLE" value="D:\Jenkins_folder\jenkins.exe"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="PSModulePath" value="C:\Windows\system32\WindowsPowerShell\v1.0\Modules\"/>
+  </properties>
+  <testcase classname="AS.My_Maven_Project.MavenTest" name="firstTest" time="8.513"/>
+  <testcase classname="AS.My_Maven_Project.MavenTest" name="secondTest" time="0.053"/>
+</testsuite>
