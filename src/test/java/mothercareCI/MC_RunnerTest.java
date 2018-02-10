@@ -638,7 +638,7 @@ public class MC_RunnerTest extends Library {
 		joinMyMothercarePage.JoinNowAfterHomePageButton.click();
 		focusOnElement(driver, joinMyMothercarePage.emailInputOnFirstStep);
 
-		String generatedEmail = generateRandomEmail(7);
+		String generatedEmail = generateRandomEmail(6);
 		setText(joinMyMothercarePage.emailInputOnFirstStep, generatedEmail);
 		clickElement(joinMyMothercarePage.nextButton);
 
