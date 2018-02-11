@@ -79,7 +79,7 @@ public class MC_RunnerTest extends Library {
 
 	}
 
-	@Test
+/*	@Test
 	public void mc_loginTest() throws InterruptedException {
 
 		HomePage homePage = new HomePage(driver);
@@ -222,7 +222,7 @@ public class MC_RunnerTest extends Library {
 
 		logger.info(name.getMethodName() + "-Nice!");
 
-	}
+	}*/
 
 	@Test
 	public void mc2_guestCheckoutCreditCardTest() throws InterruptedException {
@@ -355,7 +355,7 @@ public class MC_RunnerTest extends Library {
 
 	}
 
-	@Test
+/*	@Test
 	public void mc_requestCatalogueTest() throws InterruptedException {
 
 		HomePage homePage = new HomePage(driver);
@@ -417,7 +417,7 @@ public class MC_RunnerTest extends Library {
 		logger.info(name.getMethodName() + "-Nice!");
 
 	}
-
+*/
 	@Test
 	public void mc_payPalRegisteredCheckoutTest() throws InterruptedException {
 
@@ -475,7 +475,7 @@ public class MC_RunnerTest extends Library {
 		logger.info(name.getMethodName() + "-Nice!");
 
 	}
-
+/*
 	@Test
 	public void mc_registeredCheckoutSavedCreditCardTest() throws InterruptedException {
 
@@ -664,7 +664,7 @@ public class MC_RunnerTest extends Library {
 		logger.info(name.getMethodName() + "-Nice!");
 
 	}
-
+*/
 	@Test
 	public void mc_addProductToCartFromQuickViewTest() {
 
@@ -682,6 +682,7 @@ public class MC_RunnerTest extends Library {
 		QuickViewPage quickViewPage = new QuickViewPage(driver);
 		clickElement(quickViewPage.plus);
 		clickElement(quickViewPage.addToBasketButton);
+		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickByJavascript(driver, homePage.shoppingCart);
 
 		CartPage cartPage = new CartPage(driver);
@@ -692,7 +693,7 @@ public class MC_RunnerTest extends Library {
 		logger.info(name.getMethodName() + "-Nice!");
 
 	}
-
+/*
 	@Test
 	public void mc_backToTopButtonOnPLPTest() {
 
@@ -810,6 +811,6 @@ public class MC_RunnerTest extends Library {
 
 		logger.info(name.getMethodName() + "-Nice!");
 
-	}
+	}*/
 
 }
