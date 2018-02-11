@@ -1,4 +1,4 @@
-/*package mothercareCI;
+package mothercareCI;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -642,4 +642,3 @@ public class ELC_RunnerTest extends Library {
 	}
 
 }
-*/
