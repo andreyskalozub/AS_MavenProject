@@ -45,9 +45,7 @@ public class MC_RunnerTest extends Library {
 	@Rule
 	public final TestName name = new TestName();
 
-	  //@Rule 
-	 //public ScreenShotRule screenShotRule = new ScreenShotRule();
-	 
+	  
 
 	@Before
 	public void before() {

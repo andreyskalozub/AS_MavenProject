@@ -40,8 +40,6 @@ public class ELC_RunnerTest extends Library {
 
 	public static WebDriver driver;
 
-	//@Rule 
-	//public ScreenShotRule screenShotRule = new ScreenShotRule();
 
 	@Rule
 	public final TestName name = new TestName();
