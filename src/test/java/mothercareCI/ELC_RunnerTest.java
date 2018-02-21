@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import org.apache.commons.io.FileUtils;
@@ -45,7 +44,7 @@ public class ELC_RunnerTest extends Library {
 	public final TestName name = new TestName();
 
 	@Before
-	public void before() throws MalformedURLException {
+	public void before()  {
 
 		driver = new ChromeDriver();
 		setDriverConfiguration(driver, 20);
