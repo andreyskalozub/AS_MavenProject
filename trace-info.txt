@@ -1,1 +1,1 @@
-2018-02-22 18:07:24,368 INFO [main] mothercareCI.MC_RunnerTest.mc_registeredCheckoutSavedCreditCardTest(MC_RunnerTest.java:520) - mc_registeredCheckoutSavedCreditCardTest-Nice!
+2018-02-22 19:43:22,257 INFO [main] mothercareCI.MC_RunnerTest.mc_registeredCheckoutSavedCreditCardTest(MC_RunnerTest.java:521) - mc_registeredCheckoutSavedCreditCardTest-Nice!

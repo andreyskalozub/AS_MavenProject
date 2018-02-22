@@ -468,9 +468,10 @@ public class ELC_RunnerTest extends Library {
 
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		checkoutPage.deliverToUKoption.click();
+		wait(1);
 		checkoutPage.elc_selectFromSavedForRegistered.click();
+		
 		waitUntilElementIsClickable(driver, checkoutPage.standartDelivery);
-		;
 		clickByJavascript(driver, checkoutPage.standartDelivery);
 
 		clickByJavascript(driver, checkoutPage.proceedToPayment);

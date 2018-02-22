@@ -501,6 +501,7 @@ public class MC_RunnerTest extends Library {
 
 		waitUntilElementIsClickable(driver, checkoutPage.standartDelivery);
 		clickByJavascript(driver, checkoutPage.standartDelivery);
+		waitUntilElementIsClickable(driver, checkoutPage.proceedToPayment);
 		checkoutPage.proceedToPayment.click();
 
 		checkoutPage.creditCardOption.click();
