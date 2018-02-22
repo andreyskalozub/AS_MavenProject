@@ -1,1 +1,1 @@
-2018-02-16 10:49:37,092 INFO [main] mothercareCI.MC_RunnerTest.mc_veryfyingAllProductsLinkOnPLPTest(MC_RunnerTest.java:812) - mc_veryfyingAllProductsLinkOnPLPTest-Nice!
+2018-02-22 18:07:24,368 INFO [main] mothercareCI.MC_RunnerTest.mc_registeredCheckoutSavedCreditCardTest(MC_RunnerTest.java:520) - mc_registeredCheckoutSavedCreditCardTest-Nice!

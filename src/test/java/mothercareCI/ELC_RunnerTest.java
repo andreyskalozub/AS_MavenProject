@@ -42,6 +42,7 @@ public class ELC_RunnerTest extends Library {
 
 	@Rule
 	public final TestName name = new TestName();
+	
 
 	@Before
 	public void before()  {

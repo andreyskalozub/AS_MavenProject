@@ -323,5 +323,25 @@ public class Library {
 		}
 
 	}
+	
+	//ADDING TO CART FIRST IN-STOCK STANDART PRODUCT(MOTHERCARE)
+	public static void mc_addToCartFirstInstockStandartProduct(WebDriver driver) {
+		
+	String cssSelector = "div[class='b-search_result_items'] a[data-product-availabilitystatus='YES'][data-product-variation-attribute='']";
+		List<WebElement> elements = driver.findElements(By.cssSelector(
+				cssSelector));
+
+		WebElement first = elements.get(0);
+		clickByJavascript(driver, first);
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

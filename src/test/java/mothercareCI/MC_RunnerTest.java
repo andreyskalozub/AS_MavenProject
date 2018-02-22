@@ -45,7 +45,7 @@ public class MC_RunnerTest extends Library {
 	@Rule
 	public final TestName name = new TestName();
 
-	  
+ 
 
 	@Before
 	public void before() {
@@ -164,11 +164,7 @@ public class MC_RunnerTest extends Library {
 		selectByIndex(plp_Page.gridFilter, 3);
 
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
-		List<WebElement> elements = driver.findElements(By.cssSelector(
-				"div[class='b-search_result_items'] a[data-product-availabilitystatus='YES'][data-product-variation-attribute='']"));
-
-		WebElement first = elements.get(0);
-		clickByJavascript(driver, first);
+		mc_addToCartFirstInstockStandartProduct(driver);
 		wait(2);
 
 		clickByJavascript(driver, homePage.shoppingCart);
@@ -299,11 +295,10 @@ public class MC_RunnerTest extends Library {
 
 		PLP_Page plp_Page = new PLP_Page(driver);
 		selectByIndex(plp_Page.gridFilter, 3);
-
-		waitUntilElementIsClickable(driver, plp_Page.knittedBlanketButton);
-		clickByJavascript(driver, plp_Page.knittedBlanketButton);
-
+		waitUntilElementIsInvisible(driver, plp_Page.loader);
+		mc_addToCartFirstInstockStandartProduct(driver);
 		wait(1);
+		
 		clickByJavascript(driver, homePage.shoppingCart);
 		CartPage cartPage = new CartPage(driver);
 		cartPage.topCheckoutButton.click();
@@ -426,10 +421,10 @@ public class MC_RunnerTest extends Library {
 
 		PLP_Page plp_Page = new PLP_Page(driver);
 		selectByIndex(plp_Page.gridFilter, 3);
-		clickByJavascript(driver, plp_Page.knittedBlanketButton);
+		waitUntilElementIsInvisible(driver, plp_Page.loader);
+		mc_addToCartFirstInstockStandartProduct(driver);
 		wait(1);
 
-		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		clickByJavascript(driver, homePage.shoppingCart);
 		CartPage cartPage = new CartPage(driver);
 		cartPage.topCheckoutButton.click();
@@ -484,12 +479,10 @@ public class MC_RunnerTest extends Library {
 
 		PLP_Page plp_Page = new PLP_Page(driver);
 		selectByIndex(plp_Page.gridFilter, 3);
-
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
-		clickByJavascript(driver, plp_Page.knittedBlanketButton);
+		
+		mc_addToCartFirstInstockStandartProduct(driver);
 		wait(1);
-
-		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		clickByJavascript(driver, homePage.shoppingCart);
 
 		CartPage cartPage = new CartPage(driver);
@@ -502,7 +495,7 @@ public class MC_RunnerTest extends Library {
 
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		checkoutPage.deliverToUKoption.click();
-		waitUntilElementIsClickable(driver, checkoutPage.selectFromSavedForRegisteredUser);
+		wait(1);
 		checkoutPage.selectFromSavedForRegisteredUser.click();
 		wait(1);
 
