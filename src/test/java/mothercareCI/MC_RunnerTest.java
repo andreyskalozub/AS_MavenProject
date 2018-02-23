@@ -36,6 +36,8 @@ import pages.SitemapPage;
 import pages.WishlistPage;
 import webLibrary.Library;
 
+
+
 public class MC_RunnerTest extends Library {
 
 	public static final Logger logger = LogManager.getLogger(MC_RunnerTest.class.getName());
@@ -165,7 +167,7 @@ public class MC_RunnerTest extends Library {
 
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		mc_addToCartFirstInstockStandartProduct(driver);
-		wait(2);
+		wait(1);
 
 		clickByJavascript(driver, homePage.shoppingCart);
 		CartPage cartPage = new CartPage(driver);
@@ -193,7 +195,8 @@ public class MC_RunnerTest extends Library {
 		checkoutPage.proceedToPayment.click();
 		waitUntilElementIsClickable(driver, checkoutPage.creditCardOption);
 		checkoutPage.creditCardOption.click();
-
+		
+		waitUntilElementIsClickable(driver, checkoutPage.paymentIframe);
 		switchToFrame(driver, checkoutPage.paymentIframe);
 		actions.moveToElement(checkoutPage.nameOnCard, 1, 1).click().perform();
 		setText(checkoutPage.nameOnCard, fakeData.firstName);
@@ -259,6 +262,7 @@ public class MC_RunnerTest extends Library {
 		clickByJavascript(driver, checkoutPage.standartDelivery);
 		checkoutPage.proceedToPayment.click();
 		checkoutPage.creditCardOption.click();
+		waitUntilElementIsClickable(driver, checkoutPage.paymentIframe);
 
 		switchToFrame(driver, checkoutPage.paymentIframe);
 		actions.moveToElement(checkoutPage.nameOnCard, 1, 1).click().perform();
@@ -327,6 +331,7 @@ public class MC_RunnerTest extends Library {
 		clickByJavascript(driver, checkoutPage.payPalOption);
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
+		waitUntilElementIsClickable(driver, checkoutPage.payPalIframe);
 
 		switchToFrame(driver, checkoutPage.payPalIframe);
 		checkoutPage.paypalLoginUsername.clear();
@@ -450,6 +455,7 @@ public class MC_RunnerTest extends Library {
 
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
+		waitUntilElementIsClickable(driver, checkoutPage.payPalIframe);
 		switchToFrame(driver, checkoutPage.payPalIframe);
 
 		checkoutPage.paypalLoginUsername.clear();
@@ -510,6 +516,7 @@ public class MC_RunnerTest extends Library {
 		setText(checkoutPage.visaCVN, data.CVV);
 		clickByJavascript(driver, checkoutPage.visaPlaceOrder);
 
+		waitUntilElementIsClickable(driver, checkoutPage.iframe);
 		switchToFrame(driver, checkoutPage.iframe);
 		checkoutPage.choiceAuth.click();
 

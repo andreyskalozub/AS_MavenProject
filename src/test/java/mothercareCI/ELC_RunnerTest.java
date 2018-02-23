@@ -33,6 +33,8 @@ import pages.WishlistPage;
 import webLibrary.Library;
 import webLibrary.MyException;
 
+
+
 public class ELC_RunnerTest extends Library {
 
 	public static final Logger logger = LogManager.getLogger(ELC_RunnerTest.class.getName());
@@ -185,7 +187,7 @@ public class ELC_RunnerTest extends Library {
 		checkoutPage.proceedToPayment.click();
 		checkoutPage.creditCardOption.click();
 
-		waitUntilElementIsVisible(driver, checkoutPage.paymentIframe);
+		waitUntilElementIsClickable(driver, checkoutPage.paymentIframe);
 		switchToFrame(driver, checkoutPage.paymentIframe);
 		actions.moveToElement(checkoutPage.nameOnCard, 1, 1).click().perform();
 		setText(checkoutPage.nameOnCard, fakeData.firstName);
@@ -253,6 +255,7 @@ public class ELC_RunnerTest extends Library {
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		checkoutPage.proceedToPaypal.click();
 
+		waitUntilElementIsClickable(driver, checkoutPage.payPalIframe);
 		switchToFrame(driver, checkoutPage.payPalIframe);
 		checkoutPage.paypalLoginUsername.clear();
 
@@ -364,7 +367,9 @@ public class ELC_RunnerTest extends Library {
 		clickByJavascript(driver, checkoutPage.payPalOption);
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
-
+		waitUntilElementIsClickable(driver, checkoutPage.payPalIframe);
+		
+		
 		switchToFrame(driver, checkoutPage.payPalIframe);
 		checkoutPage.paypalLoginUsername.clear();
 		checkoutPage.paypalLoginUsername.sendKeys(data.paypal_login);
@@ -422,7 +427,8 @@ public class ELC_RunnerTest extends Library {
 
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
-
+		waitUntilElementIsClickable(driver, checkoutPage.payPalIframe);
+		
 		switchToFrame(driver, checkoutPage.payPalIframe);
 		checkoutPage.paypalLoginUsername.clear();
 		checkoutPage.paypalLoginUsername.sendKeys(data.paypal_login);
@@ -482,6 +488,7 @@ public class ELC_RunnerTest extends Library {
 		setText(checkoutPage.visaCVN, data.CVV);
 		clickByJavascript(driver, checkoutPage.visaPlaceOrder);
 
+		waitUntilElementIsClickable(driver, checkoutPage.iframe);
 		switchToFrame(driver, checkoutPage.iframe);
 		waitUntilElementIsClickable(driver, checkoutPage.choiceAuth);
 		clickByJavascript(driver, checkoutPage.choiceAuth);

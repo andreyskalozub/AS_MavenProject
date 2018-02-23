@@ -313,7 +313,7 @@ public class Library {
 		try
 
 		{
-			Wait<WebDriver> wait = new WebDriverWait(driver, 30);
+			Wait<WebDriver> wait = new WebDriverWait(driver, 40);
 			wait.until(ExpectedConditions.textToBePresentInElement(element, text));
 		}
 
@@ -323,6 +323,23 @@ public class Library {
 		}
 
 	}
+	
+	// WAIT UNTIL IFRAME IS AVAILABLE
+		public static void waitUntilIframeIsAvailable(WebDriver driver, WebElement iframe) {
+
+			try
+
+			{
+				Wait<WebDriver> wait = new WebDriverWait(driver, 60);
+				wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframe));
+			}
+
+			catch (Exception e) {
+
+				System.out.println(e);
+			}
+
+		}
 	
 	//ADDING TO CART FIRST IN-STOCK STANDART PRODUCT(MOTHERCARE)
 	public static void mc_addToCartFirstInstockStandartProduct(WebDriver driver) {

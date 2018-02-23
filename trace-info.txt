@@ -1,1 +1,1 @@
-2018-02-23 10:19:40,786 INFO [main] mothercareCI.MC_RunnerTest.mc_addProductToCartFromQuickViewTest(MC_RunnerTest.java:685) - mc_addProductToCartFromQuickViewTest-Nice!
+2018-02-23 15:12:49,543 INFO [main] mothercareCI.ELC_RunnerTest.elc_guestCheckoutCreditCardTest(ELC_RunnerTest.java:209) - elc_guestCheckoutCreditCardTest -Nice
