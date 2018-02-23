@@ -675,7 +675,7 @@ public class MC_RunnerTest extends Library {
 		clickElement(quickViewPage.plus);
 		clickElement(quickViewPage.addToBasketButton);
 		waitUntilElementIsClickable(driver, homePage.shoppingCart);
-		clickByJavascript(driver, homePage.shoppingCart);
+		actions.moveToElement(homePage.shoppingCart, 1, 1).click().perform();
 
 		CartPage cartPage = new CartPage(driver);
 		assertEquals("Baby K Knitted Blanket", cartPage.itemsInCartSection.getAttribute("innerText"));
