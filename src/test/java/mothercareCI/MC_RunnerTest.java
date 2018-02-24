@@ -36,8 +36,6 @@ import pages.SitemapPage;
 import pages.WishlistPage;
 import webLibrary.Library;
 
-
-
 public class MC_RunnerTest extends Library {
 
 	public static final Logger logger = LogManager.getLogger(MC_RunnerTest.class.getName());
@@ -46,8 +44,6 @@ public class MC_RunnerTest extends Library {
 
 	@Rule
 	public final TestName name = new TestName();
-
- 
 
 	@Before
 	public void before() {
@@ -86,8 +82,8 @@ public class MC_RunnerTest extends Library {
 		clickElement(homePage.signInRegisterLink);
 
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.emailSignIn.sendKeys(data.my_email_mc);
-		loginPage.passwordSignIn.sendKeys(data.my_password);
+		setText(loginPage.emailSignIn, data.my_email_mc);
+		setText(loginPage.passwordSignIn, data.my_password);
 
 		Actions actions = new Actions(driver);
 		actions.moveToElement(loginPage.signInButton).click().perform();
@@ -138,10 +134,10 @@ public class MC_RunnerTest extends Library {
 
 		String copyEmail = loginPage.emailAddress.getAttribute("value");
 		setText(loginPage.confirmEmail, copyEmail);
-	
+
 		setText(loginPage.passwordRegistration, data.my_password);
 		setText(loginPage.confirmPasswordRegistration, data.my_password);
-		
+
 		Actions actions = new Actions(driver);
 		actions.moveToElement(loginPage.createAccount).click().perform();
 
@@ -160,16 +156,16 @@ public class MC_RunnerTest extends Library {
 		Actions actions = new Actions(driver);
 		HomePage homePage = new HomePage(driver);
 		actions.moveToElement(homePage.beddingCategory).click().perform();
-
 		clickByJavascript(driver, homePage.blanketsSubCategory);
+
 		PLP_Page plp_Page = new PLP_Page(driver);
 		selectByIndex(plp_Page.gridFilter, 3);
 
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		mc_addToCartFirstInstockStandartProduct(driver);
-
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		clickByJavascript(driver, homePage.shoppingCart);
+
 		CartPage cartPage = new CartPage(driver);
 		actions.moveToElement(cartPage.topCheckoutButton, 1, 1).click().perform();
 
@@ -195,7 +191,7 @@ public class MC_RunnerTest extends Library {
 		clickElement(checkoutPage.proceedToPayment);
 		waitUntilElementIsClickable(driver, checkoutPage.creditCardOption);
 		clickElement(checkoutPage.creditCardOption);
-		
+
 		waitUntilElementIsClickable(driver, checkoutPage.paymentIframe);
 		switchToFrame(driver, checkoutPage.paymentIframe);
 		actions.moveToElement(checkoutPage.nameOnCard, 1, 1).click().perform();
@@ -231,11 +227,10 @@ public class MC_RunnerTest extends Library {
 
 		PLP_Page plp_Page = new PLP_Page(driver);
 		selectByIndex(plp_Page.gridFilter, 3);
-
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		clickByJavascript(driver, plp_Page.knittedBlanketButton);
 
-		actions.moveToElement(homePage.shoppingCart, 1, 1).click().perform();
+		clickByJavascript(driver, homePage.shoppingCart);
 		CartPage cartPage = new CartPage(driver);
 		clickElement(cartPage.topCheckoutButton);
 
@@ -300,8 +295,8 @@ public class MC_RunnerTest extends Library {
 		selectByIndex(plp_Page.gridFilter, 3);
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		mc_addToCartFirstInstockStandartProduct(driver);
-		
-		actions.moveToElement(homePage.shoppingCart, 1, 1).click().perform();
+		clickByJavascript(driver, homePage.shoppingCart);
+
 		CartPage cartPage = new CartPage(driver);
 		clickElement(cartPage.topCheckoutButton);
 
@@ -354,6 +349,7 @@ public class MC_RunnerTest extends Library {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.requestCatalogue);
+
 		RequestCataloguePage requestCataloguePage = new RequestCataloguePage(driver);
 		clickElement(requestCataloguePage.firstCatalogue);
 
@@ -361,7 +357,7 @@ public class MC_RunnerTest extends Library {
 		setText(requestCataloguePage.catalogueFirstName, fakeData.firstName);
 		setText(requestCataloguePage.catalogueLastName, fakeData.lastName);
 		clickElement(requestCataloguePage.enterAddressmanuallyLink);
-		
+
 		setText(requestCataloguePage.phoneNumber, fakeData.phoneNumber);
 		setText(requestCataloguePage.addressLine_1, fakeData.address1);
 		setText(requestCataloguePage.town_city, fakeData.city);
@@ -424,8 +420,8 @@ public class MC_RunnerTest extends Library {
 		selectByIndex(plp_Page.gridFilter, 3);
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		mc_addToCartFirstInstockStandartProduct(driver);
+		clickByJavascript(driver, homePage.shoppingCart);
 
-		clickElement(homePage.shoppingCart);
 		CartPage cartPage = new CartPage(driver);
 		clickElement(cartPage.topCheckoutButton);
 
@@ -451,7 +447,6 @@ public class MC_RunnerTest extends Library {
 		waitUntilElementIsClickable(driver, checkoutPage.payPalIframe);
 		switchToFrame(driver, checkoutPage.payPalIframe);
 
-		
 		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, data.paypal_login);
 		setText(checkoutPage.paypalLoginPassword, data.paypal_password);
 		clickElement(checkoutPage.loginPaypalButton);
@@ -480,7 +475,7 @@ public class MC_RunnerTest extends Library {
 		selectByIndex(plp_Page.gridFilter, 3);
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		mc_addToCartFirstInstockStandartProduct(driver);
-		actions.moveToElement(homePage.shoppingCart, 1, 1).click().perform();
+		clickByJavascript(driver, homePage.shoppingCart);
 
 		CartPage cartPage = new CartPage(driver);
 		clickElement(cartPage.topCheckoutButton);
@@ -523,11 +518,12 @@ public class MC_RunnerTest extends Library {
 	public void mc_contactUsOpeningTest() throws InterruptedException {
 
 		scrollTillBottom(driver);
+
 		HomePage homePage = new HomePage(driver);
 		waitUntilElementIsVisible(driver, homePage.contactUs);
 		clickElement(homePage.contactUs);
-
 		switchToNewWindow(driver);
+
 		String newUrl = driver.getCurrentUrl();
 
 		assertEquals(data.contactUs_url, newUrl);
@@ -541,6 +537,7 @@ public class MC_RunnerTest extends Library {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.signInRegisterLink);
+
 		LoginPage loginPage = new LoginPage(driver);
 		selectByIndex(loginPage.title, 5);
 
@@ -579,7 +576,7 @@ public class MC_RunnerTest extends Library {
 		GiftlistPage giftlistPage = new GiftlistPage(driver);
 		selectByIndex(giftlistPage.eventTypeSelect, 1);
 		setText(giftlistPage.eventName, fakeData.fullName);
-		
+
 		clickElement(giftlistPage.eventDatePicker);
 		clickElement(giftlistPage.todayDate);
 
@@ -593,14 +590,14 @@ public class MC_RunnerTest extends Library {
 		waitUntilElementIsVisible(driver, giftlistPage.phone);
 		focusOnElement(driver, giftlistPage.phone);
 		setText(giftlistPage.phone, fakeData.phoneNumber);
+
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		clickElement(checkoutPage.enterAddressManually);
-		
 		setText(giftlistPage.nickname, fakeData.firstName);
 		setText(giftlistPage.addressLine1, fakeData.streetAddress);
 		setText(giftlistPage.city, fakeData.city);
 		setText(giftlistPage.county, fakeData.county);
-		
+
 		setText(giftlistPage.postcode, pickRandomUKPostcode());
 		clickElement(giftlistPage.continueOnAddressesButton);
 		clickElement(giftlistPage.confirmButton);
@@ -665,7 +662,6 @@ public class MC_RunnerTest extends Library {
 
 		PLP_Page plp_Page = new PLP_Page(driver);
 		selectByIndex(plp_Page.gridFilter, 3);
-
 		waitUntilElementIsVisible(driver, plp_Page.knittedBlanketQuickViewButton);
 		clickByJavascript(driver, plp_Page.knittedBlanketQuickViewButton);
 
@@ -785,8 +781,8 @@ public class MC_RunnerTest extends Library {
 
 		PLP_Page plp_Page = new PLP_Page(driver);
 		clickElement(plp_Page.showAllLink);
-
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
+
 		List<WebElement> elements = driver.findElements(By.cssSelector("a[data-product-name]"));
 		WebElement productBeforeSecondLoader = elements.get(195);
 		scroolToThisElement(driver, productBeforeSecondLoader);

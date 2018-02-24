@@ -14,6 +14,8 @@ public class MA_BigBirthdayClubPage {
 
 	}
 	
+	@FindBy(css="img[src$='birthdayclub-banner-top2.jpg']")
+	public WebElement BBB_image;
 	
 	@FindBy(css="div[class$='boy']")
 	public WebElement boyBadge;

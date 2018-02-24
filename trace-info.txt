@@ -1,1 +1,1 @@
-2018-02-23 19:40:46,417 INFO [main] mothercareCI.MC_RunnerTest.mc_joiningMyMothercareTest(MC_RunnerTest.java:654) - mc_joiningMyMothercareTest-Nice!
+2018-02-24 15:22:25,092 INFO [main] mothercareCI.MC_RunnerTest.mc_veryfyingAllProductsLinkOnPLPTest(MC_RunnerTest.java:797) - mc_veryfyingAllProductsLinkOnPLPTest-Nice!

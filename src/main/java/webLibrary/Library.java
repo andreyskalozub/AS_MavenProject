@@ -19,14 +19,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import data.Data;
 import data.FakeData;
 
-
 public class Library {
 
 	public static final Logger logger = LogManager.getLogger(Library.class.getName());
 
 	protected Data data = new Data();
 	protected FakeData fakeData = new FakeData();
-
 
 	// SETTING DRIVER:
 	public static void setDriverConfiguration(WebDriver driver, int implicitlyWaitInSeconds) {
@@ -67,7 +65,7 @@ public class Library {
 
 	}
 
-	// SWITCHING TO NEW WINDOW 
+	// SWITCHING TO NEW WINDOW
 	public static void switchToNewWindow(WebDriver driver) {
 
 		String parentHandle = driver.getWindowHandle();
@@ -323,42 +321,33 @@ public class Library {
 		}
 
 	}
-	
+
 	// WAIT UNTIL IFRAME IS AVAILABLE
-		public static void waitUntilIframeIsAvailable(WebDriver driver, WebElement iframe) {
+	public static void waitUntilIframeIsAvailable(WebDriver driver, WebElement iframe) {
 
-			try
+		try
 
-			{
-				Wait<WebDriver> wait = new WebDriverWait(driver, 60);
-				wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframe));
-			}
-
-			catch (Exception e) {
-
-				System.out.println(e);
-			}
-
+		{
+			Wait<WebDriver> wait = new WebDriverWait(driver, 60);
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframe));
 		}
-	
-	//ADDING TO CART FIRST IN-STOCK STANDART PRODUCT(MOTHERCARE)
+
+		catch (Exception e) {
+
+			System.out.println(e);
+		}
+
+	}
+
+	// ADDING TO CART FIRST IN-STOCK STANDART PRODUCT(MOTHERCARE)
 	public static void mc_addToCartFirstInstockStandartProduct(WebDriver driver) {
-		
-	String cssSelector = "div[class='b-search_result_items'] a[data-product-availabilitystatus='YES'][data-product-variation-attribute='']";
-		List<WebElement> elements = driver.findElements(By.cssSelector(
-				cssSelector));
+
+		String cssSelector = "div[class='b-search_result_items'] a[data-product-availabilitystatus='YES'][data-product-variation-attribute='']";
+		List<WebElement> elements = driver.findElements(By.cssSelector(cssSelector));
 
 		WebElement first = elements.get(0);
 		clickByJavascript(driver, first);
-		
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

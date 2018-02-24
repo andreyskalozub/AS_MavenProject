@@ -33,28 +33,24 @@ import pages.WishlistPage;
 import webLibrary.Library;
 import webLibrary.MyException;
 
-
-
 public class ELC_RunnerTest extends Library {
 
 	public static final Logger logger = LogManager.getLogger(ELC_RunnerTest.class.getName());
 
 	public static WebDriver driver;
 
-
 	@Rule
 	public final TestName name = new TestName();
-	
 
 	@Before
-	public void before()  {
+	public void before() {
 
 		driver = new ChromeDriver();
 		setDriverConfiguration(driver, 20);
 		driver.get(data.elc_ci);
 
 		HomePage homePage = new HomePage(driver);
-		homePage.cookieAccept.click();
+		clickElement(homePage.cookieAccept);
 
 	}
 
@@ -79,11 +75,11 @@ public class ELC_RunnerTest extends Library {
 	public void elc_loginTest() throws InterruptedException, IOException {
 
 		HomePage homePage = new HomePage(driver);
-		homePage.signInRegisterLink.click();
+		clickElement(homePage.signInRegisterLink);
 
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.emailSignIn.sendKeys(data.my_email_elc);
-		loginPage.passwordSignIn.sendKeys(data.my_password);
+		setText(loginPage.emailSignIn, data.my_email_elc);
+		setText(loginPage.passwordSignIn, data.my_password);
 
 		Actions actions = new Actions(driver);
 		actions.moveToElement(loginPage.signInButton).click().perform();
@@ -99,11 +95,11 @@ public class ELC_RunnerTest extends Library {
 	public void elc_emailSignUpTest() throws InterruptedException {
 
 		HomePage homePage = new HomePage(driver);
-		homePage.signInRegisterLink.click();
+		clickElement(homePage.signInRegisterLink);
 
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.emailSignIn.sendKeys(data.my_email_elc);
-		loginPage.passwordSignIn.sendKeys(data.my_password);
+		setText(loginPage.emailSignIn, data.my_email_elc);
+		setText(loginPage.passwordSignIn, data.my_password);
 
 		Actions actions = new Actions(driver);
 		actions.moveToElement(loginPage.signInButton).click().perform();
@@ -124,19 +120,18 @@ public class ELC_RunnerTest extends Library {
 	public void elc_createAccountTest() throws InterruptedException {
 
 		HomePage homePage = new HomePage(driver);
-		homePage.signInRegisterLink.click();
+		clickElement(homePage.signInRegisterLink);
 
 		LoginPage loginPage = new LoginPage(driver);
 		selectByIndex(loginPage.title, 5);
-
-		loginPage.firstName.sendKeys(fakeData.firstName);
-		loginPage.lastName.sendKeys(fakeData.lastName);
-		loginPage.emailAddress.sendKeys(generateRandomEmail(7));
+		setText(loginPage.firstName, fakeData.firstName);
+		setText(loginPage.lastName, fakeData.lastName);
+		setText(loginPage.emailAddress, generateRandomEmail(7));
 
 		String copyEmail = loginPage.emailAddress.getAttribute("value");
-		loginPage.confirmEmail.sendKeys(copyEmail);
-		loginPage.passwordRegistration.sendKeys(data.my_password);
-		loginPage.confirmPasswordRegistration.sendKeys(data.my_password);
+		setText(loginPage.confirmEmail, copyEmail);
+		setText(loginPage.passwordRegistration, data.my_password);
+		setText(loginPage.confirmPasswordRegistration, data.my_password);
 
 		Actions actions = new Actions(driver);
 		actions.moveToElement(loginPage.createAccount).click().perform();
@@ -157,18 +152,17 @@ public class ELC_RunnerTest extends Library {
 
 		PLP_Page plp_Page = new PLP_Page(driver);
 		clickByJavascript(driver, plp_Page.elc_cinderellaPLP);
-
 		waitUntilElementIsClickable(driver, plp_Page.cinderellaButton);
 		clickByJavascript(driver, plp_Page.cinderellaButton);
-		wait(1);
-		clickByJavascript(driver, homePage.shoppingCart);
+		waitUntilElementIsInvisible(driver, plp_Page.loader);
+		clickElement(homePage.shoppingCart);
 
 		CartPage cartPage = new CartPage(driver);
-		cartPage.topCheckoutButton.click();
+		clickElement(cartPage.topCheckoutButton);
 
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
-		checkoutPage.checkoutAsGuestButton.click();
-		checkoutPage.deliverToUKoption.click();
+		clickElement(checkoutPage.checkoutAsGuestButton);
+		clickElement(checkoutPage.deliverToUKoption);
 		selectByIndex(checkoutPage.title, 2);
 
 		setText(checkoutPage.firstname, fakeData.firstName);
@@ -176,7 +170,7 @@ public class ELC_RunnerTest extends Library {
 		setText(checkoutPage.email, generateRandomEmail(7));
 		setText(checkoutPage.phone, fakeData.phoneNumber);
 
-		checkoutPage.enterAddressManually.click();
+		clickElement(checkoutPage.enterAddressManually);
 		setText(checkoutPage.addressLine1, fakeData.address1);
 		setText(checkoutPage.town_city, fakeData.city);
 		setText(checkoutPage.postalCode, pickRandomUKPostcode());
@@ -184,8 +178,8 @@ public class ELC_RunnerTest extends Library {
 		actions.moveToElement(checkoutPage.deliverToThisAddress).click().perform();
 		waitUntilElementIsClickable(driver, checkoutPage.standartDelivery);
 		clickByJavascript(driver, checkoutPage.standartDelivery);
-		checkoutPage.proceedToPayment.click();
-		checkoutPage.creditCardOption.click();
+		clickElement(checkoutPage.proceedToPayment);
+		clickElement(checkoutPage.creditCardOption);
 
 		waitUntilElementIsClickable(driver, checkoutPage.paymentIframe);
 		switchToFrame(driver, checkoutPage.paymentIframe);
@@ -195,10 +189,10 @@ public class ELC_RunnerTest extends Library {
 		selectByIndex(checkoutPage.expirationYear, 5);
 
 		setText(checkoutPage.CVV, data.CVV);
-		checkoutPage.guestPlaceOrder.click();
+		clickElement(checkoutPage.guestPlaceOrder);
 
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame(checkoutPage.iframe);
+		switchToFrame(driver, checkoutPage.iframe);
 		clickByJavascript(driver, checkoutPage.choiceAuth);
 
 		assertTrue(
@@ -222,15 +216,14 @@ public class ELC_RunnerTest extends Library {
 		clickByJavascript(driver, plp_Page.elc_cinderellaPLP);
 		waitUntilElementIsClickable(driver, plp_Page.cinderellaButton);
 		clickByJavascript(driver, plp_Page.cinderellaButton);
-
-		wait(1);
-		clickByJavascript(driver, homePage.shoppingCart);
+		waitUntilElementIsInvisible(driver, plp_Page.loader);
+		clickElement(homePage.shoppingCart);
 
 		CartPage cartPage = new CartPage(driver);
-		cartPage.topCheckoutButton.click();
+		clickElement(cartPage.topCheckoutButton);
 
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
-		checkoutPage.checkoutAsGuestButton.click();
+		clickElement(checkoutPage.checkoutAsGuestButton);
 
 		clickByJavascript(driver, checkoutPage.deliverToUKoption);
 		selectByIndex(checkoutPage.title, 2);
@@ -240,7 +233,7 @@ public class ELC_RunnerTest extends Library {
 		setText(checkoutPage.email, generateRandomEmail(7));
 		setText(checkoutPage.phone, fakeData.phoneNumber);
 
-		checkoutPage.enterAddressManually.click();
+		clickElement(checkoutPage.enterAddressManually);
 		setText(checkoutPage.addressLine1, fakeData.address1);
 		setText(checkoutPage.town_city, fakeData.city);
 		setText(checkoutPage.postalCode, pickRandomUKPostcode());
@@ -249,19 +242,17 @@ public class ELC_RunnerTest extends Library {
 		actions.moveToElement(checkoutPage.deliverToThisAddress).click().perform();
 		waitUntilElementIsClickable(driver, checkoutPage.standartDelivery);
 		clickByJavascript(driver, checkoutPage.standartDelivery);
-		checkoutPage.proceedToPayment.click();
+		clickElement(checkoutPage.proceedToPayment);
 
 		clickByJavascript(driver, checkoutPage.payPalOption);
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
-		checkoutPage.proceedToPaypal.click();
+		clickByJavascript(driver, checkoutPage.proceedToPaypal);
 
 		waitUntilElementIsClickable(driver, checkoutPage.payPalIframe);
 		switchToFrame(driver, checkoutPage.payPalIframe);
-		checkoutPage.paypalLoginUsername.clear();
-
-		checkoutPage.paypalLoginUsername.sendKeys(data.paypal_login);
+		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, data.paypal_login);
 		setText(checkoutPage.paypalLoginPassword, data.paypal_password);
-		checkoutPage.loginPaypalButton.click();
+		clickElement(checkoutPage.loginPaypalButton);
 
 		driver.switchTo().defaultContent();
 		waitUntilElementIsClickable(driver, checkoutPage.payNowByPaypal);
@@ -280,24 +271,24 @@ public class ELC_RunnerTest extends Library {
 	public void elc_requestCatalogueTest() throws InterruptedException {
 
 		HomePage homePage = new HomePage(driver);
-		homePage.requestCatalogue.click();
+		clickElement(homePage.requestCatalogue);
 
 		RequestCataloguePage requestCataloguePage = new RequestCataloguePage(driver);
-		requestCataloguePage.elc_firstCatalogue.click();
+		clickElement(requestCataloguePage.elc_firstCatalogue);
 		selectByValue(requestCataloguePage.catalogueTitleSelect, "Mr");
 
 		setText(requestCataloguePage.catalogueFirstName, fakeData.firstName);
 		setText(requestCataloguePage.catalogueLastName, fakeData.lastName);
-		requestCataloguePage.enterAddressmanuallyLink.click();
+		clickElement(requestCataloguePage.enterAddressmanuallyLink);
 
-		requestCataloguePage.phoneNumber.sendKeys(fakeData.phoneNumber);
+		setText(requestCataloguePage.phoneNumber, fakeData.phoneNumber);
 		setText(requestCataloguePage.addressLine_1, fakeData.address1);
 		setText(requestCataloguePage.town_city, fakeData.city);
 		setText(requestCataloguePage.postalCode, fakeData.postalCode);
 
-		requestCataloguePage.selectCountry.click();
+		clickElement(requestCataloguePage.selectCountry);
 		selectByValue(requestCataloguePage.selectCountry, "CN");
-		requestCataloguePage.buttonRequestCatalogue.click();
+		clickElement(requestCataloguePage.buttonRequestCatalogue);
 
 		assertTrue(
 				"Actual text is " + requestCataloguePage.thankYouMessage.getAttribute("textContent")
@@ -311,21 +302,19 @@ public class ELC_RunnerTest extends Library {
 	@Test
 	public void elc_addToWishlistFromPDPAndCheckoutByPaypalTest() throws InterruptedException, MyException {
 
-		
 		HomePage homePage = new HomePage(driver);
-		homePage.signInRegisterLink.click();
-		
+		clickElement(homePage.signInRegisterLink);
+
 		LoginPage loginPage = new LoginPage(driver);
 		selectByIndex(loginPage.title, 5);
-
-		loginPage.firstName.sendKeys(fakeData.firstName);
-		loginPage.lastName.sendKeys(fakeData.lastName);
-		loginPage.emailAddress.sendKeys(generateRandomEmail(7));
+		setText(loginPage.firstName, fakeData.firstName);
+		setText(loginPage.lastName, fakeData.lastName);
+		setText(loginPage.emailAddress, generateRandomEmail(7));
 
 		String copyEmail = loginPage.emailAddress.getAttribute("value");
-		loginPage.confirmEmail.sendKeys(copyEmail);
-		loginPage.passwordRegistration.sendKeys(data.my_password);
-		loginPage.confirmPasswordRegistration.sendKeys(data.my_password);
+		setText(loginPage.confirmEmail, copyEmail);
+		setText(loginPage.passwordRegistration, data.my_password);
+		setText(loginPage.confirmPasswordRegistration, data.my_password);
 
 		Actions actions = new Actions(driver);
 		actions.moveToElement(loginPage.createAccount).click().perform();
@@ -334,47 +323,47 @@ public class ELC_RunnerTest extends Library {
 
 		PLP_Page plp_Page = new PLP_Page(driver);
 		clickByJavascript(driver, plp_Page.elc_cinderellaPLP);
-
 		waitUntilElementIsClickable(driver, plp_Page.elc_productLink);
 		clickByJavascript(driver, plp_Page.elc_productLink);
 
 		PDP_Page pdp_Page = new PDP_Page(driver);
-		pdp_Page.addToMyWishlistButton.click();
-
+		clickElement(pdp_Page.addToMyWishlistButton);
 		verifyingPresentedTextOnPage(driver, "143479");
+
 		WishlistPage wishlistPage = new WishlistPage(driver);
 		clickElement(wishlistPage.addToBasketButton);
-		
 		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickByJavascript(driver, homePage.shoppingCart);
+
 		CartPage cartPage = new CartPage(driver);
 		clickElement(cartPage.topCheckoutButton);
-		
+
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		clickElement(checkoutPage.clickAndCollectOption);
 		setText(checkoutPage.town_postcodeInput, pickRandomUKPostcode());
-		clickElement(checkoutPage.findByPostcodeButton);
+		waitUntilElementIsClickable(driver, checkoutPage.findByPostcodeButton);
+		clickByJavascript(driver, checkoutPage.findByPostcodeButton);
+		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		clickByJavascript(driver, checkoutPage.selectStoreButton);
-		
+
+		waitUntilElementIsClickable(driver, checkoutPage.title);
 		selectByIndex(checkoutPage.title, 2);
 		setText(checkoutPage.firstname, fakeData.firstName);
 		setText(checkoutPage.lastname, fakeData.lastName);
-		
+
 		setText(checkoutPage.email, generateRandomEmail(5));
 		setText(checkoutPage.phone, fakeData.phoneNumber);
 		checkoutPage.proceedToPayment.click();
-		
+
 		clickByJavascript(driver, checkoutPage.payPalOption);
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
 		waitUntilElementIsClickable(driver, checkoutPage.payPalIframe);
-		
-		
+
 		switchToFrame(driver, checkoutPage.payPalIframe);
-		checkoutPage.paypalLoginUsername.clear();
-		checkoutPage.paypalLoginUsername.sendKeys(data.paypal_login);
-		Library.setText(checkoutPage.paypalLoginPassword, data.paypal_password);
-		checkoutPage.loginPaypalButton.click();
+		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, data.paypal_login);
+		setText(checkoutPage.paypalLoginPassword, data.paypal_password);
+		clickElement(checkoutPage.loginPaypalButton);
 
 		driver.switchTo().defaultContent();
 		waitUntilElementIsClickable(driver, checkoutPage.payNowByPaypal);
@@ -387,7 +376,6 @@ public class ELC_RunnerTest extends Library {
 				checkoutPage.confirmation.getAttribute("textContent").equals("Thank you for your order"));
 
 		logger.info(name.getMethodName() + "-Nice!");
-		
 
 	}
 
@@ -401,14 +389,13 @@ public class ELC_RunnerTest extends Library {
 
 		PLP_Page plp_Page = new PLP_Page(driver);
 		clickByJavascript(driver, plp_Page.elc_cinderellaPLP);
-
 		waitUntilElementIsClickable(driver, plp_Page.cinderellaButton);
 		clickByJavascript(driver, plp_Page.cinderellaButton);
-		wait(1);
+		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		clickByJavascript(driver, homePage.shoppingCart);
 
 		CartPage cartPage = new CartPage(driver);
-		cartPage.topCheckoutButton.click();
+		clickElement(cartPage.topCheckoutButton);
 
 		LoginPage loginPage = new LoginPage(driver);
 		setText(loginPage.emailSignIn, data.my_email_elc);
@@ -416,24 +403,24 @@ public class ELC_RunnerTest extends Library {
 		clickElement(loginPage.signInButton);
 
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
-		checkoutPage.deliverToUKoption.click();
-		wait(1);
-
+		clickElement(checkoutPage.deliverToUKoption);
+		waitUntilElementIsClickable(driver, checkoutPage.elc_selectFromSavedForRegistered);
 		clickByJavascript(driver, checkoutPage.elc_selectFromSavedForRegistered);
+
 		waitUntilElementIsClickable(driver, checkoutPage.standartDelivery);
 		clickByJavascript(driver, checkoutPage.standartDelivery);
+		waitUntilElementIsClickable(driver, checkoutPage.proceedToPayment);
 		clickByJavascript(driver, checkoutPage.proceedToPayment);
-		checkoutPage.payPalOption.click();
+		clickElement(checkoutPage.payPalOption);
 
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
 		waitUntilElementIsClickable(driver, checkoutPage.payPalIframe);
-		
+
 		switchToFrame(driver, checkoutPage.payPalIframe);
-		checkoutPage.paypalLoginUsername.clear();
-		checkoutPage.paypalLoginUsername.sendKeys(data.paypal_login);
+		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, data.paypal_login);
 		setText(checkoutPage.paypalLoginPassword, data.paypal_password);
-		checkoutPage.loginPaypalButton.click();
+		clickElement(checkoutPage.loginPaypalButton);
 
 		driver.switchTo().defaultContent();
 		waitUntilElementIsClickable(driver, checkoutPage.payNowByPaypal);
@@ -458,14 +445,13 @@ public class ELC_RunnerTest extends Library {
 
 		PLP_Page plp_Page = new PLP_Page(driver);
 		clickByJavascript(driver, plp_Page.elc_cinderellaPLP);
-
 		waitUntilElementIsClickable(driver, plp_Page.cinderellaButton);
 		clickByJavascript(driver, plp_Page.cinderellaButton);
-		wait(1);
+		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		clickByJavascript(driver, homePage.shoppingCart);
 
 		CartPage cartPage = new CartPage(driver);
-		cartPage.topCheckoutButton.click();
+		clickElement(cartPage.topCheckoutButton);
 
 		LoginPage loginPage = new LoginPage(driver);
 		setText(loginPage.emailSignIn, data.my_email_elc);
@@ -473,18 +459,17 @@ public class ELC_RunnerTest extends Library {
 		clickElement(loginPage.signInButton);
 
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
-		checkoutPage.deliverToUKoption.click();
-		wait(1);
-		checkoutPage.elc_selectFromSavedForRegistered.click();
-		
+		clickElement(checkoutPage.deliverToUKoption);
+		waitUntilElementIsVisible(driver, checkoutPage.elc_selectFromSavedForRegistered); 
+		clickByJavascript(driver, checkoutPage.elc_selectFromSavedForRegistered);
 		waitUntilElementIsClickable(driver, checkoutPage.standartDelivery);
 		clickByJavascript(driver, checkoutPage.standartDelivery);
 
 		clickByJavascript(driver, checkoutPage.proceedToPayment);
-		checkoutPage.creditCardOption.click();
-
+		clickElement(checkoutPage.creditCardOption);
 		waitUntilElementIsClickable(driver, checkoutPage.visaSavedCard);
-		checkoutPage.visaSavedCard.click();
+
+		clickByJavascript(driver, checkoutPage.visaSavedCard);
 		setText(checkoutPage.visaCVN, data.CVV);
 		clickByJavascript(driver, checkoutPage.visaPlaceOrder);
 
@@ -506,11 +491,11 @@ public class ELC_RunnerTest extends Library {
 	public void elc_errorWhileIncorrectCredentialsDuringSignInTest() throws Exception {
 
 		HomePage homePage = new HomePage(driver);
-		homePage.signInRegisterLink.click();
+		clickElement(homePage.signInRegisterLink);
 
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.emailSignIn.sendKeys(data.my_email_elc);
-		loginPage.passwordSignIn.sendKeys(data.my_password + "wrong");
+		setText(loginPage.emailSignIn, data.my_email_elc);
+		setText(loginPage.passwordSignIn, data.my_password + "wrong");
 
 		Actions actions = new Actions(driver);
 		actions.moveToElement(loginPage.signInButton).click().perform();
@@ -527,19 +512,18 @@ public class ELC_RunnerTest extends Library {
 	public void elc_addToBigBirthdayClubTest() throws InterruptedException {
 
 		HomePage homePage = new HomePage(driver);
-		homePage.signInRegisterLink.click();
+		clickElement(homePage.signInRegisterLink);
 
 		LoginPage loginPage = new LoginPage(driver);
 		selectByIndex(loginPage.title, 5);
-		loginPage.firstName.sendKeys(fakeData.firstName);
-		loginPage.lastName.sendKeys(fakeData.lastName);
-		loginPage.emailAddress.sendKeys(generateRandomEmail(7));
+		setText(loginPage.firstName, fakeData.firstName);
+		setText(loginPage.lastName, fakeData.lastName);
+		setText(loginPage.emailAddress, generateRandomEmail(7));
 
 		String copyEmail = loginPage.emailAddress.getAttribute("value");
-		loginPage.confirmEmail.sendKeys(copyEmail);
-
-		loginPage.passwordRegistration.sendKeys(data.my_password);
-		loginPage.confirmPasswordRegistration.sendKeys(data.my_password);
+		setText(loginPage.confirmEmail, copyEmail);
+		setText(loginPage.passwordRegistration, data.my_password);
+		setText(loginPage.confirmPasswordRegistration, data.my_password);
 
 		Actions actions = new Actions(driver);
 		actions.moveToElement(loginPage.createAccount).click().perform();
@@ -547,27 +531,27 @@ public class ELC_RunnerTest extends Library {
 		assertEquals("thank you for registering with Early Learning Centre",
 				loginPage.registrationConfirmation.getAttribute("textContent"));
 
-		homePage.elc_myAccountHeaderLink.click();
+		clickElement(homePage.elc_myAccountHeaderLink);
+		
 		MyAccountPage myAccountPage = new MyAccountPage(driver);
-		myAccountPage.bigBirthdayClub.click();
-		wait(2);
-
+		waitUntilElementIsClickable(driver, myAccountPage.bigBirthdayClub);
+		clickByJavascript(driver, myAccountPage.bigBirthdayClub);
+		
 		MA_BigBirthdayClubPage ma_BigBirthdayClubPage = new MA_BigBirthdayClubPage(driver);
-		waitUntilElementIsClickable(driver, ma_BigBirthdayClubPage.girlbadge);
-		actions.moveToElement(ma_BigBirthdayClubPage.girlbadge).click().perform();
-
+		waitUntilElementIsClickable(driver, ma_BigBirthdayClubPage.BBB_image);
+		scrollTillBottom(driver);
+		clickElement(ma_BigBirthdayClubPage.girlbadge);
 		waitUntilElementIsClickable(driver, ma_BigBirthdayClubPage.childName);
 
 		String babyNameValue = fakeData.firstName;
-		ma_BigBirthdayClubPage.childName.sendKeys(babyNameValue);
-
+		setText(ma_BigBirthdayClubPage.childName, babyNameValue);
 		actions.moveToElement(ma_BigBirthdayClubPage.datePicker).click().perform();
 		waitUntilElementIsClickable(driver, ma_BigBirthdayClubPage.currentdate);
 		clickByJavascript(driver, ma_BigBirthdayClubPage.currentdate);
 
 		selectByIndex(ma_BigBirthdayClubPage.relationshipSelect, 2);
-		ma_BigBirthdayClubPage.addNewFamilyMemberButton.click();
-		ma_BigBirthdayClubPage.confirmationPopup.isDisplayed();
+		clickElement(ma_BigBirthdayClubPage.addNewFamilyMemberButton);
+		waitUntilElementIsVisible(driver, ma_BigBirthdayClubPage.confirmationPopup);
 		clickByJavascript(driver, ma_BigBirthdayClubPage.backToClubButtonInPopup);
 
 		waitUntilElementIsVisible(driver, ma_BigBirthdayClubPage.babyNameValueDisplayed);
@@ -581,20 +565,19 @@ public class ELC_RunnerTest extends Library {
 	public void elc_addNewAddressForJustRegisteredTest() throws InterruptedException {
 
 		HomePage homePage = new HomePage(driver);
-		homePage.signInRegisterLink.click();
+		clickElement(homePage.signInRegisterLink);
 
 		LoginPage loginPage = new LoginPage(driver);
 		selectByIndex(loginPage.title, 5);
-
-		loginPage.firstName.sendKeys(fakeData.firstName);
-		loginPage.lastName.sendKeys(fakeData.lastName);
-		loginPage.emailAddress.sendKeys(generateRandomEmail(7));
+		setText(loginPage.firstName, fakeData.firstName);
+		setText(loginPage.lastName, fakeData.lastName);
+		setText(loginPage.emailAddress, generateRandomEmail(7));
 
 		String copyEmail = loginPage.emailAddress.getAttribute("value");
-		loginPage.confirmEmail.sendKeys(copyEmail);
+		setText(loginPage.confirmEmail, copyEmail);
 
-		loginPage.passwordRegistration.sendKeys(data.my_password);
-		loginPage.confirmPasswordRegistration.sendKeys(data.my_password);
+		setText(loginPage.passwordRegistration, data.my_password);
+		setText(loginPage.confirmPasswordRegistration, data.my_password);
 
 		Actions actions = new Actions(driver);
 		actions.moveToElement(loginPage.createAccount).click().perform();
@@ -602,11 +585,11 @@ public class ELC_RunnerTest extends Library {
 		assertEquals("thank you for registering with Early Learning Centre",
 				loginPage.registrationConfirmation.getAttribute("textContent"));
 
-		homePage.elc_myAccountHeaderLink.click();
+		clickElement(homePage.elc_myAccountHeaderLink);
 
 		MyAccountPage myAccountPage = new MyAccountPage(driver);
-		myAccountPage.addressBook.click();
-		myAccountPage.createNewAddress.click();
+		clickElement(myAccountPage.addressBook);
+		clickElement(myAccountPage.createNewAddress);
 		clickByJavascript(driver, myAccountPage.newUKaddress);
 
 		setText(myAccountPage.phoneNumber, fakeData.phoneNumber);
