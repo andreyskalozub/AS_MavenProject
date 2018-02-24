@@ -2,10 +2,10 @@ package data;
 
 import com.github.javafaker.Faker;
 
-public class FakeData extends Faker{
+public class FakeData extends Faker {
 
 	Faker faker = new Faker();
-	
+
 	public String firstName = faker.name().firstName();
 	public String lastName = faker.name().lastName();
 	public String phoneNumber = faker.code().ean13();
@@ -17,4 +17,3 @@ public class FakeData extends Faker{
 	public String county = faker.address().stateAbbr();
 	public String nickname = faker.name().username();
 }
-

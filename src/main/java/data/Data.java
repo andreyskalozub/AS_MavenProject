@@ -17,7 +17,6 @@ public class Data {
 
 	// ADDITIONAL DATA
 	public String contactUs_url = "https://dev08-realm1-mothercare.demandware.net/s/MCENGB/advice-buying-guides-and-services/services/contact-us/services-ms-contactus.html";
-	
 
 	// PAYMENT DATA
 	public String creditCardNumber = "4444333322221111";

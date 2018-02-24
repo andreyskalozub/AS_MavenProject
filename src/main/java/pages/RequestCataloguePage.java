@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-
 public class RequestCataloguePage {
 
 	public RequestCataloguePage(WebDriver driver) {
@@ -16,7 +15,7 @@ public class RequestCataloguePage {
 
 	@FindBy(css = "input[id*='_i1_']")
 	public WebElement firstCatalogue;
-	
+
 	@FindBy(css = "input[id*='_i0_']")
 	public WebElement elc_firstCatalogue;
 

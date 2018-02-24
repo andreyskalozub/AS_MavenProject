@@ -5,17 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-
 public class LoginPage {
-	
+
 	public LoginPage(WebDriver driver) {
 
 		PageFactory.initElements(driver, this);
 
 	}
 
-	
-	
 	@FindBy(xpath = "//input[contains(@id,'login_user')]")
 	public WebElement emailSignIn;
 
@@ -24,8 +21,8 @@ public class LoginPage {
 
 	@FindBy(css = "button[name ='dwfrm_login_login'][value='sign in']")
 	public WebElement signInButton;
-	
-	@FindBy(xpath="//*[@class=\"form-row f_error_message\"]")
+
+	@FindBy(xpath = "//*[@class=\"form-row f_error_message\"]")
 	public WebElement errorWhileSigninMessage;
 
 	@FindBy(css = "select[id='dwfrm_profile_customer_title']")
@@ -51,29 +48,26 @@ public class LoginPage {
 
 	@FindBy(css = "button[value='Apply']")
 	public WebElement createAccount;
-	
-	@FindBy(xpath="//*[@id='primary']/div/h1")
+
+	@FindBy(xpath = "//*[@id='primary']/div/h1")
 	public WebElement registrationConfirmation;
 
-	@FindBy(css ="input[id*='footer_newsletter_email_']")
+	@FindBy(css = "input[id*='footer_newsletter_email_']")
 	public WebElement inputSignup;
 
-	@FindBy(css ="button[value='Signup']")
+	@FindBy(css = "button[value='Signup']")
 	public WebElement buttonSignup;
-	
-	@FindBy(xpath="//*[@id='dialog-container']/div/h3")
+
+	@FindBy(xpath = "//*[@id='dialog-container']/div/h3")
 	public WebElement signUpConfirmationPopup;
-	
-	@FindBy(css="#primary > h1")
+
+	@FindBy(css = "#primary > h1")
 	public WebElement assertMyAccount;
-	
-	@FindBy(css="input[id$='requestpassword_email']")
+
+	@FindBy(css = "input[id$='requestpassword_email']")
 	public WebElement inputForEmailInForgotPasswordPopup;
-	
-	@FindBy(css="button[name$='dwfrm_requestpassword_send']")
+
+	@FindBy(css = "button[name$='dwfrm_requestpassword_send']")
 	public WebElement sendPasswordInForgotPasswordPopup;
 
 }
-
-
-

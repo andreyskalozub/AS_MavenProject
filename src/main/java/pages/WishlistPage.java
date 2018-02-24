@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-
 public class WishlistPage {
 
 	public WishlistPage(WebDriver driver) {
@@ -19,7 +18,7 @@ public class WishlistPage {
 
 	@FindBy(css = "div[class='b-product_code'] :last-child")
 	public WebElement itemInWishlist_IDConfirmation;
-	
+
 	@FindBy(css = "[title='add to basket']")
 	public WebElement addToBasketButton;
 

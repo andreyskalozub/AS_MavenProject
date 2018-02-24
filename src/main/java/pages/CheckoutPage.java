@@ -18,16 +18,16 @@ public class CheckoutPage {
 
 	@FindBy(css = "a[id='uk']")
 	public WebElement deliverToUKoption;
-	
+
 	@FindBy(css = "#cis")
 	public WebElement clickAndCollectOption;
-	
+
 	@FindBy(css = "input[name$='storelocator_searchquery']")
 	public WebElement town_postcodeInput;
-	
+
 	@FindBy(css = "button[value='Search'][class~='g-button-default']")
 	public WebElement findByPostcodeButton;
-	
+
 	@FindBy(css = "#store-location-results button[class$='store-select']")
 	public WebElement selectStoreButton;
 

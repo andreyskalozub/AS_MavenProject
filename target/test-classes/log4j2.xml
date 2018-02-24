@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
-  <Appenders>
-    <Console name="CONSOLE" target="SYSTEM_OUT">
-      <PatternLayout pattern="%d %p [%t] %45l - %m%n"/>
-    </Console>
-	<File name="MyLogger" fileName="trace-info.txt" append="false">
-	<PatternLayout pattern="%d %p [%t] %l - %m%n"/>
-	</File>
-	
-	<File name="MyLogger1" fileName="error+.txt" append="false">
-	<PatternLayout pattern="%d %p [%t] %l - %m%n"/>
-	</File>
-	
-  </Appenders>
-  <Loggers>
-    
-    <Root level="trace">
-      <AppenderRef ref="CONSOLE" level="info"/>
-	  <AppenderRef ref="MyLogger" level="trace"/>
-	  <AppenderRef ref="MyLogger1" level="error"/>
-    </Root>
-  </Loggers>
+	<Appenders>
+		<Console name="CONSOLE" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d %p [%t] %45l - %m%n" />
+		</Console>
+		<File name="MyLogger" fileName="trace-info.txt" append="false">
+			<PatternLayout pattern="%d %p [%t] %l - %m%n" />
+		</File>
+
+		<File name="MyLogger1" fileName="error+.txt" append="false">
+			<PatternLayout pattern="%d %p [%t] %l - %m%n" />
+		</File>
+
+	</Appenders>
+	<Loggers>
+
+		<Root level="trace">
+			<AppenderRef ref="CONSOLE" level="info" />
+			<AppenderRef ref="MyLogger" level="trace" />
+			<AppenderRef ref="MyLogger1" level="error" />
+		</Root>
+	</Loggers>
 </Configuration>

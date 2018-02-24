@@ -72,7 +72,7 @@ public class ELC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void elc_loginTest() throws InterruptedException, IOException {
+	public void elc_loginWithValidCredentialsTest() throws InterruptedException, IOException {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.signInRegisterLink);
@@ -92,7 +92,28 @@ public class ELC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void elc_emailSignUpTest() throws InterruptedException {
+	public void elc_loginWithIncorrectCredentialsTest() throws Exception {
+
+		HomePage homePage = new HomePage(driver);
+		clickElement(homePage.signInRegisterLink);
+
+		LoginPage loginPage = new LoginPage(driver);
+		setText(loginPage.emailSignIn, data.my_email_elc);
+		setText(loginPage.passwordSignIn, data.my_password + "wrong");
+
+		Actions actions = new Actions(driver);
+		actions.moveToElement(loginPage.signInButton).click().perform();
+		isElementPresentAndUnique(driver, "//*[@class='form-row f_error_message']");
+
+		assertEquals("Sorry, this does not match our records. Check your spelling and try again.",
+				loginPage.errorWhileSigninMessage.getAttribute("innerText"));
+
+		logger.info(name.getMethodName() + " -Nice");
+
+	}
+
+	@Test
+	public void elc_signupToEmailSubscriptionTest() throws InterruptedException {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.signInRegisterLink);
@@ -117,7 +138,7 @@ public class ELC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void elc_createAccountTest() throws InterruptedException {
+	public void elc_creatingNewAccountTest() throws InterruptedException {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.signInRegisterLink);
@@ -143,7 +164,7 @@ public class ELC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void elc_guestCheckoutCreditCardTest() throws InterruptedException {
+	public void elc_guestCheckoutByCreditCardTest() throws InterruptedException {
 
 		Actions actions = new Actions(driver);
 		HomePage homePage = new HomePage(driver);
@@ -205,7 +226,7 @@ public class ELC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void elc_paypalGuestCheckoutTest() throws InterruptedException {
+	public void elc_guestCheckoutByPaypalTest() throws InterruptedException {
 
 		Actions actions = new Actions(driver);
 		HomePage homePage = new HomePage(driver);
@@ -268,7 +289,7 @@ public class ELC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void elc_requestCatalogueTest() throws InterruptedException {
+	public void elc_requestingCatalogueTest() throws InterruptedException {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.requestCatalogue);
@@ -300,7 +321,7 @@ public class ELC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void elc_addToWishlistFromPDPAndCheckoutByPaypalTest() throws InterruptedException, MyException {
+	public void elc_addingProductToWishlistFromPDPAndCheckoutByPaypalTest() throws InterruptedException, MyException {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.signInRegisterLink);
@@ -380,7 +401,7 @@ public class ELC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void elc_payPalRegisteredCheckoutTest() throws InterruptedException {
+	public void elc_registeredUserCheckoutByPaypalTest() throws InterruptedException {
 
 		Actions actions = new Actions(driver);
 		HomePage homePage = new HomePage(driver);
@@ -436,7 +457,7 @@ public class ELC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void elc_registeredCheckoutCreditCardTest() throws InterruptedException {
+	public void elc_registeredUserCheckoutByCreditCardTest() throws InterruptedException {
 
 		Actions actions = new Actions(driver);
 		HomePage homePage = new HomePage(driver);
@@ -460,7 +481,7 @@ public class ELC_RunnerTest extends Library {
 
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		clickElement(checkoutPage.deliverToUKoption);
-		waitUntilElementIsVisible(driver, checkoutPage.elc_selectFromSavedForRegistered); 
+		waitUntilElementIsVisible(driver, checkoutPage.elc_selectFromSavedForRegistered);
 		clickByJavascript(driver, checkoutPage.elc_selectFromSavedForRegistered);
 		waitUntilElementIsClickable(driver, checkoutPage.standartDelivery);
 		clickByJavascript(driver, checkoutPage.standartDelivery);
@@ -488,28 +509,7 @@ public class ELC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void elc_errorWhileIncorrectCredentialsDuringSignInTest() throws Exception {
-
-		HomePage homePage = new HomePage(driver);
-		clickElement(homePage.signInRegisterLink);
-
-		LoginPage loginPage = new LoginPage(driver);
-		setText(loginPage.emailSignIn, data.my_email_elc);
-		setText(loginPage.passwordSignIn, data.my_password + "wrong");
-
-		Actions actions = new Actions(driver);
-		actions.moveToElement(loginPage.signInButton).click().perform();
-		isElementPresentAndUnique(driver, "//*[@class='form-row f_error_message']");
-
-		assertEquals("Sorry, this does not match our records. Check your spelling and try again.",
-				loginPage.errorWhileSigninMessage.getAttribute("innerText"));
-
-		logger.info(name.getMethodName() + " -Nice");
-
-	}
-
-	@Test
-	public void elc_addToBigBirthdayClubTest() throws InterruptedException {
+	public void elc_addingChildToBigBirthdayClubTest() throws InterruptedException {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.signInRegisterLink);
@@ -532,11 +532,11 @@ public class ELC_RunnerTest extends Library {
 				loginPage.registrationConfirmation.getAttribute("textContent"));
 
 		clickElement(homePage.elc_myAccountHeaderLink);
-		
+
 		MyAccountPage myAccountPage = new MyAccountPage(driver);
 		waitUntilElementIsClickable(driver, myAccountPage.bigBirthdayClub);
 		clickByJavascript(driver, myAccountPage.bigBirthdayClub);
-		
+
 		MA_BigBirthdayClubPage ma_BigBirthdayClubPage = new MA_BigBirthdayClubPage(driver);
 		waitUntilElementIsClickable(driver, ma_BigBirthdayClubPage.BBB_image);
 		scrollTillBottom(driver);
@@ -562,7 +562,7 @@ public class ELC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void elc_addNewAddressForJustRegisteredTest() throws InterruptedException {
+	public void elc_addingNewAddressForJustRegisteredUserTest() throws InterruptedException {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.signInRegisterLink);
@@ -612,7 +612,7 @@ public class ELC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void elc_findStoresUsingPostcodeViaStoreLocator() {
+	public void elc_findingStoresUsingPostcodeViaStoreLocator() {
 
 		HomePage homePage = new HomePage(driver);
 		clickByJavascript(driver, homePage.elc_storeFinder);

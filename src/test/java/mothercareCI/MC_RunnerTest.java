@@ -76,7 +76,7 @@ public class MC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void mc_loginTest() throws InterruptedException {
+	public void mc_loginWithValidCredentialsTest() throws InterruptedException {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.signInRegisterLink);
@@ -95,7 +95,7 @@ public class MC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void mc_emailSignUpTest() throws InterruptedException {
+	public void mc_SignUpToEmailSubscriptionTest() throws InterruptedException {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.signInRegisterLink);
@@ -120,7 +120,7 @@ public class MC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void mc_createAccountTest() throws InterruptedException {
+	public void mc_creatingNewAccountTest() throws InterruptedException {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.signInRegisterLink);
@@ -151,7 +151,7 @@ public class MC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void mc_guestCheckoutCreditCardTest() throws InterruptedException {
+	public void mc_guestCheckoutByCreditCardTest() throws InterruptedException {
 
 		Actions actions = new Actions(driver);
 		HomePage homePage = new HomePage(driver);
@@ -218,7 +218,7 @@ public class MC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void mc2_guestCheckoutCreditCardTest() throws InterruptedException {
+	public void mc_guest2CheckoutByCreditCardTest() throws InterruptedException {
 
 		Actions actions = new Actions(driver);
 		HomePage homePage = new HomePage(driver);
@@ -229,8 +229,8 @@ public class MC_RunnerTest extends Library {
 		selectByIndex(plp_Page.gridFilter, 3);
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		clickByJavascript(driver, plp_Page.knittedBlanketButton);
-
 		clickByJavascript(driver, homePage.shoppingCart);
+
 		CartPage cartPage = new CartPage(driver);
 		clickElement(cartPage.topCheckoutButton);
 
@@ -284,7 +284,7 @@ public class MC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void mc_paypalGuestCheckoutTest() throws InterruptedException {
+	public void mc_guestCheckoutByPaypalTest() throws InterruptedException {
 
 		Actions actions = new Actions(driver);
 		HomePage homePage = new HomePage(driver);
@@ -345,7 +345,7 @@ public class MC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void mc_requestCatalogueTest() throws InterruptedException {
+	public void mc_requestingCatalogueTest() throws InterruptedException {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.requestCatalogue);
@@ -377,7 +377,7 @@ public class MC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void mc_addToWishlistFromPDPTest() throws InterruptedException {
+	public void mc_addingProductToWishlistFromPDPTest() throws InterruptedException {
 
 		Actions actions = new Actions(driver);
 		HomePage homePage = new HomePage(driver);
@@ -409,7 +409,7 @@ public class MC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void mc_payPalRegisteredCheckoutTest() throws InterruptedException {
+	public void mc_registeredUserCheckoutByPaypalTest() throws InterruptedException {
 
 		Actions actions = new Actions(driver);
 		HomePage homePage = new HomePage(driver);
@@ -464,7 +464,7 @@ public class MC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void mc_registeredCheckoutSavedCreditCardTest() throws InterruptedException {
+	public void mc_registeredUserCheckoutBySavedCreditCardTest() throws InterruptedException {
 
 		Actions actions = new Actions(driver);
 		HomePage homePage = new HomePage(driver);
@@ -515,7 +515,7 @@ public class MC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void mc_contactUsOpeningTest() throws InterruptedException {
+	public void mc_contactUsLinkOpeningInNewTabTest() throws InterruptedException {
 
 		scrollTillBottom(driver);
 
@@ -615,7 +615,7 @@ public class MC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void mc_joiningMyMothercareTest() {
+	public void mc_joiningMyMothercareFlowTest() {
 
 		HomePage homePage = new HomePage(driver);
 		hoverElement(driver, homePage.OneHundredPounds_JoinMyMothercare);
@@ -653,7 +653,7 @@ public class MC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void mc_addProductToCartFromQuickViewTest() {
+	public void mc_addingProductToCartFromQuickViewTest() {
 
 		Actions actions = new Actions(driver);
 		HomePage homePage = new HomePage(driver);
@@ -681,7 +681,7 @@ public class MC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void mc_backToTopButtonOnPLPTest() {
+	public void mc_clickingBackToTopButtonOnPLPTest() {
 
 		Actions actions = new Actions(driver);
 		HomePage homePage = new HomePage(driver);
@@ -701,7 +701,7 @@ public class MC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void mc_removeJustAddedProductFromCartTest() {
+	public void mc_removingJustAddedProductFromCartTest() {
 
 		Actions actions = new Actions(driver);
 		HomePage homePage = new HomePage(driver);
