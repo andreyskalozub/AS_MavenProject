@@ -1,1 +1,1 @@
-2018-02-24 15:22:25,092 INFO [main] mothercareCI.MC_RunnerTest.mc_veryfyingAllProductsLinkOnPLPTest(MC_RunnerTest.java:797) - mc_veryfyingAllProductsLinkOnPLPTest-Nice!
+2018-02-25 09:27:42,315 INFO [main] mothercareCI.ELC_RunnerTest.elc_registeredUserCheckoutByPaypalTest(ELC_RunnerTest.java:455) - elc_registeredUserCheckoutByPaypalTest -Nice

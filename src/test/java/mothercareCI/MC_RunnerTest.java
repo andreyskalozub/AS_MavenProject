@@ -164,6 +164,7 @@ public class MC_RunnerTest extends Library {
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		mc_addToCartFirstInstockStandartProduct(driver);
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
+		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickByJavascript(driver, homePage.shoppingCart);
 
 		CartPage cartPage = new CartPage(driver);
@@ -227,8 +228,10 @@ public class MC_RunnerTest extends Library {
 
 		PLP_Page plp_Page = new PLP_Page(driver);
 		selectByIndex(plp_Page.gridFilter, 3);
-		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		clickByJavascript(driver, plp_Page.knittedBlanketButton);
+		
+		waitUntilElementIsInvisible(driver, plp_Page.loader);
+		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickByJavascript(driver, homePage.shoppingCart);
 
 		CartPage cartPage = new CartPage(driver);
@@ -295,6 +298,9 @@ public class MC_RunnerTest extends Library {
 		selectByIndex(plp_Page.gridFilter, 3);
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		mc_addToCartFirstInstockStandartProduct(driver);
+		
+		waitUntilElementIsInvisible(driver, plp_Page.loader);
+		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickByJavascript(driver, homePage.shoppingCart);
 
 		CartPage cartPage = new CartPage(driver);
@@ -420,6 +426,9 @@ public class MC_RunnerTest extends Library {
 		selectByIndex(plp_Page.gridFilter, 3);
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		mc_addToCartFirstInstockStandartProduct(driver);
+		
+		waitUntilElementIsInvisible(driver, plp_Page.loader);
+		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickByJavascript(driver, homePage.shoppingCart);
 
 		CartPage cartPage = new CartPage(driver);
@@ -475,6 +484,9 @@ public class MC_RunnerTest extends Library {
 		selectByIndex(plp_Page.gridFilter, 3);
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		mc_addToCartFirstInstockStandartProduct(driver);
+		
+		waitUntilElementIsInvisible(driver, plp_Page.loader);
+		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickByJavascript(driver, homePage.shoppingCart);
 
 		CartPage cartPage = new CartPage(driver);

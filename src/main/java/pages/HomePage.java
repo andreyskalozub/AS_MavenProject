@@ -55,7 +55,7 @@ public class HomePage {
 	@FindBy(css = "button[class$='search_toggle']+a:first-of-type")
 	public WebElement elc_storeFinder;
 
-	@FindBy(css = "#mini-cart > div.b-minicart_total.js-mini-cart-total > div > a")
+	@FindBy(css = "a[title='Go to Cart']")
 	public WebElement shoppingCart;
 
 	@FindBy(css = "a[title='Request a catalogue']")
