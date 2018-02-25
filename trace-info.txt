@@ -1,1 +1,1 @@
-2018-02-25 09:27:42,315 INFO [main] mothercareCI.ELC_RunnerTest.elc_registeredUserCheckoutByPaypalTest(ELC_RunnerTest.java:455) - elc_registeredUserCheckoutByPaypalTest -Nice
+2018-02-25 16:56:26,874 INFO [main] mothercareCI.ELC_RunnerTest.elc_addingChildToBigBirthdayClubTest(ELC_RunnerTest.java:563) - elc_addingChildToBigBirthdayClubTest -Nice

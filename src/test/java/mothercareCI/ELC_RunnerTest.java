@@ -175,7 +175,7 @@ public class ELC_RunnerTest extends Library {
 		clickByJavascript(driver, plp_Page.elc_cinderellaPLP);
 		waitUntilElementIsClickable(driver, plp_Page.cinderellaButton);
 		clickByJavascript(driver, plp_Page.cinderellaButton);
-		waitUntilElementIsInvisible(driver, plp_Page.loader);
+		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickElement(homePage.shoppingCart);
 
 		CartPage cartPage = new CartPage(driver);
@@ -237,7 +237,7 @@ public class ELC_RunnerTest extends Library {
 		clickByJavascript(driver, plp_Page.elc_cinderellaPLP);
 		waitUntilElementIsClickable(driver, plp_Page.cinderellaButton);
 		clickByJavascript(driver, plp_Page.cinderellaButton);
-		waitUntilElementIsInvisible(driver, plp_Page.loader);
+		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickElement(homePage.shoppingCart);
 
 		CartPage cartPage = new CartPage(driver);
@@ -412,7 +412,7 @@ public class ELC_RunnerTest extends Library {
 		clickByJavascript(driver, plp_Page.elc_cinderellaPLP);
 		waitUntilElementIsClickable(driver, plp_Page.cinderellaButton);
 		clickByJavascript(driver, plp_Page.cinderellaButton);
-		waitUntilElementIsInvisible(driver, plp_Page.loader);
+		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickByJavascript(driver, homePage.shoppingCart);
 
 		CartPage cartPage = new CartPage(driver);
@@ -467,8 +467,9 @@ public class ELC_RunnerTest extends Library {
 		PLP_Page plp_Page = new PLP_Page(driver);
 		clickByJavascript(driver, plp_Page.elc_cinderellaPLP);
 		waitUntilElementIsClickable(driver, plp_Page.cinderellaButton);
+		
 		clickByJavascript(driver, plp_Page.cinderellaButton);
-		waitUntilElementIsInvisible(driver, plp_Page.loader);
+		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickByJavascript(driver, homePage.shoppingCart);
 
 		CartPage cartPage = new CartPage(driver);
@@ -482,6 +483,7 @@ public class ELC_RunnerTest extends Library {
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		clickElement(checkoutPage.deliverToUKoption);
 		waitUntilElementIsVisible(driver, checkoutPage.elc_selectFromSavedForRegistered);
+		
 		clickByJavascript(driver, checkoutPage.elc_selectFromSavedForRegistered);
 		waitUntilElementIsClickable(driver, checkoutPage.standartDelivery);
 		clickByJavascript(driver, checkoutPage.standartDelivery);
@@ -540,7 +542,8 @@ public class ELC_RunnerTest extends Library {
 		MA_BigBirthdayClubPage ma_BigBirthdayClubPage = new MA_BigBirthdayClubPage(driver);
 		waitUntilElementIsClickable(driver, ma_BigBirthdayClubPage.BBB_image);
 		scrollTillBottom(driver);
-		clickElement(ma_BigBirthdayClubPage.girlbadge);
+		waitUntilElementIsClickable(driver, ma_BigBirthdayClubPage.girlbadge);
+		actions.moveToElement(ma_BigBirthdayClubPage.girlbadge, 1, 1).click().perform();
 		waitUntilElementIsClickable(driver, ma_BigBirthdayClubPage.childName);
 
 		String babyNameValue = fakeData.firstName;
