@@ -89,8 +89,7 @@ public class MC_RunnerTest extends Library {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(loginPage.signInButton).click().perform();
 
-		assertTrue("Actual text is" + loginPage.assertMyAccount.getAttribute("textContent") + "Expected text is "
-				+ "My Account", loginPage.assertMyAccount.getAttribute("textContent").equals("My Account"));
+		assertTrue(loginPage.assertMyAccount.isDisplayed());
 
 		logger.info(name.getMethodName() + " -Nice");
 	}
@@ -506,8 +505,9 @@ public class MC_RunnerTest extends Library {
 
 		clickElement(checkoutPage.creditCardOption);
 		waitUntilElementIsClickable(driver, checkoutPage.visaSavedCard);
-		clickElement(checkoutPage.visaSavedCard);
+		clickByJavascript(driver, checkoutPage.visaSavedCard);
 		setText(checkoutPage.visaCVN, data.CVV);
+		waitUntilElementIsClickable(driver, checkoutPage.visaPlaceOrder);
 		clickByJavascript(driver, checkoutPage.visaPlaceOrder);
 
 		waitUntilElementIsClickable(driver, checkoutPage.iframe);

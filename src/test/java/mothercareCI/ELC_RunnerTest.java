@@ -528,8 +528,7 @@ public class ELC_RunnerTest extends Library {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(loginPage.createAccount).click().perform();
 
-		assertEquals("thank you for registering with Early Learning Centre",
-				loginPage.registrationConfirmation.getAttribute("textContent"));
+		assertTrue(loginPage.assertMyAccount.isDisplayed());
 
 		clickElement(homePage.elc_myAccountHeaderLink);
 
@@ -583,8 +582,7 @@ public class ELC_RunnerTest extends Library {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(loginPage.createAccount).click().perform();
 
-		assertEquals("thank you for registering with Early Learning Centre",
-				loginPage.registrationConfirmation.getAttribute("textContent"));
+		assertTrue(loginPage.assertMyAccount.isDisplayed());
 
 		clickElement(homePage.elc_myAccountHeaderLink);
 

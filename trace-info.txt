@@ -1,0 +1,1 @@
+2018-03-02 13:36:09,204 INFO [main] mothercareCI.MC_RunnerTest.mc_registeredUserCheckoutBySavedCreditCardTest(MC_RunnerTest.java:522) - mc_registeredUserCheckoutBySavedCreditCardTest-Nice!
