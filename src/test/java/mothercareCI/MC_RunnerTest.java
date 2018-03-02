@@ -40,7 +40,7 @@ public class MC_RunnerTest extends Library {
 
 	public static final Logger logger = LogManager.getLogger(MC_RunnerTest.class.getName());
 
-	WebDriver driver;
+	public static WebDriver driver;
 
 	@Rule
 	public final TestName name = new TestName();
@@ -49,11 +49,13 @@ public class MC_RunnerTest extends Library {
 	public void before() {
 
 		driver = new ChromeDriver();
-		setDriverConfiguration(driver, 30);
+		setDriverConfiguration(driver, 15);
 		driver.get(data.mc_ci);
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.cookieAccept);
+		
+		
 
 	}
 
@@ -61,7 +63,6 @@ public class MC_RunnerTest extends Library {
 	public void gettingScreenshotAndClosingDriver() throws IOException {
 
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-
 		String currentDir = "C:\\tmp";
 		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 		try {

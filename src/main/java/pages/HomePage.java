@@ -69,5 +69,8 @@ public class HomePage {
 
 	@FindBy(css = "a[manual_cm_re='top-_-stripe-_-mymothercare']")
 	public WebElement OneHundredPounds_JoinMyMothercare;
+	
+	@FindBy(xpath = "*//div[@id='t017-close']")
+	public WebElement closePopup;
 
 }

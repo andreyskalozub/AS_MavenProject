@@ -4,6 +4,7 @@ public class Data {
 
 	// SITES URLS
 	public String mc_ci = "https://storefront:mc1234@dev08-realm1-mothercare.demandware.net/s/MCENGB/home";
+	
 	public String elc_ci = "https://storefront:elc1234@dev08-realm1-mothercare.demandware.net/on/demandware.store/Sites-ELCENGB-Site";
 
 	// ACCOUNT DETAILS

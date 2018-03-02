@@ -61,7 +61,7 @@ public class LoginPage {
 	@FindBy(xpath = "//*[@id='dialog-container']/div/h3")
 	public WebElement signUpConfirmationPopup;
 
-	@FindBy(css = "#primary > h1")
+	@FindBy(css = "a[title='Go to: Log out']")
 	public WebElement assertMyAccount;
 
 	@FindBy(css = "input[id$='requestpassword_email']")
