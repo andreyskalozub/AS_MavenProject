@@ -22,15 +22,6 @@ public class PLP_Page {
 	@FindBy(css = "#category-level-2 > li:nth-child(5) > a")
 	public WebElement blankets;
 
-	@FindBy(css = "a[title='Go to Category: bathing & changing']")
-	public WebElement bathingAndChanging;
-
-	@FindBy(css = "a[title='Go to Category: baby bath & accessories']")
-	public WebElement babyBathsAndAccessories;
-
-	@FindBy(css = "a[title='Go to Category: baths']")
-	public WebElement baths;
-
 	@FindBy(xpath = "//*[@id='category-level-2']/li[7]/a/span[1]")
 	public WebElement pushchairsOffers;
 

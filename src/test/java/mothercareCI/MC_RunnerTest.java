@@ -21,7 +21,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import pages.CartPage;
 import pages.CheckoutPage;
@@ -33,7 +32,6 @@ import pages.PDP_Page;
 import pages.PLP_Page;
 import pages.QuickViewPage;
 import pages.RequestCataloguePage;
-import pages.SitemapPage;
 import pages.WishlistPage;
 import webLibrary.Library;
 
@@ -73,7 +71,7 @@ public class MC_RunnerTest extends Library {
 			e1.printStackTrace();
 		}
 
-		driver.quit();
+		//driver.quit();
 
 	}
 
@@ -564,19 +562,11 @@ public class MC_RunnerTest extends Library {
 
 		Actions actions = new Actions(driver);
 		scroolToThisElement(driver, loginPage.createAccount);
-		actions.moveToElement(loginPage.createAccount).click().perform();
-		scrollTillBottom(driver);
-		clickByJavascript(driver, homePage.sitemap);
-
-		SitemapPage sitemapPage = new SitemapPage(driver);
-		clickElement(sitemapPage.bathingAndChangingOffers);
+		clickByJavascript(driver, loginPage.createAccount);
+		actions.moveToElement(homePage.bathingAndChangingCategory).click().perform();
+		clickByJavascript(driver, homePage.bathsSubCategory);
 
 		PLP_Page plp_Page = new PLP_Page(driver);
-		clickByJavascript(driver, plp_Page.bathingAndChanging);
-		clickByJavascript(driver, plp_Page.babyBathsAndAccessories);
-
-		waitUntilElementIsVisible(driver, plp_Page.baths);
-		clickByJavascript(driver, plp_Page.baths);
 		clickByJavascript(driver, plp_Page.listFilterOption);
 		clickByJavascript(driver, plp_Page.bathWithVariationButton);
 

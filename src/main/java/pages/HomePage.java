@@ -34,11 +34,14 @@ public class HomePage {
 	@FindBy(css = "div[class$='header_toplinks'] a[title='Go to: My Account']")
 	public WebElement elc_myAccountHeaderLink;
 
-	@FindBy(css = "a[href='http://dev08-realm1-mothercare.demandware.net/s/MCENGB/bedding-2/']")
+	@FindBy(css = "a[href$='MCENGB/bedding-2/']")
 	public WebElement beddingCategory;
 
 	@FindBy(css = "a[title='pushchairs']")
 	public WebElement pushchairsCategory;
+	
+	@FindBy(css = "a[href$='/MCENGB/bathing-and-changing/']")
+	public WebElement bathingAndChangingCategory;
 
 	@FindBy(css = "a[title='3 wheeler']")
 	public WebElement Home_3Wheeler;
@@ -48,6 +51,9 @@ public class HomePage {
 
 	@FindBy(xpath = "//*[@title='blankets']")
 	public WebElement blanketsSubCategory;
+	
+	@FindBy(css = "a[title='baths']")
+	public WebElement bathsSubCategory;
 
 	@FindBy(css = "button[type='submit']+a[title='Locate Stores'] span")
 	public WebElement storeFinder;

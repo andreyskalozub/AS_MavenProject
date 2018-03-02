@@ -1,1 +1,1 @@
-2018-03-02 17:28:03,973 INFO [main] mothercareCI.MC_RunnerTest.mc_creatingAccountLogOutAndLoginAgainTest(MC_RunnerTest.java:778) - mc_creatingAccountLogOutAndLoginAgainTest-Nice!
+2018-03-02 18:47:33,483 INFO [main] mothercareCI.MC_RunnerTest.mc_addingVariationProductToGiftlistTest(MC_RunnerTest.java:618) - addingVariationProductToGiftlistTest-Nice!
