@@ -21,6 +21,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import pages.CartPage;
 import pages.CheckoutPage;
@@ -206,7 +207,7 @@ public class MC_RunnerTest extends Library {
 		switchToFrame(driver, checkoutPage.iframe);
 
 		waitUntilElementIsClickable(driver, checkoutPage.choiceAuth);
-		clickElement(checkoutPage.choiceAuth);
+		clickByJavascript(driver, checkoutPage.choiceAuth);
 
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "
@@ -252,6 +253,7 @@ public class MC_RunnerTest extends Library {
 		setText(checkoutPage.addressLine1, fakeData.address1);
 		setText(checkoutPage.town_city, fakeData.city);
 		setText(checkoutPage.postalCode, pickRandomUKPostcode());
+		scroolToThisElement(driver, checkoutPage.deliverToThisAddress);
 		actions.moveToElement(checkoutPage.deliverToThisAddress).click().perform();
 
 		waitUntilElementIsClickable(driver, checkoutPage.standartDelivery);
@@ -272,7 +274,7 @@ public class MC_RunnerTest extends Library {
 		driver.switchTo().defaultContent();
 		switchToFrame(driver, checkoutPage.iframe);
 		waitUntilElementIsClickable(driver, checkoutPage.choiceAuth);
-		clickElement(checkoutPage.choiceAuth);
+		clickByJavascript(driver, checkoutPage.choiceAuth);
 
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "
@@ -512,7 +514,7 @@ public class MC_RunnerTest extends Library {
 
 		waitUntilElementIsClickable(driver, checkoutPage.iframe);
 		switchToFrame(driver, checkoutPage.iframe);
-		clickElement(checkoutPage.choiceAuth);
+		clickByJavascript(driver, checkoutPage.choiceAuth);
 
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "
@@ -561,6 +563,7 @@ public class MC_RunnerTest extends Library {
 		setText(loginPage.confirmPasswordRegistration, data.my_password);
 
 		Actions actions = new Actions(driver);
+		scroolToThisElement(driver, loginPage.createAccount);
 		actions.moveToElement(loginPage.createAccount).click().perform();
 		scrollTillBottom(driver);
 		clickByJavascript(driver, homePage.sitemap);
@@ -759,12 +762,8 @@ public class MC_RunnerTest extends Library {
 
 		Actions actions = new Actions(driver);
 		actions.moveToElement(loginPage.createAccount).click().perform();
-		assertTrue(
-
-				"Actual text is" + loginPage.registrationConfirmation.getAttribute("textContent") + "Expected text is "
-						+ " thank you for registering with mothercare",
-				loginPage.registrationConfirmation.getAttribute("textContent")
-						.equals("thank you for registering with mothercare"));
+		
+		assertTrue(loginPage.assertMyAccount.isDisplayed());
 
 		scrollToTop(driver);
 		clickByJavascript(driver, homePage.logoutLink);
@@ -774,8 +773,7 @@ public class MC_RunnerTest extends Library {
 		setText(loginPage.passwordSignIn, data.my_password);
 		actions.moveToElement(loginPage.signInButton).click().perform();
 
-		assertTrue("Actual text is" + loginPage.assertMyAccount.getAttribute("textContent") + "Expected text is "
-				+ "My Account", loginPage.assertMyAccount.getAttribute("textContent").equals("My Account"));
+		assertTrue(loginPage.assertMyAccount.isDisplayed());
 
 		logger.info(name.getMethodName() + "-Nice!");
 	}
