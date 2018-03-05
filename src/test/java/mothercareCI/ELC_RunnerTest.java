@@ -71,7 +71,7 @@ public class ELC_RunnerTest extends Library {
 
 	}
 
-	@Test
+/*	@Test
 	public void elc_loginWithValidCredentialsTest() throws InterruptedException, IOException {
 
 		HomePage homePage = new HomePage(driver);
@@ -397,7 +397,7 @@ public class ELC_RunnerTest extends Library {
 		logger.info(name.getMethodName() + "-Nice!");
 
 	}
-
+*/
 	@Test
 	public void elc_registeredUserCheckoutByPaypalTest() throws InterruptedException {
 
@@ -422,7 +422,8 @@ public class ELC_RunnerTest extends Library {
 		clickElement(loginPage.signInButton);
 
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
-		clickElement(checkoutPage.deliverToUKoption);
+		waitUntilElementIsClickable(driver, checkoutPage.deliverToUKoption);
+		clickByJavascript(driver, checkoutPage.deliverToUKoption);
 		waitUntilElementIsClickable(driver, checkoutPage.elc_selectFromSavedForRegistered);
 		clickByJavascript(driver, checkoutPage.elc_selectFromSavedForRegistered);
 
@@ -454,7 +455,7 @@ public class ELC_RunnerTest extends Library {
 
 	}
 
-	@Test
+/*	@Test
 	public void elc_registeredUserCheckoutByCreditCardTest() throws InterruptedException {
 
 		Actions actions = new Actions(driver);
@@ -628,5 +629,5 @@ public class ELC_RunnerTest extends Library {
 
 		logger.info(name.getMethodName() + " -Nice");
 	}
-
+*/
 }
