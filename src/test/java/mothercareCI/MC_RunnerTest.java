@@ -75,7 +75,7 @@ public class MC_RunnerTest extends Library {
 
 	}
 
-/*	@Test
+	@Test
 	public void mc_loginWithValidCredentialsTest() throws InterruptedException {
 
 		HomePage homePage = new HomePage(driver);
@@ -410,7 +410,7 @@ public class MC_RunnerTest extends Library {
 
 		logger.info(name.getMethodName() + "-Nice!");
 
-	}*/
+	}
 
 	@Test
 	public void mc_registeredUserCheckoutByPaypalTest() throws InterruptedException {
@@ -469,7 +469,7 @@ public class MC_RunnerTest extends Library {
 		logger.info(name.getMethodName() + "-Nice!");
 
 	}
-/*
+
 	@Test
 	public void mc_registeredUserCheckoutBySavedCreditCardTest() throws InterruptedException {
 
@@ -540,7 +540,7 @@ public class MC_RunnerTest extends Library {
 
 		logger.info(name.getMethodName() + "-Nice!");
 
-	}*/
+	}
 
 	@Test
 	public void mc_addingVariationProductToGiftlistTest() throws InterruptedException {
@@ -564,8 +564,8 @@ public class MC_RunnerTest extends Library {
 		Actions actions = new Actions(driver);
 		scroolToThisElement(driver, loginPage.createAccount);
 		clickByJavascript(driver, loginPage.createAccount);
+		scroolToThisElement(driver, homePage.bathingAndChangingCategory);
 		actions.moveToElement(homePage.bathingAndChangingCategory).click().perform();
-		actions.click().perform();
 		clickByJavascript(driver, homePage.bathsSubCategory);
 
 		PLP_Page plp_Page = new PLP_Page(driver);
@@ -619,7 +619,7 @@ public class MC_RunnerTest extends Library {
 		logger.info("addingVariationProductToGiftlistTest" + "-Nice!");
 	}
 
-	/*@Test
+	@Test
 	public void mc_joiningMyMothercareFlowTest() {
 
 		HomePage homePage = new HomePage(driver);
@@ -797,5 +797,5 @@ public class MC_RunnerTest extends Library {
 		logger.info(name.getMethodName() + "-Nice!");
 
 	}
-*/
+
 }
