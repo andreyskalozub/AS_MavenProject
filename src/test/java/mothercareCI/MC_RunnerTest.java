@@ -561,10 +561,12 @@ public class MC_RunnerTest extends Library {
 		setText(loginPage.passwordRegistration, data.my_password);
 		setText(loginPage.confirmPasswordRegistration, data.my_password);
 
-		Actions actions = new Actions(driver);
 		scroolToThisElement(driver, loginPage.createAccount);
 		clickByJavascript(driver, loginPage.createAccount);
-		scroolToThisElement(driver, homePage.bathingAndChangingCategory);
+		scroolToThisElement(driver, homePage.brandLogo);
+		clickByJavascript(driver, homePage.brandLogo);
+		
+		Actions actions = new Actions(driver);
 		actions.moveToElement(homePage.bathingAndChangingCategory).click().perform();
 		clickByJavascript(driver, homePage.bathsSubCategory);
 
