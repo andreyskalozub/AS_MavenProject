@@ -71,7 +71,7 @@ public class MC_RunnerTest extends Library {
 			e1.printStackTrace();
 		}
 
-		//driver.quit();
+		driver.quit();
 
 	}
 
