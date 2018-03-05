@@ -1,1 +1,1 @@
-2018-03-05 12:36:32,983 INFO [main] mothercareCI.MC_RunnerTest.mc_loginWithValidCredentialsTest(MC_RunnerTest.java:93) - mc_loginWithValidCredentialsTest -Nice
+2018-03-05 13:31:25,559 INFO [main] mothercareCI.MC_RunnerTest.mc_addingVariationProductToGiftlistTest(MC_RunnerTest.java:616) - addingVariationProductToGiftlistTest-Nice!

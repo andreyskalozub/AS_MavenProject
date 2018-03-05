@@ -567,6 +567,7 @@ public class MC_RunnerTest extends Library {
 		clickByJavascript(driver, homePage.bathsSubCategory);
 
 		PLP_Page plp_Page = new PLP_Page(driver);
+		waitUntilElementIsClickable(driver, plp_Page.listFilterOption);
 		clickByJavascript(driver, plp_Page.listFilterOption);
 		clickByJavascript(driver, plp_Page.bathWithVariationButton);
 
