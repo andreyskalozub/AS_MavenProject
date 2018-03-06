@@ -1,1 +1,1 @@
-2018-03-05 18:41:19,280 INFO [main] mothercareCI.MC_RunnerTest.mc_addingVariationProductToGiftlistTest(MC_RunnerTest.java:621) - addingVariationProductToGiftlistTest-Nice!
+2018-03-06 10:38:39,852 INFO [main] mothercareCI.MC_RunnerTest.mc_veryfyingAllProductsLinkOnPLPTest(MC_RunnerTest.java:800) - mc_veryfyingAllProductsLinkOnPLPTest-Nice!

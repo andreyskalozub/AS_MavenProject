@@ -513,6 +513,7 @@ public class MC_RunnerTest extends Library {
 
 		waitUntilElementIsClickable(driver, checkoutPage.iframe);
 		switchToFrame(driver, checkoutPage.iframe);
+		waitUntilElementIsClickable(driver, checkoutPage.choiceAuth);
 		clickByJavascript(driver, checkoutPage.choiceAuth);
 
 		assertTrue(
