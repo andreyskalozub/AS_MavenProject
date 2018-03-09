@@ -267,8 +267,8 @@ public class ELC_RunnerTest extends Library {
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
 
-		waitUntilElementIsClickable(driver, checkoutPage.payPalIframe);
 		switchToFrame(driver, checkoutPage.payPalIframe);
+		wait(1);
 		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, data.paypal_login);
 		setText(checkoutPage.paypalLoginPassword, data.paypal_password);
 		clickElement(checkoutPage.loginPaypalButton);
@@ -380,6 +380,7 @@ public class ELC_RunnerTest extends Library {
 		waitUntilElementIsClickable(driver, checkoutPage.payPalIframe);
 
 		switchToFrame(driver, checkoutPage.payPalIframe);
+		wait(1);
 		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, data.paypal_login);
 		setText(checkoutPage.paypalLoginPassword, data.paypal_password);
 		clickElement(checkoutPage.loginPaypalButton);
@@ -438,6 +439,7 @@ public class ELC_RunnerTest extends Library {
 		waitUntilElementIsClickable(driver, checkoutPage.payPalIframe);
 
 		switchToFrame(driver, checkoutPage.payPalIframe);
+		wait(1);
 		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, data.paypal_login);
 		setText(checkoutPage.paypalLoginPassword, data.paypal_password);
 		clickElement(checkoutPage.loginPaypalButton);

@@ -260,7 +260,7 @@ public class Library {
 	public static void waitUntilElementIsClickable(WebDriver driver, WebElement element) {
 
 		try {
-			Wait<WebDriver> wait = new WebDriverWait(driver, 30);
+			Wait<WebDriver> wait = new WebDriverWait(driver, 10);
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 		}
 
@@ -277,7 +277,7 @@ public class Library {
 		try
 
 		{
-			Wait<WebDriver> wait = new WebDriverWait(driver, 60);
+			Wait<WebDriver> wait = new WebDriverWait(driver, 10);
 			wait.until(ExpectedConditions.visibilityOf(element));
 		}
 
@@ -311,7 +311,7 @@ public class Library {
 		try
 
 		{
-			Wait<WebDriver> wait = new WebDriverWait(driver, 40);
+			Wait<WebDriver> wait = new WebDriverWait(driver, 10);
 			wait.until(ExpectedConditions.textToBePresentInElement(element, text));
 		}
 
@@ -328,7 +328,7 @@ public class Library {
 		try
 
 		{
-			Wait<WebDriver> wait = new WebDriverWait(driver, 60);
+			Wait<WebDriver> wait = new WebDriverWait(driver, 30);
 			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframe));
 		}
 

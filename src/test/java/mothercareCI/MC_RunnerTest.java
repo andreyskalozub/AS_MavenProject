@@ -205,6 +205,7 @@ public class MC_RunnerTest extends Library {
 		switchToFrame(driver, checkoutPage.iframe);
 
 		waitUntilElementIsClickable(driver, checkoutPage.choiceAuth);
+		scroolToThisElement(driver, checkoutPage.choiceAuth);
 		clickByJavascript(driver, checkoutPage.choiceAuth);
 
 		assertTrue(
@@ -272,6 +273,7 @@ public class MC_RunnerTest extends Library {
 		driver.switchTo().defaultContent();
 		switchToFrame(driver, checkoutPage.iframe);
 		waitUntilElementIsClickable(driver, checkoutPage.choiceAuth);
+		scroolToThisElement(driver, checkoutPage.choiceAuth);
 		clickByJavascript(driver, checkoutPage.choiceAuth);
 
 		assertTrue(
@@ -330,6 +332,7 @@ public class MC_RunnerTest extends Library {
 		waitUntilElementIsClickable(driver, checkoutPage.payPalIframe);
 
 		switchToFrame(driver, checkoutPage.payPalIframe);
+		wait(1);
 		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, data.paypal_login);
 		setText(checkoutPage.paypalLoginPassword, data.paypal_password);
 		clickElement(checkoutPage.loginPaypalButton);
@@ -448,12 +451,13 @@ public class MC_RunnerTest extends Library {
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPayment);
 		clickElement(checkoutPage.proceedToPayment);
 		clickByJavascript(driver, checkoutPage.payPalOption);
-
+		
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
 		waitUntilElementIsClickable(driver, checkoutPage.payPalIframe);
-		switchToFrame(driver, checkoutPage.payPalIframe);
 
+		switchToFrame(driver, checkoutPage.payPalIframe);
+		wait(1);
 		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, data.paypal_login);
 		setText(checkoutPage.paypalLoginPassword, data.paypal_password);
 		clickElement(checkoutPage.loginPaypalButton);
@@ -514,6 +518,7 @@ public class MC_RunnerTest extends Library {
 		waitUntilElementIsClickable(driver, checkoutPage.iframe);
 		switchToFrame(driver, checkoutPage.iframe);
 		waitUntilElementIsClickable(driver, checkoutPage.choiceAuth);
+		scroolToThisElement(driver, checkoutPage.choiceAuth);
 		clickByJavascript(driver, checkoutPage.choiceAuth);
 
 		assertTrue(
