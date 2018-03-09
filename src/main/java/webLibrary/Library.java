@@ -277,7 +277,7 @@ public class Library {
 		try
 
 		{
-			Wait<WebDriver> wait = new WebDriverWait(driver, 10);
+			Wait<WebDriver> wait = new WebDriverWait(driver, 20);
 			wait.until(ExpectedConditions.visibilityOf(element));
 		}
 

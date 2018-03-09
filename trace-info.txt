@@ -1,1 +1,1 @@
-2018-03-09 10:43:56,579 INFO [main] mothercareCI.ELC_RunnerTest.elc_guestCheckoutByPaypalTest(ELC_RunnerTest.java:285) - elc_guestCheckoutByPaypalTest -Nice
+2018-03-09 12:16:32,998 INFO [main] mothercareCI.MC_RunnerTest.mc_registeredUserCheckoutByPaypalTest(MC_RunnerTest.java:473) - mc_registeredUserCheckoutByPaypalTest-Nice!

@@ -795,6 +795,7 @@ public class MC_RunnerTest extends Library {
 		WebElement productBeforeSecondLoader = elements.get(195);
 		scroolToThisElement(driver, productBeforeSecondLoader);
 
+		waitUntilElementIsVisible(driver, plp_Page.blankets_241_onButton);
 		waitTextIsPresentedInElement(driver, plp_Page.blankets_241_onButton, "241");
 		scrollTillBottom(driver);
 
