@@ -706,6 +706,7 @@ public class MC_RunnerTest extends Library {
 
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		scrollTillBottom(driver);
+		waitUntilElementIsClickable(driver, plp_Page.backToTopButton);
 		clickByJavascript(driver, plp_Page.backToTopButton);
 
 		assertTrue(homePage.brandLogo.isDisplayed());
@@ -795,9 +796,10 @@ public class MC_RunnerTest extends Library {
 		WebElement productBeforeSecondLoader = elements.get(195);
 		scroolToThisElement(driver, productBeforeSecondLoader);
 
+		scrollTillBottom(driver);
 		waitUntilElementIsVisible(driver, plp_Page.blankets_241_onButton);
 		waitTextIsPresentedInElement(driver, plp_Page.blankets_241_onButton, "241");
-		scrollTillBottom(driver);
+		
 
 		assertEquals(true, plp_Page.blankets_241_onButton.getAttribute("textContent").contains("241"));
 
