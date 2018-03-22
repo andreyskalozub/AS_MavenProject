@@ -62,11 +62,10 @@ public class MC_RunnerTest extends Library {
 	public void gettingScreenshotAndClosingDriver() throws IOException {
 
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		String currentDir = "C:\\tmp";
 		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 		try {
 			FileUtils.copyFile(scrFile,
-					new File(currentDir + "\\screenshots\\" + timeStamp + "-- " + name.getMethodName() + ".png"));
+					new File("screenshots/" + timeStamp + "-- " + name.getMethodName() + ".png"));
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
