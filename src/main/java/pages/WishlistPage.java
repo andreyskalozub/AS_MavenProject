@@ -14,7 +14,7 @@ public class WishlistPage {
 	}
 
 	@FindBy(xpath = "//*[@id='primary']/h1")
-	public WebElement messageMyWishlist; // textContent=='↵My wish list↵↵(your wish list)↵↵'
+	public WebElement messageMyWishlist; 
 
 	@FindBy(css = "div[class='b-product_code'] :last-child")
 	public WebElement itemInWishlist_IDConfirmation;

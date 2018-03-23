@@ -1,15 +1,66 @@
 package pages;
 
+import java.util.ResourceBundle;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class GiftlistPage {
+import data.FakeData;
+import webLibrary.Library;
+
+public class GiftlistPage extends Library{
+	
+public static WebDriver driver;
+	
+	public static ResourceBundle rb = ResourceBundle.getBundle("config");
 
 	public GiftlistPage(WebDriver driver) {
 
 		PageFactory.initElements(driver, this);
+
+	}
+	
+	public static void newEventCreating_MC(WebDriver driver) {
+
+		GiftlistPage giftlistPage = new GiftlistPage(driver);
+		selectByIndex(giftlistPage.eventTypeSelect, 1);
+		FakeData fakeData = new FakeData();
+		setText(giftlistPage.eventName, fakeData.fullName);
+
+		clickElement(giftlistPage.eventDatePicker);
+		clickElement(giftlistPage.todayDate);
+
+		setText(giftlistPage.eventCity, fakeData.city);
+		clickElement(giftlistPage.continueButton);
+		clickElement(giftlistPage.createNewAddress);
+
+		waitUntilElementIsVisible(driver, giftlistPage.newUKaddress);
+		clickByJavascript(driver, giftlistPage.newUKaddress);
+
+		waitUntilElementIsVisible(driver, giftlistPage.phone);
+		focusOnElement(driver, giftlistPage.phone);
+		setText(giftlistPage.phone, fakeData.phoneNumber);
+		
+		
+
+	}
+	
+	public static void newNicknameCreating_MC(WebDriver driver) {
+
+		GiftlistPage giftlistPage = new GiftlistPage(driver);
+		FakeData fakeData = new FakeData();
+		setText(giftlistPage.nickname, fakeData.firstName);
+		setText(giftlistPage.addressLine1, fakeData.streetAddress);
+		setText(giftlistPage.city, fakeData.city);
+		setText(giftlistPage.county, fakeData.county);
+
+		setText(giftlistPage.postcode, pickRandomUKPostcode());
+		clickElement(giftlistPage.continueOnAddressesButton);
+		clickElement(giftlistPage.confirmButton);
+		
+		
 
 	}
 

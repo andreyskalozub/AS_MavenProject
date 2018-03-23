@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
+import java.util.ResourceBundle;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -40,6 +41,8 @@ public class MC_RunnerTest extends Library {
 	public static final Logger logger = LogManager.getLogger(MC_RunnerTest.class.getName());
 
 	public static WebDriver driver;
+	
+	private static ResourceBundle rb = ResourceBundle.getBundle("config");
 
 	@Rule
 	public final TestName name = new TestName();
@@ -49,7 +52,7 @@ public class MC_RunnerTest extends Library {
 
 		driver = new ChromeDriver();
 		setDriverConfiguration(driver, 15);
-		driver.get(data.mc_ci);
+		driver.get(rb.getString("mc_ci"));
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.cookieAccept);
@@ -70,7 +73,7 @@ public class MC_RunnerTest extends Library {
 			e1.printStackTrace();
 		}
 
-		driver.quit();
+		//driver.quit();
 
 	}
 
@@ -79,14 +82,10 @@ public class MC_RunnerTest extends Library {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.signInRegisterLink);
+		
+		LoginPage.loginAction_MC(driver);
 
 		LoginPage loginPage = new LoginPage(driver);
-		setText(loginPage.emailSignIn, data.my_email_mc);
-		setText(loginPage.passwordSignIn, data.my_password);
-
-		Actions actions = new Actions(driver);
-		actions.moveToElement(loginPage.signInButton).click().perform();
-
 		assertTrue(loginPage.assertMyAccount.isDisplayed());
 
 		logger.info(name.getMethodName() + " -Nice");
@@ -97,13 +96,10 @@ public class MC_RunnerTest extends Library {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.signInRegisterLink);
-
+		
+		LoginPage.loginAction_MC(driver);
+		
 		LoginPage loginPage = new LoginPage(driver);
-		setText(loginPage.emailSignIn, data.my_email_mc);
-		setText(loginPage.passwordSignIn, data.my_password);
-
-		Actions actions = new Actions(driver);
-		actions.moveToElement(loginPage.signInButton).click().perform();
 		setText(loginPage.inputSignup, generateRandomEmail(7));
 		clickByJavascript(driver, loginPage.buttonSignup);
 
@@ -123,22 +119,9 @@ public class MC_RunnerTest extends Library {
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.signInRegisterLink);
 
+		LoginPage.creatingNewAccount(driver);
+
 		LoginPage loginPage = new LoginPage(driver);
-		selectByIndex(loginPage.title, 5);
-
-		setText(loginPage.firstName, fakeData.firstName);
-		setText(loginPage.lastName, fakeData.lastName);
-		setText(loginPage.emailAddress, generateRandomEmail(7));
-
-		String copyEmail = loginPage.emailAddress.getAttribute("value");
-		setText(loginPage.confirmEmail, copyEmail);
-
-		setText(loginPage.passwordRegistration, data.my_password);
-		setText(loginPage.confirmPasswordRegistration, data.my_password);
-
-		Actions actions = new Actions(driver);
-		actions.moveToElement(loginPage.createAccount).click().perform();
-
 		assertTrue(
 				"Actual text is" + loginPage.registrationConfirmation.getAttribute("textContent") + "Expected text is "
 						+ " thank you for registering with mothercare",
@@ -167,26 +150,9 @@ public class MC_RunnerTest extends Library {
 		CartPage cartPage = new CartPage(driver);
 		actions.moveToElement(cartPage.topCheckoutButton, 1, 1).click().perform();
 
+		CheckoutPage.proccessingCheckoutUntilPaymentMethodAsGuest(driver);
+		
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
-		clickElement(checkoutPage.checkoutAsGuestButton);
-		waitUntilElementIsClickable(driver, checkoutPage.deliverToUKoption);
-		clickElement(checkoutPage.deliverToUKoption);
-
-		selectByIndex(checkoutPage.title, 2);
-		setText(checkoutPage.firstname, fakeData.firstName);
-		setText(checkoutPage.lastname, fakeData.lastName);
-		setText(checkoutPage.email, generateRandomEmail(5));
-		setText(checkoutPage.phone, fakeData.phoneNumber);
-
-		clickElement(checkoutPage.enterAddressManually);
-		setText(checkoutPage.addressLine1, fakeData.address1);
-		setText(checkoutPage.town_city, fakeData.city);
-		setText(checkoutPage.postalCode, pickRandomUKPostcode());
-		clickByJavascript(driver, checkoutPage.deliverToThisAddress);
-
-		waitUntilElementIsClickable(driver, checkoutPage.standartDelivery);
-		clickByJavascript(driver, checkoutPage.standartDelivery);
-		clickElement(checkoutPage.proceedToPayment);
 		waitUntilElementIsClickable(driver, checkoutPage.creditCardOption);
 		clickElement(checkoutPage.creditCardOption);
 
@@ -194,13 +160,14 @@ public class MC_RunnerTest extends Library {
 		switchToFrame(driver, checkoutPage.paymentIframe);
 		actions.moveToElement(checkoutPage.nameOnCard, 1, 1).click().perform();
 		setText(checkoutPage.nameOnCard, fakeData.firstName);
-		setText(checkoutPage.cardNumber, data.creditCardNumber);
+		setText(checkoutPage.cardNumber, rb.getString("creditCardNumber"));
 
 		selectByIndex(checkoutPage.expirationYear, 5);
-		setText(checkoutPage.CVV, data.CVV);
+		setText(checkoutPage.CVV, rb.getString("CVV"));
 		clickElement(checkoutPage.guestPlaceOrder);
-
+		
 		driver.switchTo().defaultContent();
+		
 		switchToFrame(driver, checkoutPage.iframe);
 
 		waitUntilElementIsClickable(driver, checkoutPage.choiceAuth);
@@ -235,41 +202,24 @@ public class MC_RunnerTest extends Library {
 		CartPage cartPage = new CartPage(driver);
 		clickElement(cartPage.topCheckoutButton);
 
+		CheckoutPage.proccessingCheckoutUntilPaymentMethodAsGuest(driver);
+		
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
-		clickElement(checkoutPage.checkoutAsGuestButton);
-
-		waitUntilElementIsClickable(driver, checkoutPage.deliverToUKoption);
-		clickElement(checkoutPage.deliverToUKoption);
-		selectByIndex(checkoutPage.title, 2);
-
-		setText(checkoutPage.firstname, fakeData.firstName);
-		setText(checkoutPage.lastname, fakeData.lastName);
-		setText(checkoutPage.email, generateRandomEmail(5));
-		setText(checkoutPage.phone, fakeData.phoneNumber);
-		clickElement(checkoutPage.enterAddressManually);
-
-		setText(checkoutPage.addressLine1, fakeData.address1);
-		setText(checkoutPage.town_city, fakeData.city);
-		setText(checkoutPage.postalCode, pickRandomUKPostcode());
-		scroolToThisElement(driver, checkoutPage.deliverToThisAddress);
-		actions.moveToElement(checkoutPage.deliverToThisAddress).click().perform();
-
-		waitUntilElementIsClickable(driver, checkoutPage.standartDelivery);
-		clickByJavascript(driver, checkoutPage.standartDelivery);
-		clickElement(checkoutPage.proceedToPayment);
+		waitUntilElementIsClickable(driver, checkoutPage.creditCardOption);
 		clickElement(checkoutPage.creditCardOption);
-		waitUntilElementIsClickable(driver, checkoutPage.paymentIframe);
 
+		waitUntilElementIsClickable(driver, checkoutPage.paymentIframe);
 		switchToFrame(driver, checkoutPage.paymentIframe);
 		actions.moveToElement(checkoutPage.nameOnCard, 1, 1).click().perform();
 		setText(checkoutPage.nameOnCard, fakeData.firstName);
-		setText(checkoutPage.cardNumber, data.creditCardNumber);
+		setText(checkoutPage.cardNumber, rb.getString("creditCardNumber"));
 
 		selectByIndex(checkoutPage.expirationYear, 5);
-		setText(checkoutPage.CVV, data.CVV);
+		setText(checkoutPage.CVV, rb.getString("CVV"));
 		clickElement(checkoutPage.guestPlaceOrder);
 
 		driver.switchTo().defaultContent();
+		
 		switchToFrame(driver, checkoutPage.iframe);
 		waitUntilElementIsClickable(driver, checkoutPage.choiceAuth);
 		scroolToThisElement(driver, checkoutPage.choiceAuth);
@@ -305,26 +255,9 @@ public class MC_RunnerTest extends Library {
 		CartPage cartPage = new CartPage(driver);
 		clickElement(cartPage.topCheckoutButton);
 
+		CheckoutPage.proccessingCheckoutUntilPaymentMethodAsGuest(driver);
+
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
-		clickElement(checkoutPage.checkoutAsGuestButton);
-		clickElement(checkoutPage.deliverToUKoption);
-		selectByIndex(checkoutPage.title, 2);
-
-		setText(checkoutPage.firstname, fakeData.firstName);
-		setText(checkoutPage.lastname, fakeData.lastName);
-		setText(checkoutPage.email, generateRandomEmail(5));
-		setText(checkoutPage.phone, fakeData.phoneNumber);
-		clickElement(checkoutPage.enterAddressManually);
-
-		setText(checkoutPage.addressLine1, fakeData.address1);
-		setText(checkoutPage.town_city, fakeData.city);
-		setText(checkoutPage.postalCode, pickRandomUKPostcode());
-		actions.moveToElement(checkoutPage.deliverToThisAddress).click().perform();
-
-		waitUntilElementIsClickable(driver, checkoutPage.standartDelivery);
-		clickByJavascript(driver, checkoutPage.standartDelivery);
-		clickElement(checkoutPage.proceedToPayment);
-
 		clickByJavascript(driver, checkoutPage.payPalOption);
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
@@ -332,8 +265,8 @@ public class MC_RunnerTest extends Library {
 
 		switchToFrame(driver, checkoutPage.payPalIframe);
 		wait(1);
-		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, data.paypal_login);
-		setText(checkoutPage.paypalLoginPassword, data.paypal_password);
+		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, rb.getString("paypal_login"));
+		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
 
 		driver.switchTo().defaultContent();
@@ -403,8 +336,8 @@ public class MC_RunnerTest extends Library {
 		clickElement(pdp_Page.addToMyWishlistButton);
 
 		LoginPage loginPage = new LoginPage(driver);
-		setText(loginPage.emailSignIn, data.my_email_mc);
-		setText(loginPage.passwordSignIn, data.my_password);
+		setText(loginPage.emailSignIn, rb.getString("my_email_mc"));
+		setText(loginPage.passwordSignIn, rb.getString("my_password"));
 		actions.moveToElement(loginPage.signInButton).click().perform();
 
 		WishlistPage wishlistPage = new WishlistPage(driver);
@@ -433,10 +366,7 @@ public class MC_RunnerTest extends Library {
 		CartPage cartPage = new CartPage(driver);
 		clickElement(cartPage.topCheckoutButton);
 
-		LoginPage loginPage = new LoginPage(driver);
-		setText(loginPage.emailSignIn, data.my_email_mc);
-		setText(loginPage.passwordSignIn, data.my_password);
-		clickElement(loginPage.signInButton);
+		LoginPage.logInAsRegistereduser_MC(driver);
 
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		waitUntilElementIsClickable(driver, checkoutPage.deliverInternational);
@@ -457,8 +387,8 @@ public class MC_RunnerTest extends Library {
 
 		switchToFrame(driver, checkoutPage.payPalIframe);
 		wait(1);
-		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, data.paypal_login);
-		setText(checkoutPage.paypalLoginPassword, data.paypal_password);
+		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, rb.getString("paypal_login"));
+		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
 
 		driver.switchTo().defaultContent();
@@ -492,10 +422,7 @@ public class MC_RunnerTest extends Library {
 		CartPage cartPage = new CartPage(driver);
 		clickElement(cartPage.topCheckoutButton);
 
-		LoginPage loginPage = new LoginPage(driver);
-		setText(loginPage.emailSignIn, data.my_email_mc);
-		setText(loginPage.passwordSignIn, data.my_password);
-		clickElement(loginPage.signInButton);
+		LoginPage.logInAsRegistereduser_MC(driver);
 
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		actions.moveToElement(checkoutPage.deliverToUKoption, 1, 1).click().perform();
@@ -510,7 +437,7 @@ public class MC_RunnerTest extends Library {
 		clickElement(checkoutPage.creditCardOption);
 		waitUntilElementIsClickable(driver, checkoutPage.visaSavedCard);
 		clickByJavascript(driver, checkoutPage.visaSavedCard);
-		setText(checkoutPage.visaCVN, data.CVV);
+		setText(checkoutPage.visaCVN, rb.getString("CVV"));
 		waitUntilElementIsClickable(driver, checkoutPage.visaPlaceOrder);
 		clickByJavascript(driver, checkoutPage.visaPlaceOrder);
 
@@ -541,7 +468,7 @@ public class MC_RunnerTest extends Library {
 
 		String newUrl = driver.getCurrentUrl();
 
-		assertEquals(data.contactUs_url, newUrl);
+		assertEquals(rb.getString("contactUs_url"), newUrl);
 
 		logger.info(name.getMethodName() + "-Nice!");
 
@@ -552,22 +479,9 @@ public class MC_RunnerTest extends Library {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.signInRegisterLink);
+		
+		LoginPage.creatingNewAccount(driver);
 
-		LoginPage loginPage = new LoginPage(driver);
-		selectByIndex(loginPage.title, 5);
-
-		setText(loginPage.firstName, fakeData.firstName);
-		setText(loginPage.lastName, fakeData.lastName);
-		setText(loginPage.emailAddress, generateRandomEmail(7));
-
-		String copyEmail = loginPage.emailAddress.getAttribute("value");
-		setText(loginPage.confirmEmail, copyEmail);
-
-		setText(loginPage.passwordRegistration, data.my_password);
-		setText(loginPage.confirmPasswordRegistration, data.my_password);
-
-		scroolToThisElement(driver, loginPage.createAccount);
-		clickByJavascript(driver, loginPage.createAccount);
 		scroolToThisElement(driver, homePage.brandLogo);
 		clickByJavascript(driver, homePage.brandLogo);
 		
@@ -585,35 +499,14 @@ public class MC_RunnerTest extends Library {
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
 		clickElement(pdp_Page.addToMyGiftlistButton);
 
-		GiftlistPage giftlistPage = new GiftlistPage(driver);
-		selectByIndex(giftlistPage.eventTypeSelect, 1);
-		setText(giftlistPage.eventName, fakeData.fullName);
-
-		clickElement(giftlistPage.eventDatePicker);
-		clickElement(giftlistPage.todayDate);
-
-		setText(giftlistPage.eventCity, fakeData.city);
-		clickElement(giftlistPage.continueButton);
-		clickElement(giftlistPage.createNewAddress);
-
-		waitUntilElementIsVisible(driver, giftlistPage.newUKaddress);
-		clickByJavascript(driver, giftlistPage.newUKaddress);
-
-		waitUntilElementIsVisible(driver, giftlistPage.phone);
-		focusOnElement(driver, giftlistPage.phone);
-		setText(giftlistPage.phone, fakeData.phoneNumber);
+		GiftlistPage.newEventCreating_MC(driver);
 
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		clickElement(checkoutPage.enterAddressManually);
-		setText(giftlistPage.nickname, fakeData.firstName);
-		setText(giftlistPage.addressLine1, fakeData.streetAddress);
-		setText(giftlistPage.city, fakeData.city);
-		setText(giftlistPage.county, fakeData.county);
-
-		setText(giftlistPage.postcode, pickRandomUKPostcode());
-		clickElement(giftlistPage.continueOnAddressesButton);
-		clickElement(giftlistPage.confirmButton);
-
+		
+		GiftlistPage.newNicknameCreating_MC(driver);
+		
+		GiftlistPage giftlistPage = new GiftlistPage(driver);
 		assertTrue("actual code is " + giftlistPage.assertionElementID.getAttribute("textContent")
 				+ " expected code is " + "320296",
 				giftlistPage.assertionElementID.getAttribute("textContent").equals("320296"));
@@ -641,8 +534,8 @@ public class MC_RunnerTest extends Library {
 		setText(joinMyMothercarePage.emailInputOnFirstStep, generatedEmail);
 		clickElement(joinMyMothercarePage.nextButton);
 
-		setText(joinMyMothercarePage.password, data.my_password);
-		setText(joinMyMothercarePage.confirmPassword, data.my_password);
+		setText(joinMyMothercarePage.password, rb.getString("my_password"));
+		setText(joinMyMothercarePage.confirmPassword, rb.getString("my_password"));
 		clickElement(joinMyMothercarePage.nextButton);
 
 		clickByJavascript(driver, joinMyMothercarePage.familyFriend);
@@ -758,8 +651,8 @@ public class MC_RunnerTest extends Library {
 
 		String copyEmail = loginPage.emailAddress.getAttribute("value");
 		setText(loginPage.confirmEmail, copyEmail);
-		setText(loginPage.passwordRegistration, data.my_password);
-		setText(loginPage.confirmPasswordRegistration, data.my_password);
+		setText(loginPage.passwordRegistration, rb.getString("my_password"));
+		setText(loginPage.confirmPasswordRegistration, rb.getString("my_password"));
 
 		Actions actions = new Actions(driver);
 		actions.moveToElement(loginPage.createAccount).click().perform();
@@ -771,7 +664,7 @@ public class MC_RunnerTest extends Library {
 		clickElement(homePage.signInRegisterLink);
 
 		setText(loginPage.emailSignIn, copyEmail);
-		setText(loginPage.passwordSignIn, data.my_password);
+		setText(loginPage.passwordSignIn, rb.getString("my_password"));
 		actions.moveToElement(loginPage.signInButton).click().perform();
 
 		assertTrue(loginPage.assertMyAccount.isDisplayed());

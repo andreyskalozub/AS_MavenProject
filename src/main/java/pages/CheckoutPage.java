@@ -1,15 +1,52 @@
 package pages;
 
+import java.util.ResourceBundle;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CheckoutPage {
+import data.FakeData;
+import webLibrary.Library;
+
+public class CheckoutPage extends Library{
+	
+	public static WebDriver driver;
+	
+	public static ResourceBundle rb = ResourceBundle.getBundle("config");
 
 	public CheckoutPage(WebDriver driver) {
 
 		PageFactory.initElements(driver, this);
+
+	}
+	
+	public static void proccessingCheckoutUntilPaymentMethodAsGuest(WebDriver driver) {
+
+		FakeData fakeData = new FakeData();
+		CheckoutPage checkoutPage = new CheckoutPage(driver);
+		clickElement(checkoutPage.checkoutAsGuestButton);
+		waitUntilElementIsClickable(driver, checkoutPage.deliverToUKoption);
+		clickElement(checkoutPage.deliverToUKoption);
+
+		selectByIndex(checkoutPage.title, 2);
+		setText(checkoutPage.firstname, fakeData.firstName);
+		setText(checkoutPage.lastname, fakeData.lastName);
+		setText(checkoutPage.email, generateRandomEmail(5));
+		setText(checkoutPage.phone, fakeData.phoneNumber);
+
+		clickElement(checkoutPage.enterAddressManually);
+		setText(checkoutPage.addressLine1, fakeData.address1);
+		setText(checkoutPage.town_city, fakeData.city);
+		setText(checkoutPage.postalCode, pickRandomUKPostcode());
+		clickByJavascript(driver, checkoutPage.deliverToThisAddress);
+
+		waitUntilElementIsClickable(driver, checkoutPage.standartDelivery);
+		clickByJavascript(driver, checkoutPage.standartDelivery);
+		clickElement(checkoutPage.proceedToPayment);
+		
+		
 
 	}
 

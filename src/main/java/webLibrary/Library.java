@@ -16,14 +16,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import data.Data;
 import data.FakeData;
 
 public class Library {
 
 	public static final Logger logger = LogManager.getLogger(Library.class.getName());
 
-	protected Data data = new Data();
 	protected FakeData fakeData = new FakeData();
 
 	// SETTING DRIVER:

@@ -1,1 +1,0 @@
-2018-03-22 18:42:59,133 INFO [main] mothercareCI.MC_RunnerTest.mc_SignUpToEmailSubscriptionTest(MC_RunnerTest.java:116) - mc_SignUpToEmailSubscriptionTest-Nice!
