@@ -258,7 +258,7 @@ public class Library {
 	public static void waitUntilElementIsClickable(WebDriver driver, WebElement element) {
 
 		try {
-			Wait<WebDriver> wait = new WebDriverWait(driver, 10);
+			Wait<WebDriver> wait = new WebDriverWait(driver, 20);
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 		}
 

@@ -95,7 +95,7 @@ public class ELC_RunnerTest extends Library {
 		clickElement(homePage.signInRegisterLink);
 
 		LoginPage loginPage = new LoginPage(driver);
-		setText(loginPage.emailSignIn, rb.getString("my_email.elc"));
+		setText(loginPage.emailSignIn, rb.getString("my_email_elc"));
 		setText(loginPage.passwordSignIn, rb.getString("my_password") + "wrong");
 
 		Actions actions = new Actions(driver);
