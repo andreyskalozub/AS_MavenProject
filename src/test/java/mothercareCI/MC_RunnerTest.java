@@ -378,7 +378,7 @@ public class MC_RunnerTest extends Library {
 		clickByJavascript(driver, checkoutPage.channelIslandsOption);
 
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPayment);
-		clickElement(checkoutPage.proceedToPayment);
+		clickByJavascript(driver, checkoutPage.proceedToPayment);
 		clickByJavascript(driver, checkoutPage.payPalOption);
 		
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
@@ -432,7 +432,7 @@ public class MC_RunnerTest extends Library {
 		waitUntilElementIsClickable(driver, checkoutPage.standartDelivery);
 		clickByJavascript(driver, checkoutPage.standartDelivery);
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPayment);
-		clickElement(checkoutPage.proceedToPayment);
+		clickByJavascript(driver, checkoutPage.proceedToPayment);
 
 		clickElement(checkoutPage.creditCardOption);
 		waitUntilElementIsClickable(driver, checkoutPage.visaSavedCard);
