@@ -44,7 +44,7 @@ public class CheckoutPage extends Library{
 
 		waitUntilElementIsClickable(driver, checkoutPage.standartDelivery);
 		clickByJavascript(driver, checkoutPage.standartDelivery);
-		clickElement(checkoutPage.proceedToPayment);
+		clickByJavascript(driver,checkoutPage.proceedToPayment);
 		
 		
 
