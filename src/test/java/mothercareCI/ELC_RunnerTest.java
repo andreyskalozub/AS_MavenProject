@@ -117,10 +117,10 @@ public class ELC_RunnerTest extends Library {
 
 		LoginPage.loginAction_ELC(driver);
 		
+		LoginPage.subscribeToEmails(driver);
+		
 		LoginPage loginPage = new LoginPage(driver);
-		setText(loginPage.inputSignup, generateRandomEmail(7));
-		clickByJavascript(driver, loginPage.buttonSignup);
-
+		
 		assertTrue(
 				"actual text is " + loginPage.signUpConfirmationPopup.getAttribute("textContent") + " expected text is "
 						+ "Thank you for signing up to ELC emails",
@@ -154,10 +154,8 @@ public class ELC_RunnerTest extends Library {
 		actions.moveToElement(homePage.elc_learningAndBooks).click().perform();
 		actions.click().perform();
 
-		PLP_Page plp_Page = new PLP_Page(driver);
-		clickByJavascript(driver, plp_Page.elc_cinderellaPLP);
-		waitUntilElementIsClickable(driver, plp_Page.cinderellaButton);
-		clickByJavascript(driver, plp_Page.cinderellaButton);
+		PLP_Page.elc_AddProductToCart(driver);
+		
 		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickElement(homePage.shoppingCart);
 
@@ -181,7 +179,7 @@ public class ELC_RunnerTest extends Library {
 
 		driver.switchTo().defaultContent();
 		switchToFrame(driver, checkoutPage.iframe);
-		clickByJavascript(driver, checkoutPage.choiceAuth);
+		CheckoutPage.approveAuthentificationForOrder(driver);
 
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "
@@ -200,10 +198,8 @@ public class ELC_RunnerTest extends Library {
 		actions.moveToElement(homePage.elc_learningAndBooks).click().perform();
 		actions.click().perform();
 
-		PLP_Page plp_Page = new PLP_Page(driver);
-		clickByJavascript(driver, plp_Page.elc_cinderellaPLP);
-		waitUntilElementIsClickable(driver, plp_Page.cinderellaButton);
-		clickByJavascript(driver, plp_Page.cinderellaButton);
+		PLP_Page.elc_AddProductToCart(driver);
+		
 		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickElement(homePage.shoppingCart);
 
@@ -348,10 +344,8 @@ public class ELC_RunnerTest extends Library {
 		actions.moveToElement(homePage.elc_learningAndBooks).click().perform();
 		actions.click().perform();
 
-		PLP_Page plp_Page = new PLP_Page(driver);
-		clickByJavascript(driver, plp_Page.elc_cinderellaPLP);
-		waitUntilElementIsClickable(driver, plp_Page.cinderellaButton);
-		clickByJavascript(driver, plp_Page.cinderellaButton);
+		PLP_Page.elc_AddProductToCart(driver);
+		
 		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickByJavascript(driver, homePage.shoppingCart);
 
@@ -403,11 +397,8 @@ public class ELC_RunnerTest extends Library {
 		actions.moveToElement(homePage.elc_learningAndBooks).click().perform();
 		actions.click().perform();
 
-		PLP_Page plp_Page = new PLP_Page(driver);
-		clickByJavascript(driver, plp_Page.elc_cinderellaPLP);
-		waitUntilElementIsClickable(driver, plp_Page.cinderellaButton);
+		PLP_Page.elc_AddProductToCart(driver);
 		
-		clickByJavascript(driver, plp_Page.cinderellaButton);
 		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickByJavascript(driver, homePage.shoppingCart);
 
@@ -434,8 +425,7 @@ public class ELC_RunnerTest extends Library {
 
 		waitUntilElementIsClickable(driver, checkoutPage.iframe);
 		switchToFrame(driver, checkoutPage.iframe);
-		waitUntilElementIsClickable(driver, checkoutPage.choiceAuth);
-		clickByJavascript(driver, checkoutPage.choiceAuth);
+		CheckoutPage.approveAuthentificationForOrder(driver);
 
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "

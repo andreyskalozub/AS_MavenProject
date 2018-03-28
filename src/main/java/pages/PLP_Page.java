@@ -3,13 +3,26 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import webLibrary.Library;
+
 import org.openqa.selenium.WebDriver;
 
-public class PLP_Page {
+public class PLP_Page extends Library{
 
 	public PLP_Page(WebDriver driver) {
 
 		PageFactory.initElements(driver, this);
+
+	}
+	
+	public static void elc_AddProductToCart(WebDriver driver) {
+
+		PLP_Page plp_Page = new PLP_Page(driver);
+		clickByJavascript(driver, plp_Page.elc_cinderellaPLP);
+		waitUntilElementIsClickable(driver, plp_Page.cinderellaButton);
+		clickByJavascript(driver, plp_Page.cinderellaButton);
+		
 
 	}
 

@@ -49,6 +49,17 @@ public class CheckoutPage extends Library{
 		
 
 	}
+	
+	public static void approveAuthentificationForOrder(WebDriver driver) {
+
+		CheckoutPage checkoutPage = new CheckoutPage(driver);
+		waitUntilElementIsClickable(driver, checkoutPage.choiceAuth);
+		scroolToThisElement(driver, checkoutPage.choiceAuth);
+		clickByJavascript(driver, checkoutPage.choiceAuth);
+		
+		
+
+	}
 
 	@FindBy(css = "button[value='checkout as a guest']")
 	public WebElement checkoutAsGuestButton;

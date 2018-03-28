@@ -99,9 +99,9 @@ public class MC_RunnerTest extends Library {
 		
 		LoginPage.loginAction_MC(driver);
 		
+		LoginPage.subscribeToEmails(driver);
+		
 		LoginPage loginPage = new LoginPage(driver);
-		setText(loginPage.inputSignup, generateRandomEmail(7));
-		clickByJavascript(driver, loginPage.buttonSignup);
 
 		assertTrue(
 				"actual text is " + loginPage.signUpConfirmationPopup.getAttribute("textContent") + " expected text is "
@@ -170,9 +170,7 @@ public class MC_RunnerTest extends Library {
 		
 		switchToFrame(driver, checkoutPage.iframe);
 
-		waitUntilElementIsClickable(driver, checkoutPage.choiceAuth);
-		scroolToThisElement(driver, checkoutPage.choiceAuth);
-		clickByJavascript(driver, checkoutPage.choiceAuth);
+		CheckoutPage.approveAuthentificationForOrder(driver);
 
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "
@@ -221,9 +219,7 @@ public class MC_RunnerTest extends Library {
 		driver.switchTo().defaultContent();
 		
 		switchToFrame(driver, checkoutPage.iframe);
-		waitUntilElementIsClickable(driver, checkoutPage.choiceAuth);
-		scroolToThisElement(driver, checkoutPage.choiceAuth);
-		clickByJavascript(driver, checkoutPage.choiceAuth);
+		CheckoutPage.approveAuthentificationForOrder(driver);
 
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "
@@ -443,9 +439,7 @@ public class MC_RunnerTest extends Library {
 
 		waitUntilElementIsClickable(driver, checkoutPage.iframe);
 		switchToFrame(driver, checkoutPage.iframe);
-		waitUntilElementIsClickable(driver, checkoutPage.choiceAuth);
-		scroolToThisElement(driver, checkoutPage.choiceAuth);
-		clickByJavascript(driver, checkoutPage.choiceAuth);
+		CheckoutPage.approveAuthentificationForOrder(driver);
 
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "

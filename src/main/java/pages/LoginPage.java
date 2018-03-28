@@ -84,6 +84,14 @@ public class LoginPage extends Library{
 
 	}
 	
+	public static void subscribeToEmails(WebDriver driver) {
+
+		LoginPage loginPage = new LoginPage(driver);
+		setText(loginPage.inputSignup, generateRandomEmail(7));
+		clickByJavascript(driver, loginPage.buttonSignup);
+
+	}
+	
 
 	@FindBy(xpath = "//input[contains(@id,'login_user')]")
 	public WebElement emailSignIn;
