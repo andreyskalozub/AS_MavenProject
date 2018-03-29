@@ -1,1 +1,1 @@
-2018-03-28 13:05:13,345 INFO [main] mothercareCI.ELC_RunnerTest.elc_guestCheckoutByPaypalTest(ELC_RunnerTest.java:232) - elc_guestCheckoutByPaypalTest -Nice
+2018-03-29 15:36:17,041 INFO [main] mothercareCI.ELC_RunnerTest.elc_signupToEmailSubscriptionTest(ELC_RunnerTest.java:130) - elc_signupToEmailSubscriptionTest -Nice

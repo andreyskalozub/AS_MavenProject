@@ -4,11 +4,11 @@
 		<Console name="CONSOLE" target="SYSTEM_OUT">
 			<PatternLayout pattern="%d %p [%t] %45l - %m%n" />
 		</Console>
-		<File name="MyLogger" fileName="trace-info.txt" append="false">
+		<File name="MyLogger" fileName="info_warning_debug.txt" append="false">
 			<PatternLayout pattern="%d %p [%t] %l - %m%n" />
 		</File>
 
-		<File name="MyLogger1" fileName="error+.txt" append="false">
+		<File name="MyLogger1" fileName="errors.txt" append="false">
 			<PatternLayout pattern="%d %p [%t] %l - %m%n" />
 		</File>
 

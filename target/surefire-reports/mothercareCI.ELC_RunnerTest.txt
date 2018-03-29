@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: mothercareCI.ELC_RunnerTest
 -------------------------------------------------------------------------------
-Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 955.419 sec
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 590.694 sec
