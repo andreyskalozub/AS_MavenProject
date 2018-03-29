@@ -1,1 +1,0 @@
-2018-03-29 15:36:17,041 INFO [main] mothercareCI.ELC_RunnerTest.elc_signupToEmailSubscriptionTest(ELC_RunnerTest.java:130) - elc_signupToEmailSubscriptionTest -Nice
