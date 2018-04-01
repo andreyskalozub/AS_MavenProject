@@ -154,10 +154,13 @@ public class CheckoutPage extends Library{
 	@FindBy(css = "#password")
 	public WebElement paypalLoginPassword;
 
-	@FindBy(css = "#btnLogin")
+	@FindBy(css = "button[id='btnLogin']")
 	public WebElement loginPaypalButton;
+	
+	@FindBy(css = "#makePreferred")
+	public WebElement makePrefferedCheckbox;
 
-	@FindBy(xpath = "//*[@id='confirmButtonTop']")
+	@FindBy(css = "#confirmButtonTop")
 	public WebElement payNowByPaypal;
 
 	@FindBy(css = "label[for='isUseSameAddress-yes']")
@@ -169,7 +172,7 @@ public class CheckoutPage extends Library{
 	@FindBy(css = "#paymentIframe")
 	public WebElement paymentIframe;
 
-	@FindBy(css = "[name='injectedUl']")
+	@FindBy(css = "#ppfniframe")
 	public WebElement payPalIframe;
 
 	@FindBy(id = "capf1")

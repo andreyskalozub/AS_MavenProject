@@ -160,6 +160,13 @@ public class Library {
 		executor.executeScript("arguments[0].click();", element);
 	}
 
+	//HIGHLIGHTING DESIRED ELEMENT
+	public static void highlightElement(WebDriver driver, WebElement element) {
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].style.border='2px groove red'", element);
+	}
+	
 	// RETURNING BACK IN BROWSER
 	public static void returnBack(WebDriver driver) {
 

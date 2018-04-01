@@ -213,15 +213,12 @@ public class ELC_RunnerTest extends Library {
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
 
-		switchToFrame(driver, checkoutPage.payPalIframe);
-		wait(1);
 		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, rb.getString("paypal_login"));
 		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
-
-		driver.switchTo().defaultContent();
-		waitUntilElementIsClickable(driver, checkoutPage.payNowByPaypal);
-		clickByJavascript(driver, checkoutPage.payNowByPaypal);
+		
+		setCheckboxState(checkoutPage.makePrefferedCheckbox, "unchecked");
+		actions.moveToElement(checkoutPage.payNowByPaypal, 1, 1).doubleClick().build().perform();
 
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "
@@ -314,30 +311,24 @@ public class ELC_RunnerTest extends Library {
 		clickByJavascript(driver, checkoutPage.payPalOption);
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
-		waitUntilElementIsClickable(driver, checkoutPage.payPalIframe);
-
-		switchToFrame(driver, checkoutPage.payPalIframe);
-		wait(1);
 		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, rb.getString("paypal_login"));
 		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
-
-		driver.switchTo().defaultContent();
-		waitUntilElementIsClickable(driver, checkoutPage.payNowByPaypal);
-		clickByJavascript(driver, checkoutPage.payNowByPaypal);
-		waitUntilElementIsVisible(driver, checkoutPage.confirmation);
+		
+		setCheckboxState(checkoutPage.makePrefferedCheckbox, "unchecked");
+		actions.moveToElement(checkoutPage.payNowByPaypal, 1, 1).doubleClick().build().perform();
 
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "
 						+ "Thank you for your order",
 				checkoutPage.confirmation.getAttribute("textContent").equals("Thank you for your order"));
 
-		logger.info(name.getMethodName() + "-Nice!");
+		logger.info(name.getMethodName() + " -Nice");
 
 	}
 
 	@Test
-	public void elc_registeredUserCheckoutByPaypalTest() throws InterruptedException {
+	public void elc_registeredUserCheckoutByPaypalTest() throws Exception {
 
 		Actions actions = new Actions(driver);
 		HomePage homePage = new HomePage(driver);
@@ -368,17 +359,13 @@ public class ELC_RunnerTest extends Library {
 
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
-		waitUntilElementIsClickable(driver, checkoutPage.payPalIframe);
-
-		switchToFrame(driver, checkoutPage.payPalIframe);
-		wait(1);
+		
 		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, rb.getString("paypal_login"));
 		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
-
-		driver.switchTo().defaultContent();
-		waitUntilElementIsClickable(driver, checkoutPage.payNowByPaypal);
-		clickByJavascript(driver, checkoutPage.payNowByPaypal);
+		
+		setCheckboxState(checkoutPage.makePrefferedCheckbox, "unchecked");
+		actions.moveToElement(checkoutPage.payNowByPaypal, 1, 1).doubleClick().build().perform();
 
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "
