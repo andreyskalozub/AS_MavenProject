@@ -41,7 +41,7 @@ public class MC_RunnerTest extends Library {
 	public static final Logger logger = LogManager.getLogger(MC_RunnerTest.class.getName());
 
 	public static WebDriver driver;
-	
+
 	private static ResourceBundle rb = ResourceBundle.getBundle("config");
 
 	@Rule
@@ -56,8 +56,6 @@ public class MC_RunnerTest extends Library {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.cookieAccept);
-		
-		
 
 	}
 
@@ -67,8 +65,7 @@ public class MC_RunnerTest extends Library {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 		try {
-			FileUtils.copyFile(scrFile,
-					new File("screenshots/" + timeStamp + "-- " + name.getMethodName() + ".png"));
+			FileUtils.copyFile(scrFile, new File("screenshots/" + timeStamp + "-- " + name.getMethodName() + ".png"));
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -82,7 +79,7 @@ public class MC_RunnerTest extends Library {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.signInRegisterLink);
-		
+
 		LoginPage.loginAction_MC(driver);
 
 		LoginPage loginPage = new LoginPage(driver);
@@ -96,11 +93,11 @@ public class MC_RunnerTest extends Library {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.signInRegisterLink);
-		
+
 		LoginPage.loginAction_MC(driver);
-		
+
 		LoginPage.subscribeToEmails(driver);
-		
+
 		LoginPage loginPage = new LoginPage(driver);
 
 		assertTrue(
@@ -151,7 +148,7 @@ public class MC_RunnerTest extends Library {
 		actions.moveToElement(cartPage.topCheckoutButton, 1, 1).click().perform();
 
 		CheckoutPage.proccessingCheckoutUntilPaymentMethodAsGuest(driver);
-		
+
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		waitUntilElementIsClickable(driver, checkoutPage.creditCardOption);
 		clickElement(checkoutPage.creditCardOption);
@@ -165,9 +162,9 @@ public class MC_RunnerTest extends Library {
 		selectByIndex(checkoutPage.expirationYear, 5);
 		setText(checkoutPage.CVV, rb.getString("CVV"));
 		clickElement(checkoutPage.guestPlaceOrder);
-		
+
 		driver.switchTo().defaultContent();
-		
+
 		switchToFrame(driver, checkoutPage.iframe);
 
 		CheckoutPage.approveAuthentificationForOrder(driver);
@@ -192,7 +189,7 @@ public class MC_RunnerTest extends Library {
 		PLP_Page plp_Page = new PLP_Page(driver);
 		selectByIndex(plp_Page.gridFilter, 3);
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
-		
+
 		clickByJavascript(driver, plp_Page.knittedBlanketButton);
 		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickByJavascript(driver, homePage.shoppingCart);
@@ -201,7 +198,7 @@ public class MC_RunnerTest extends Library {
 		clickElement(cartPage.topCheckoutButton);
 
 		CheckoutPage.proccessingCheckoutUntilPaymentMethodAsGuest(driver);
-		
+
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		waitUntilElementIsClickable(driver, checkoutPage.creditCardOption);
 		clickElement(checkoutPage.creditCardOption);
@@ -217,7 +214,7 @@ public class MC_RunnerTest extends Library {
 		clickElement(checkoutPage.guestPlaceOrder);
 
 		driver.switchTo().defaultContent();
-		
+
 		switchToFrame(driver, checkoutPage.iframe);
 		CheckoutPage.approveAuthentificationForOrder(driver);
 
@@ -243,7 +240,7 @@ public class MC_RunnerTest extends Library {
 		PLP_Page plp_Page = new PLP_Page(driver);
 		selectByIndex(plp_Page.gridFilter, 3);
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
-		
+
 		mc_addToCartFirstInstockStandartProduct(driver);
 		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickByJavascript(driver, homePage.shoppingCart);
@@ -257,12 +254,14 @@ public class MC_RunnerTest extends Library {
 		clickByJavascript(driver, checkoutPage.payPalOption);
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
+
 		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, rb.getString("paypal_login"));
 		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
-		
-		setCheckboxState(checkoutPage.makePrefferedCheckbox, "unchecked");
-		actions.moveToElement(checkoutPage.payNowByPaypal, 1, 1).doubleClick().build().perform();
+
+		waitUntilElementIsClickable(driver, checkoutPage.makePrefferedCheckbox);
+		focusOnElement(driver, checkoutPage.makePrefferedCheckbox);
+		clickByJavascript(driver, checkoutPage.payNowByPaypal);
 
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "
@@ -348,7 +347,7 @@ public class MC_RunnerTest extends Library {
 		PLP_Page plp_Page = new PLP_Page(driver);
 		selectByIndex(plp_Page.gridFilter, 3);
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
-		
+
 		mc_addToCartFirstInstockStandartProduct(driver);
 		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickByJavascript(driver, homePage.shoppingCart);
@@ -370,15 +369,17 @@ public class MC_RunnerTest extends Library {
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPayment);
 		clickByJavascript(driver, checkoutPage.proceedToPayment);
 		clickByJavascript(driver, checkoutPage.payPalOption);
-		
+
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
+
 		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, rb.getString("paypal_login"));
 		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
-		
-		setCheckboxState(checkoutPage.makePrefferedCheckbox, "unchecked");
-		actions.moveToElement(checkoutPage.payNowByPaypal, 1, 1).doubleClick().build().perform();
+
+		waitUntilElementIsClickable(driver, checkoutPage.makePrefferedCheckbox);
+		focusOnElement(driver, checkoutPage.makePrefferedCheckbox);
+		clickByJavascript(driver, checkoutPage.payNowByPaypal);
 
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "
@@ -400,7 +401,7 @@ public class MC_RunnerTest extends Library {
 		PLP_Page plp_Page = new PLP_Page(driver);
 		selectByIndex(plp_Page.gridFilter, 3);
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
-		
+
 		mc_addToCartFirstInstockStandartProduct(driver);
 		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickByJavascript(driver, homePage.shoppingCart);
@@ -463,12 +464,12 @@ public class MC_RunnerTest extends Library {
 
 		HomePage homePage = new HomePage(driver);
 		clickElement(homePage.signInRegisterLink);
-		
+
 		LoginPage.creatingNewAccount(driver);
 
 		scroolToThisElement(driver, homePage.brandLogo);
 		clickByJavascript(driver, homePage.brandLogo);
-		
+
 		Actions actions = new Actions(driver);
 		actions.moveToElement(homePage.bathingAndChangingCategory).click().perform();
 		clickByJavascript(driver, homePage.bathsSubCategory);
@@ -487,9 +488,9 @@ public class MC_RunnerTest extends Library {
 
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		clickElement(checkoutPage.enterAddressManually);
-		
+
 		GiftlistPage.newNicknameCreating_MC(driver);
-		
+
 		GiftlistPage giftlistPage = new GiftlistPage(driver);
 		assertTrue("actual code is " + giftlistPage.assertionElementID.getAttribute("textContent")
 				+ " expected code is " + "320296",
@@ -640,7 +641,7 @@ public class MC_RunnerTest extends Library {
 
 		Actions actions = new Actions(driver);
 		actions.moveToElement(loginPage.createAccount).click().perform();
-		
+
 		assertTrue(loginPage.assertMyAccount.isDisplayed());
 
 		scrollToTop(driver);
@@ -675,7 +676,6 @@ public class MC_RunnerTest extends Library {
 		scrollTillBottom(driver);
 		waitUntilElementIsVisible(driver, plp_Page.blankets_241_onButton);
 		waitTextIsPresentedInElement(driver, plp_Page.blankets_241_onButton, "241");
-		
 
 		assertEquals(true, plp_Page.blankets_241_onButton.getAttribute("textContent").contains("241"));
 

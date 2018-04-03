@@ -1,1 +1,1 @@
-2018-04-01 15:42:46,463 INFO [main] mothercareCI.MC_RunnerTest.mc_registeredUserCheckoutByPaypalTest(MC_RunnerTest.java:388) - mc_registeredUserCheckoutByPaypalTest -Nice
+2018-04-03 11:26:02,531 INFO [main] mothercareCI.MC_RunnerTest.mc_loginWithValidCredentialsTest(MC_RunnerTest.java:91) - mc_loginWithValidCredentialsTest -Nice

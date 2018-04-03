@@ -39,7 +39,7 @@ public class ELC_RunnerTest extends Library {
 	public static final Logger logger = LogManager.getLogger(ELC_RunnerTest.class.getName());
 
 	public static WebDriver driver;
-	
+
 	private static ResourceBundle rb = ResourceBundle.getBundle("config");
 
 	@Rule
@@ -63,8 +63,7 @@ public class ELC_RunnerTest extends Library {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 		try {
-			FileUtils.copyFile(scrFile,
-					new File("screenshots/" + timeStamp + "-- " + name.getMethodName() + ".png"));
+			FileUtils.copyFile(scrFile, new File("screenshots/" + timeStamp + "-- " + name.getMethodName() + ".png"));
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -116,11 +115,11 @@ public class ELC_RunnerTest extends Library {
 		clickElement(homePage.signInRegisterLink);
 
 		LoginPage.loginAction_ELC(driver);
-		
+
 		LoginPage.subscribeToEmails(driver);
-		
+
 		LoginPage loginPage = new LoginPage(driver);
-		
+
 		assertTrue(
 				"actual text is " + loginPage.signUpConfirmationPopup.getAttribute("textContent") + " expected text is "
 						+ "Thank you for signing up to ELC emails",
@@ -138,7 +137,7 @@ public class ELC_RunnerTest extends Library {
 		clickElement(homePage.signInRegisterLink);
 
 		LoginPage.creatingNewAccount(driver);
-		
+
 		LoginPage loginPage = new LoginPage(driver);
 		assertTrue(loginPage.assertMyAccount.isDisplayed());
 
@@ -155,7 +154,7 @@ public class ELC_RunnerTest extends Library {
 		actions.click().perform();
 
 		PLP_Page.elc_AddProductToCart(driver);
-		
+
 		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickElement(homePage.shoppingCart);
 
@@ -163,7 +162,7 @@ public class ELC_RunnerTest extends Library {
 		clickElement(cartPage.topCheckoutButton);
 
 		CheckoutPage.proccessingCheckoutUntilPaymentMethodAsGuest(driver);
-		
+
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		clickElement(checkoutPage.creditCardOption);
 
@@ -199,7 +198,7 @@ public class ELC_RunnerTest extends Library {
 		actions.click().perform();
 
 		PLP_Page.elc_AddProductToCart(driver);
-		
+
 		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickElement(homePage.shoppingCart);
 
@@ -207,7 +206,7 @@ public class ELC_RunnerTest extends Library {
 		clickElement(cartPage.topCheckoutButton);
 
 		CheckoutPage.proccessingCheckoutUntilPaymentMethodAsGuest(driver);
-		
+
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		clickByJavascript(driver, checkoutPage.payPalOption);
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
@@ -216,9 +215,10 @@ public class ELC_RunnerTest extends Library {
 		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, rb.getString("paypal_login"));
 		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
-		
-		setCheckboxState(checkoutPage.makePrefferedCheckbox, "unchecked");
-		actions.moveToElement(checkoutPage.payNowByPaypal, 1, 1).doubleClick().build().perform();
+
+		waitUntilElementIsClickable(driver, checkoutPage.makePrefferedCheckbox);
+		focusOnElement(driver, checkoutPage.makePrefferedCheckbox);
+		clickByJavascript(driver, checkoutPage.payNowByPaypal);
 
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "
@@ -268,7 +268,7 @@ public class ELC_RunnerTest extends Library {
 		clickElement(homePage.signInRegisterLink);
 
 		LoginPage.creatingNewAccount(driver);
-		
+
 		Actions actions = new Actions(driver);
 		actions.moveToElement(homePage.elc_learningAndBooks).click().perform();
 		actions.click().perform();
@@ -293,7 +293,7 @@ public class ELC_RunnerTest extends Library {
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		clickElement(checkoutPage.clickAndCollectOption);
 		setText(checkoutPage.town_postcodeInput, pickRandomUKPostcode());
-		
+
 		waitUntilElementIsClickable(driver, checkoutPage.findByPostcodeButton);
 		clickByJavascript(driver, checkoutPage.findByPostcodeButton);
 		waitUntilElementIsInvisible(driver, plp_Page.loader);
@@ -311,12 +311,14 @@ public class ELC_RunnerTest extends Library {
 		clickByJavascript(driver, checkoutPage.payPalOption);
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
+
 		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, rb.getString("paypal_login"));
 		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
-		
-		setCheckboxState(checkoutPage.makePrefferedCheckbox, "unchecked");
-		actions.moveToElement(checkoutPage.payNowByPaypal, 1, 1).doubleClick().build().perform();
+
+		waitUntilElementIsClickable(driver, checkoutPage.makePrefferedCheckbox);
+		focusOnElement(driver, checkoutPage.makePrefferedCheckbox);
+		clickByJavascript(driver, checkoutPage.payNowByPaypal);
 
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "
@@ -336,7 +338,7 @@ public class ELC_RunnerTest extends Library {
 		actions.click().perform();
 
 		PLP_Page.elc_AddProductToCart(driver);
-		
+
 		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickByJavascript(driver, homePage.shoppingCart);
 
@@ -359,13 +361,14 @@ public class ELC_RunnerTest extends Library {
 
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
-		
+
 		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, rb.getString("paypal_login"));
 		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
-		
-		setCheckboxState(checkoutPage.makePrefferedCheckbox, "unchecked");
-		actions.moveToElement(checkoutPage.payNowByPaypal, 1, 1).doubleClick().build().perform();
+
+		waitUntilElementIsClickable(driver, checkoutPage.makePrefferedCheckbox);
+		focusOnElement(driver, checkoutPage.makePrefferedCheckbox);
+		clickByJavascript(driver, checkoutPage.payNowByPaypal);
 
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "
@@ -385,7 +388,7 @@ public class ELC_RunnerTest extends Library {
 		actions.click().perform();
 
 		PLP_Page.elc_AddProductToCart(driver);
-		
+
 		waitUntilElementIsClickable(driver, homePage.shoppingCart);
 		clickByJavascript(driver, homePage.shoppingCart);
 
@@ -397,7 +400,7 @@ public class ELC_RunnerTest extends Library {
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		clickElement(checkoutPage.deliverToUKoption);
 		waitUntilElementIsVisible(driver, checkoutPage.elc_selectFromSavedForRegistered);
-		
+
 		clickByJavascript(driver, checkoutPage.elc_selectFromSavedForRegistered);
 		waitUntilElementIsClickable(driver, checkoutPage.standartDelivery);
 		clickByJavascript(driver, checkoutPage.standartDelivery);
@@ -430,7 +433,7 @@ public class ELC_RunnerTest extends Library {
 		clickElement(homePage.signInRegisterLink);
 
 		LoginPage.creatingNewAccount(driver);
-		
+
 		LoginPage loginPage = new LoginPage(driver);
 		assertTrue(loginPage.assertMyAccount.isDisplayed());
 
@@ -444,7 +447,7 @@ public class ELC_RunnerTest extends Library {
 		waitUntilElementIsClickable(driver, ma_BigBirthdayClubPage.BBB_image);
 		scrollTillBottom(driver);
 		waitUntilElementIsClickable(driver, ma_BigBirthdayClubPage.girlbadge);
-		
+
 		Actions actions = new Actions(driver);
 		actions.moveToElement(ma_BigBirthdayClubPage.girlbadge, 1, 1).click().perform();
 		waitUntilElementIsClickable(driver, ma_BigBirthdayClubPage.childName);
