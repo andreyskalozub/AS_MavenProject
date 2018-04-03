@@ -1,1 +1,1 @@
-2018-04-03 11:26:02,531 INFO [main] mothercareCI.MC_RunnerTest.mc_loginWithValidCredentialsTest(MC_RunnerTest.java:91) - mc_loginWithValidCredentialsTest -Nice
+2018-04-03 13:16:48,036 INFO [main] mothercareCI.ELC_RunnerTest.elc_addingProductToWishlistFromPDPAndCheckoutByPaypalTest(ELC_RunnerTest.java:329) - elc_addingProductToWishlistFromPDPAndCheckoutByPaypalTest -Nice

@@ -157,6 +157,9 @@ public class CheckoutPage extends Library{
 	@FindBy(css = "button[id='btnLogin']")
 	public WebElement loginPaypalButton;
 	
+	@FindBy(css = "[data-test-id='shipToChangeLink']")
+	public WebElement shipToChangeLink;
+	
 	@FindBy(css = "#makePreferred")
 	public WebElement makePrefferedCheckbox;
 

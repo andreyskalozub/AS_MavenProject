@@ -301,10 +301,11 @@ public class ELC_RunnerTest extends Library {
 
 		waitUntilElementIsClickable(driver, checkoutPage.title);
 		selectByIndex(checkoutPage.title, 2);
-		setText(checkoutPage.firstname, fakeData.firstName);
-		setText(checkoutPage.lastname, fakeData.lastName);
-
-		setText(checkoutPage.email, generateRandomEmail(5));
+		
+		overwriteCurrentInputValue(checkoutPage.firstname, fakeData.firstName);
+		overwriteCurrentInputValue(checkoutPage.lastname, fakeData.lastName);
+		overwriteCurrentInputValue(checkoutPage.email, generateRandomEmail(5));
+		
 		setText(checkoutPage.phone, fakeData.phoneNumber);
 		checkoutPage.proceedToPayment.click();
 
@@ -316,8 +317,8 @@ public class ELC_RunnerTest extends Library {
 		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
 
-		waitUntilElementIsClickable(driver, checkoutPage.makePrefferedCheckbox);
-		focusOnElement(driver, checkoutPage.makePrefferedCheckbox);
+		waitUntilElementIsClickable(driver, checkoutPage.shipToChangeLink);
+		focusOnElement(driver, checkoutPage.shipToChangeLink);
 		clickByJavascript(driver, checkoutPage.payNowByPaypal);
 
 		assertTrue(
