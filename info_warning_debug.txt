@@ -1,1 +1,1 @@
-2018-04-03 13:16:48,036 INFO [main] mothercareCI.ELC_RunnerTest.elc_addingProductToWishlistFromPDPAndCheckoutByPaypalTest(ELC_RunnerTest.java:329) - elc_addingProductToWishlistFromPDPAndCheckoutByPaypalTest -Nice
+2018-04-25 14:41:56,847 INFO [main] mothercareCI.MC_RunnerTest.mc_guestCheckoutByPaypalTest(MC_RunnerTest.java:273) - mc_guestCheckoutByPaypalTest -Nice

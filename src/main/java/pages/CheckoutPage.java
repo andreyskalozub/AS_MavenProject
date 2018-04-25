@@ -175,7 +175,7 @@ public class CheckoutPage extends Library{
 	@FindBy(css = "#paymentIframe")
 	public WebElement paymentIframe;
 
-	@FindBy(css = "#ppfniframe")
+	@FindBy(css = "[name='injectedUl']")
 	public WebElement payPalIframe;
 
 	@FindBy(id = "capf1")
