@@ -147,6 +147,9 @@ public class CheckoutPage extends Library{
 
 	@FindBy(css = "#paypal-select-go")
 	public WebElement proceedToPaypal;
+	
+	@FindBy(css = "[class='btn full ng-binding']")
+	public WebElement logInToPayPal;
 
 	@FindBy(css = "label[for='email'] + #email")
 	public WebElement paypalLoginUsername;
