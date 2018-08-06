@@ -160,6 +160,21 @@ public class CheckoutPage extends Library{
 	@FindBy(css = "button[id='btnLogin']")
 	public WebElement loginPaypalButton;
 	
+	@FindBy(css = "#loadLogin")
+	public WebElement payWithPaypalButtonREG;
+	
+	@FindBy(css = "#submitLogin")
+	public WebElement loginWithPaypalButtonREG;
+	
+	@FindBy(css = "#login_password")
+	public WebElement paypalPasswordREG;
+	
+	@FindBy(css = "#login_email")
+	public WebElement paypalEmailREG;
+	
+	@FindBy(css = "#continue")
+	public WebElement paypalPayNowREG;
+	
 	@FindBy(css = "[data-test-id='shipToChangeLink']")
 	public WebElement shipToChangeLink;
 	

@@ -70,7 +70,7 @@ public class MC_RunnerTest extends Library {
 			e1.printStackTrace();
 		}
 
-		driver.quit();
+		//driver.quit();
 
 	}
 
@@ -373,15 +373,13 @@ public class MC_RunnerTest extends Library {
 
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
-		clickByJavascript(driver, checkoutPage.logInToPayPal);
+		clickByJavascript(driver, checkoutPage.payWithPaypalButtonREG);
 		
-		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, rb.getString("paypal_login"));
-		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
-		clickElement(checkoutPage.loginPaypalButton);
+		overwriteCurrentInputValue(checkoutPage.paypalEmailREG, rb.getString("paypal_login"));
+		setText(checkoutPage.paypalPasswordREG, rb.getString("paypal_password"));
+		clickElement(checkoutPage.loginWithPaypalButtonREG);
 
-		waitUntilElementIsClickable(driver, checkoutPage.makePrefferedCheckbox);
-		focusOnElement(driver, checkoutPage.makePrefferedCheckbox);
-		clickByJavascript(driver, checkoutPage.payNowByPaypal);
+		actions.moveToElement(checkoutPage.paypalPayNowREG).click().perform();
 
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "

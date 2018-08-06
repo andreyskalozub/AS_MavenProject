@@ -324,7 +324,7 @@ public class Library {
 		try
 
 		{
-			Wait<WebDriver> wait = new WebDriverWait(driver, 20);
+			Wait<WebDriver> wait = new WebDriverWait(driver, 30);
 			wait.until(ExpectedConditions.textToBePresentInElement(element, text));
 		}
 
