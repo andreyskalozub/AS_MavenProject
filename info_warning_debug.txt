@@ -1,0 +1,1 @@
+2018-09-17 13:08:56,795 INFO [main] mothercareCI.MC_RunnerTest.mc_changeNumberOfProductsOnPLPTest(MC_RunnerTest.java:676) - mc_changeNumberOfProductsOnPLPTest-Nice!

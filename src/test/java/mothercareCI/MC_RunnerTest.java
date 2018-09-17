@@ -23,6 +23,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+
 import pages.CartPage;
 import pages.CheckoutPage;
 import pages.GiftlistPage;
@@ -658,7 +660,7 @@ public class MC_RunnerTest extends Library {
 	}
 
 	@Test
-	public void mc_veryfyingAllProductsLinkOnPLPTest() throws Exception {
+	public void mc_changeNumberOfProductsOnPLPTest() throws Exception {
 
 		Actions actions = new Actions(driver);
 		HomePage homePage = new HomePage(driver);
@@ -666,20 +668,10 @@ public class MC_RunnerTest extends Library {
 		clickByJavascript(driver, homePage.blanketsSubCategory);
 
 		PLP_Page plp_Page = new PLP_Page(driver);
-		clickElement(plp_Page.showAllLink);
-		waitUntilElementIsInvisible(driver, plp_Page.loader);
-
-		List<WebElement> elements = driver.findElements(By.cssSelector("a[data-product-name]"));
-		WebElement productBeforeSecondLoader = elements.get(195);
-		scroolToThisElement(driver, productBeforeSecondLoader);
-
-		scrollTillBottom(driver);
-		waitUntilElementIsVisible(driver, plp_Page.blankets_241_onButton);
-		waitTextIsPresentedInElement(driver, plp_Page.blankets_241_onButton, "241");
-
-		assertEquals(true, plp_Page.blankets_241_onButton.getAttribute("textContent").contains("241"));
-
-		assertEquals("241", plp_Page.blankets_241_showingProducts.getAttribute("innerText"));
+		assertTrue(isElementPresentUsingCSS(driver, "option[value$='sz=12'][selected='selected']"));
+		clickElement(plp_Page.switcherForPLP);
+		selectByIndex(plp_Page.switcherForPLP, 1);
+		assertTrue(isElementPresentUsingCSS(driver, "option[value$='sz=24'][selected='selected']"));
 
 		logger.info(name.getMethodName() + "-Nice!");
 

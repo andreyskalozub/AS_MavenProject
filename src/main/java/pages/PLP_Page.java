@@ -40,6 +40,15 @@ public class PLP_Page extends Library{
 
 	@FindBy(css = "a[class$='all-products']")
 	public WebElement showAllLink;
+	
+	@FindBy(css = "#grid-paging-header")
+	public WebElement switcherForPLP;
+	
+	@FindBy(css = "option[value$='sz=12'][selected='selected']")
+	public WebElement _12_products;
+	
+	@FindBy(css = "option[value$='sz=24'][selected='selected']")
+	public WebElement _24_products;
 
 	@FindBy(css = "b[class='js-items-shown']")
 	public WebElement itemsShownOnBackToTopButton;
