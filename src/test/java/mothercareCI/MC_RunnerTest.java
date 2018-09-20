@@ -380,9 +380,7 @@ public class MC_RunnerTest extends Library {
 		overwriteCurrentInputValue(checkoutPage.paypalEmailREG, rb.getString("paypal_login"));
 		setText(checkoutPage.paypalPasswordREG, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginWithPaypalButtonREG);
-
 		actions.moveToElement(checkoutPage.paypalPayNowREG).click().perform();
-
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "
 						+ "Thank you for your order",
