@@ -195,6 +195,9 @@ public class CheckoutPage extends Library{
 
 	@FindBy(css = "[name='injectedUl']")
 	public WebElement payPalIframe;
+	
+	@FindBy(css = "[track-submit='choose_FI_interstitial']")
+	public WebElement paypalContinueButton;
 
 	@FindBy(id = "capf1")
 	public WebElement nameOnCard;
