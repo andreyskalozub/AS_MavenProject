@@ -217,8 +217,8 @@ public class ELC_RunnerTest extends Library {
 		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
 
-		waitUntilElementIsClickable(driver, checkoutPage.makePrefferedCheckbox);
-		focusOnElement(driver, checkoutPage.makePrefferedCheckbox);
+		/*waitUntilElementIsClickable(driver, checkoutPage.makePrefferedCheckbox);
+		focusOnElement(driver, checkoutPage.makePrefferedCheckbox);*/
 		clickByJavascript(driver, checkoutPage.payNowByPaypal);
 
 		assertTrue(
@@ -319,8 +319,8 @@ public class ELC_RunnerTest extends Library {
 		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
 
-		waitUntilElementIsClickable(driver, checkoutPage.shipToChangeLink);
-		focusOnElement(driver, checkoutPage.shipToChangeLink);
+		/*waitUntilElementIsClickable(driver, checkoutPage.shipToChangeLink);
+		focusOnElement(driver, checkoutPage.shipToChangeLink);*/
 		clickByJavascript(driver, checkoutPage.payNowByPaypal);
 
 		assertTrue(
@@ -370,8 +370,8 @@ public class ELC_RunnerTest extends Library {
 		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
 
-		waitUntilElementIsClickable(driver, checkoutPage.makePrefferedCheckbox);
-		focusOnElement(driver, checkoutPage.makePrefferedCheckbox);
+		/*waitUntilElementIsClickable(driver, checkoutPage.makePrefferedCheckbox);
+		focusOnElement(driver, checkoutPage.makePrefferedCheckbox);*/
 		clickByJavascript(driver, checkoutPage.payNowByPaypal);
 
 		assertTrue(

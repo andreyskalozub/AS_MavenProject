@@ -262,8 +262,8 @@ public class MC_RunnerTest extends Library {
 		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
 
-		waitUntilElementIsClickable(driver, checkoutPage.makePrefferedCheckbox);
-		focusOnElement(driver, checkoutPage.makePrefferedCheckbox);
+		/*waitUntilElementIsClickable(driver, checkoutPage.makePrefferedCheckbox);
+		focusOnElement(driver, checkoutPage.makePrefferedCheckbox);*/
 		clickByJavascript(driver, checkoutPage.payNowByPaypal);
 
 		assertTrue(
@@ -339,7 +339,7 @@ public class MC_RunnerTest extends Library {
 
 	}
 
-	/*@Test
+	@Test
 	public void mc_registeredUserCheckoutByPaypalTest() throws InterruptedException {
 
 		Actions actions = new Actions(driver);
@@ -389,7 +389,7 @@ public class MC_RunnerTest extends Library {
 		logger.info(name.getMethodName() + " -Nice");
 
 	}
-*/
+
 	@Test
 	public void mc_registeredUserCheckoutBySavedCreditCardTest() throws InterruptedException {
 
