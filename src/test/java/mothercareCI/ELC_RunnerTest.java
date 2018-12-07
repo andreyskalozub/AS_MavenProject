@@ -217,8 +217,9 @@ public class ELC_RunnerTest extends Library {
 		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
 
-		waitUntilElementIsVisible(driver, checkoutPage.paypalContinueButton);
-		clickElement(checkoutPage.paypalContinueButton);
+		waitUntilElementIsClickable(driver, checkoutPage.paypalContinueButton);
+		clickByJavascript(driver, checkoutPage.paypalContinueButton);
+		waitUntilElementIsClickable(driver, checkoutPage.payNowByPaypal);
 		clickByJavascript(driver, checkoutPage.payNowByPaypal);
 
 		assertTrue(
@@ -319,8 +320,9 @@ public class ELC_RunnerTest extends Library {
 		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
 
-		waitUntilElementIsVisible(driver, checkoutPage.paypalContinueButton);
-		clickElement(checkoutPage.paypalContinueButton);
+		waitUntilElementIsClickable(driver, checkoutPage.paypalContinueButton);
+		clickByJavascript(driver, checkoutPage.paypalContinueButton);
+		waitUntilElementIsClickable(driver, checkoutPage.payNowByPaypal);
 		clickByJavascript(driver, checkoutPage.payNowByPaypal);
 
 		assertTrue(
@@ -370,8 +372,9 @@ public class ELC_RunnerTest extends Library {
 		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
 
-		waitUntilElementIsVisible(driver, checkoutPage.paypalContinueButton);
-		clickElement(checkoutPage.paypalContinueButton);
+		waitUntilElementIsClickable(driver, checkoutPage.paypalContinueButton);
+		clickByJavascript(driver, checkoutPage.paypalContinueButton);
+		waitUntilElementIsClickable(driver, checkoutPage.payNowByPaypal);
 		clickByJavascript(driver, checkoutPage.payNowByPaypal);
 
 		assertTrue(
