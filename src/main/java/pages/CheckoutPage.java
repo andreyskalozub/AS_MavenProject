@@ -160,8 +160,8 @@ public class CheckoutPage extends Library{
 	@FindBy(css = "button[id='btnLogin']")
 	public WebElement loginPaypalButton;
 	
-	@FindBy(css = "#loadLogin")
-	public WebElement payWithPaypalButtonREG;
+	@FindBy(css = "a[class='btn full ng-binding']")
+	public WebElement firstLoginButtonREG;
 	
 	@FindBy(css = "#submitLogin")
 	public WebElement loginWithPaypalButtonREG;

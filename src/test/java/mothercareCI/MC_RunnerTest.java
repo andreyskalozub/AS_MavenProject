@@ -362,26 +362,30 @@ public class MC_RunnerTest extends Library {
 		LoginPage.logInAsRegistereduser_MC(driver);
 
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
-		waitUntilElementIsClickable(driver, checkoutPage.deliverInternational);
-		clickByJavascript(driver, checkoutPage.deliverInternational);
-		waitUntilElementIsClickable(driver, checkoutPage.internationalSelectFromSavedAddress);
-		clickByJavascript(driver, checkoutPage.internationalSelectFromSavedAddress);
+		
+		waitUntilElementIsClickable(driver, checkoutPage.deliverToUKoption);
+		clickByJavascript(driver, checkoutPage.deliverToUKoption);
+		waitUntilElementIsClickable(driver, checkoutPage.elc_selectFromSavedForRegistered);
+		clickByJavascript(driver, checkoutPage.elc_selectFromSavedForRegistered);
 
-		waitUntilElementIsClickable(driver, checkoutPage.channelIslandsOption);
-		clickByJavascript(driver, checkoutPage.channelIslandsOption);
-
+		waitUntilElementIsClickable(driver, checkoutPage.standartDelivery);
+		clickByJavascript(driver, checkoutPage.standartDelivery);
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPayment);
 		clickByJavascript(driver, checkoutPage.proceedToPayment);
+		
 		clickByJavascript(driver, checkoutPage.payPalOption);
-
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
-		clickByJavascript(driver, checkoutPage.payWithPaypalButtonREG);
-		
-		overwriteCurrentInputValue(checkoutPage.paypalEmailREG, rb.getString("paypal_login"));
-		setText(checkoutPage.paypalPasswordREG, rb.getString("paypal_password"));
-		clickElement(checkoutPage.loginWithPaypalButtonREG);
-		actions.moveToElement(checkoutPage.paypalPayNowREG).click().perform();
+
+		clickByJavascript(driver, checkoutPage.logInToPayPal);
+		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, rb.getString("paypal_login"));
+		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
+		clickElement(checkoutPage.loginPaypalButton);
+
+		waitUntilElementIsClickable(driver, checkoutPage.paypalContinueButton);
+		clickByJavascript(driver, checkoutPage.paypalContinueButton);
+		waitUntilElementIsClickable(driver, checkoutPage.payNowByPaypal);
+		clickByJavascript(driver, checkoutPage.payNowByPaypal);
 		assertTrue(
 				"actual text is " + checkoutPage.confirmation.getAttribute("textContent") + " expected text is "
 						+ "Thank you for your order",
