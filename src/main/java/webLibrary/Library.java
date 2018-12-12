@@ -46,7 +46,7 @@ public class Library {
 			Thread.sleep(timeToWaitInSec * 1000);
 		} catch (InterruptedException e) {
 
-			e.printStackTrace();
+			e.getMessage();
 		}
 	}
 
@@ -279,7 +279,7 @@ public class Library {
 
 		catch (Exception e) {
 
-			System.out.println(e);
+			System.out.println("Error message is -" + e.getMessage());
 		}
 
 	}
@@ -296,7 +296,7 @@ public class Library {
 
 		catch (Exception e) {
 
-			System.out.println(e);
+			System.out.println("Error message is -" + e.getMessage());
 		}
 
 	}
@@ -313,7 +313,7 @@ public class Library {
 
 		catch (Exception e) {
 
-			System.out.println(e);
+			System.out.println("Error message is -" + e.getMessage());
 		}
 
 	}
@@ -330,7 +330,7 @@ public class Library {
 
 		catch (Exception e) {
 
-			System.out.println(e);
+			System.out.println("Error message is -" + e.getMessage());
 		}
 
 	}
@@ -347,7 +347,7 @@ public class Library {
 
 		catch (Exception e) {
 
-			System.out.println(e);
+			System.out.println("Error message is -" + e.getMessage());
 		}
 
 	}

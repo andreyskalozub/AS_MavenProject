@@ -1,1 +1,1 @@
-2018-12-10 14:10:20,487 INFO [main] mothercareCI.MC_RunnerTest.mc_registeredUserCheckoutByPaypalTest(MC_RunnerTest.java:394) - mc_registeredUserCheckoutByPaypalTest -Nice
+2018-12-12 16:30:12,012 INFO [main] mothercareCI.MC_RunnerTest.mc_creatingNewAccountTest(MC_RunnerTest.java:131) - mc_creatingNewAccountTest-Nice!
