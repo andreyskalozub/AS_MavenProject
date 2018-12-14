@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="18" failures="0" name="mothercareCI.MC_RunnerTest" time="1,457.782" errors="1" skipped="0">
+<testsuite tests="18" failures="0" name="mothercareCI.MC_RunnerTest" time="1,250.522" errors="0" skipped="0">
   <properties>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="JOB_NAME" value="ci_eclipse"/>
@@ -12,7 +12,7 @@
     <property name="POM_ARTIFACTID" value="My_Maven_Project"/>
     <property name="os.name" value="Windows 7"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_151\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_151\jre\classes"/>
-    <property name="EXECUTOR_NUMBER" value="0"/>
+    <property name="EXECUTOR_NUMBER" value="1"/>
     <property name="sun.desktop" value="windows"/>
     <property name="PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
@@ -27,8 +27,8 @@
     <property name="ProgramFiles" value="C:\Program Files (x86)"/>
     <property name="user.language" value="en"/>
     <property name="JOB_BASE_NAME" value="ci_eclipse"/>
-    <property name="RUN_CHANGES_DISPLAY_URL" value="http://localhost:8080/job/ci_eclipse/153/display/redirect?page=changes"/>
-    <property name="BUILD_DISPLAY_NAME" value="#153"/>
+    <property name="RUN_CHANGES_DISPLAY_URL" value="http://localhost:8080/job/ci_eclipse/154/display/redirect?page=changes"/>
+    <property name="BUILD_DISPLAY_NAME" value="#154"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_151\jre\bin"/>
     <property name="LOCALAPPDATA" value="C:\Windows\system32\config\systemprofile\AppData\Local"/>
     <property name="java.version" value="1.8.0_151"/>
@@ -39,7 +39,7 @@
     <property name="NODE_NAME" value="master"/>
     <property name="PROCESSOR_ARCHITEW6432" value="AMD64"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_151\jre\lib\endorsed"/>
-    <property name="BUILD_ID" value="153"/>
+    <property name="BUILD_ID" value="154"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="file.encoding.pkg" value="sun.io"/>
@@ -54,7 +54,7 @@
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_151\jre"/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="os.version" value="6.1"/>
-    <property name="RUN_DISPLAY_URL" value="http://localhost:8080/job/ci_eclipse/153/display/redirect"/>
+    <property name="RUN_DISPLAY_URL" value="http://localhost:8080/job/ci_eclipse/154/display/redirect"/>
     <property name="POM_VERSION" value="0.0.1-SNAPSHOT"/>
     <property name="TMP" value="C:\Windows\TEMP"/>
     <property name="path.separator" value=";"/>
@@ -76,7 +76,7 @@
     <property name="POM_GROUPID" value="AS"/>
     <property name="user.home" value="C:\Windows\system32\config\systemprofile"/>
     <property name="PUBLIC" value="C:\Users\Public"/>
-    <property name="BUILD_TAG" value="jenkins-ci_eclipse-153"/>
+    <property name="BUILD_TAG" value="jenkins-ci_eclipse-154"/>
     <property name="JENKINS_SERVER_COOKIE" value="2ef9b5513ebbf680"/>
     <property name="HUDSON_URL" value="http://localhost:8080/"/>
     <property name="ProgramData" value="C:\ProgramData"/>
@@ -84,14 +84,14 @@
     <property name="USERPROFILE" value="C:\Windows\system32\config\systemprofile"/>
     <property name="CLASSPATH" value=""/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_151\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven/bin;C:\Program Files\Java\jdk1.8.0_151/bin;C:\Program Files\Java\jdk1.8.0_151/bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\OpenVPN\bin;D:\Last ChromeDriver;D:\Flash\geckodriver-v0.19.1-win64;D:\Flash\IEDriverServer_x64_3.8.0;D:\Git\cmd;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_151\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven/bin;C:\Program Files\Java\jdk1.8.0_151/bin;C:\Program Files\Java\jdk1.8.0_151/bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Last ChromeDriver;D:\Flash\geckodriver-v0.19.1-win64;D:\Flash\IEDriverServer_x64_3.8.0;D:\Git\cmd;C:\Program Files (x86)\OpenVPN\bin;;."/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="APPDATA" value="C:\Windows\system32\config\systemprofile\AppData\Roaming"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="maven.home" value="C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven"/>
     <property name="java.class.path" value="C:\Program Files (x86)\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven35-agent-1.12-alpha-1.jar;C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven\boot\plexus-classworlds-2.5.2.jar;C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven/conf/logging"/>
-    <property name="sun.java.command" value="jenkins.maven3.agent.Maven35Main C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven C:\Program Files (x86)\Jenkins\war\WEB-INF\lib\remoting-3.10.2.jar C:\Program Files (x86)\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven35-interceptor-1.12-alpha-1.jar C:\Program Files (x86)\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven3-interceptor-commons-1.12-alpha-1.jar 50351"/>
-    <property name="Path" value="C:\Program Files\Java\jdk1.8.0_151/bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\OpenVPN\bin;D:\Last ChromeDriver;D:\Flash\geckodriver-v0.19.1-win64;D:\Flash\IEDriverServer_x64_3.8.0;D:\Git\cmd;"/>
+    <property name="sun.java.command" value="jenkins.maven3.agent.Maven35Main C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven C:\Program Files (x86)\Jenkins\war\WEB-INF\lib\remoting-3.10.2.jar C:\Program Files (x86)\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven35-interceptor-1.12-alpha-1.jar C:\Program Files (x86)\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven3-interceptor-commons-1.12-alpha-1.jar 64209"/>
+    <property name="Path" value="C:\Program Files\Java\jdk1.8.0_151/bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Last ChromeDriver;D:\Flash\geckodriver-v0.19.1-win64;D:\Flash\IEDriverServer_x64_3.8.0;D:\Git\cmd;C:\Program Files (x86)\OpenVPN\bin;"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="PROCESSOR_ARCHITECTURE" value="x86"/>
     <property name="PATH+JDK" value="C:\Program Files\Java\jdk1.8.0_151/bin"/>
@@ -105,7 +105,7 @@
     <property name="HUDSON_HOME" value="C:\Program Files (x86)\Jenkins"/>
     <property name="PATH+MAVEN" value="C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven/bin"/>
     <property name="ProgramFiles(x86)" value="C:\Program Files (x86)"/>
-    <property name="BUILD_URL" value="http://localhost:8080/job/ci_eclipse/153/"/>
+    <property name="BUILD_URL" value="http://localhost:8080/job/ci_eclipse/154/"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="os.arch" value="amd64"/>
@@ -119,7 +119,7 @@
 "/>
     <property name="MAVEN_HOME" value="C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="BUILD_NUMBER" value="153"/>
+    <property name="BUILD_NUMBER" value="154"/>
     <property name="BASE" value="C:\Program Files (x86)\Jenkins"/>
     <property name="JENKINS_URL" value="http://localhost:8080/"/>
     <property name="PROCESSOR_REVISION" value="1706"/>
@@ -134,109 +134,22 @@
     <property name="java.specification.version" value="1.8"/>
     <property name="PSModulePath" value="C:\Windows\system32\WindowsPowerShell\v1.0\Modules\"/>
   </properties>
-  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_registeredUserCheckoutByPaypalTest" time="133.41">
-    <error message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[class=&apos;btn full ng-binding&apos;]&quot;}
-  (Session info: chrome=67.0.3396.99)
-  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
-System info: host: &apos;ANDREY-PC&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_151&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.36.540470 (e522d04694c7eb..., userDataDir: C:\Windows\TEMP\scoped_dir7...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 67.0.3396.99, webStorageEnabled: true}
-Session ID: f9514d592cf66219e2a1683744a7eba2
-*** Element info: {Using=css selector, value=[class=&apos;btn full ng-binding&apos;]}" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[class=&apos;btn full ng-binding&apos;]&quot;}
-  (Session info: chrome=67.0.3396.99)
-  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
-System info: host: &apos;ANDREY-PC&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_151&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.36.540470 (e522d04694c7eb..., userDataDir: C:\Windows\TEMP\scoped_dir7...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 67.0.3396.99, webStorageEnabled: true}
-Session ID: f9514d592cf66219e2a1683744a7eba2
-*** Element info: {Using=css selector, value=[class=&apos;btn full ng-binding&apos;]}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:370)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:464)
-	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:430)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy23.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:51)
-	at com.google.common.collect.Iterators$6.transform(Iterators.java:820)
-	at com.google.common.collect.TransformedIterator.next(TransformedIterator.java:48)
-	at com.google.common.collect.Iterators.addAll(Iterators.java:373)
-	at com.google.common.collect.Lists.newArrayList(Lists.java:165)
-	at com.google.common.collect.Lists.newArrayList(Lists.java:150)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:534)
-	at webLibrary.Library.clickByJavascript(Library.java:160)
-	at mothercareCI.MC_RunnerTest.mc_registeredUserCheckoutByPaypalTest(MC_RunnerTest.java:376)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.rules.TestWatchman$1.evaluate(TestWatchman.java:48)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</error>
-    <system-err>Starting ChromeDriver 2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91) on port 48738
-Only local connections are allowed.
-Jul 05, 2018 11:06:58 AM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
-</system-err>
-  </testcase>
-  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_guest2CheckoutByCreditCardTest" time="101.046"/>
-  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_addingProductToWishlistFromPDPTest" time="116.088"/>
-  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_guestCheckoutByPaypalTest" time="133.442"/>
-  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_requestingCatalogueTest" time="37.926"/>
-  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_guestCheckoutByCreditCardTest" time="92.098"/>
-  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_creatingNewAccountTest" time="35.339"/>
-  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_SignUpToEmailSubscriptionTest" time="36.824"/>
-  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_loginWithValidCredentialsTest" time="31.87"/>
-  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_joiningMyMothercareFlowTest" time="50.219"/>
-  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_registeredUserCheckoutBySavedCreditCardTest" time="85.504"/>
-  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_contactUsLinkOpeningInNewTabTest" time="32.539"/>
-  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_addingVariationProductToGiftlistTest" time="119.299"/>
-  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_addingProductToCartFromQuickViewTest" time="50.353"/>
-  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_clickingBackToTopButtonOnPLPTest" time="126.703"/>
-  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_removingJustAddedProductFromCartTest" time="79.138"/>
-  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_creatingAccountLogOutAndLoginAgainTest" time="72.63"/>
-  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_veryfyingAllProductsLinkOnPLPTest" time="123.354"/>
+  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_guest2CheckoutByCreditCardTest" time="93.303"/>
+  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_addingProductToWishlistFromPDPTest" time="98.146"/>
+  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_registeredUserCheckoutByPaypalTest" time="118.601"/>
+  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_registeredUserCheckoutBySavedCreditCardTest" time="81.876"/>
+  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_contactUsLinkOpeningInNewTabTest" time="28.2"/>
+  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_addingVariationProductToGiftlistTest" time="111.831"/>
+  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_addingProductToCartFromQuickViewTest" time="53.106"/>
+  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_clickingBackToTopButtonOnPLPTest" time="113.988"/>
+  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_removingJustAddedProductFromCartTest" time="62.485"/>
+  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_creatingAccountLogOutAndLoginAgainTest" time="62.046"/>
+  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_changeNumberOfProductsOnPLPTest" time="39.277"/>
+  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_guestCheckoutByPaypalTest" time="118.666"/>
+  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_requestingCatalogueTest" time="35.598"/>
+  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_guestCheckoutByCreditCardTest" time="93.627"/>
+  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_creatingNewAccountTest" time="34.128"/>
+  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_SignUpToEmailSubscriptionTest" time="30.983"/>
+  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_loginWithValidCredentialsTest" time="32.58"/>
+  <testcase classname="mothercareCI.MC_RunnerTest" name="mc_joiningMyMothercareFlowTest" time="42.081"/>
 </testsuite>

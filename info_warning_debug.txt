@@ -1,1 +1,31 @@
-2018-12-12 16:30:12,012 INFO [main] mothercareCI.MC_RunnerTest.mc_creatingNewAccountTest(MC_RunnerTest.java:131) - mc_creatingNewAccountTest-Nice!
+2018-12-12 16:45:35,381 INFO [main] mothercareCI.ELC_RunnerTest.elc_addingProductToWishlistFromPDPAndCheckoutByPaypalTest(ELC_RunnerTest.java:333) - elc_addingProductToWishlistFromPDPAndCheckoutByPaypalTest -Nice
+2018-12-12 16:45:51,466 INFO [main] mothercareCI.ELC_RunnerTest.elc_loginWithIncorrectCredentialsTest(ELC_RunnerTest.java:107) - elc_loginWithIncorrectCredentialsTest -Nice
+2018-12-12 16:46:07,256 INFO [main] mothercareCI.ELC_RunnerTest.elc_loginWithValidCredentialsTest(ELC_RunnerTest.java:86) - elc_loginWithValidCredentialsTest -Nice
+2018-12-12 16:46:23,496 INFO [main] mothercareCI.ELC_RunnerTest.elc_signupToEmailSubscriptionTest(ELC_RunnerTest.java:129) - elc_signupToEmailSubscriptionTest -Nice
+2018-12-12 16:47:05,199 INFO [main] mothercareCI.ELC_RunnerTest.elc_guestCheckoutByCreditCardTest(ELC_RunnerTest.java:188) - elc_guestCheckoutByCreditCardTest -Nice
+2018-12-12 16:48:20,544 INFO [main] mothercareCI.ELC_RunnerTest.elc_registeredUserCheckoutByPaypalTest(ELC_RunnerTest.java:385) - elc_registeredUserCheckoutByPaypalTest -Nice
+2018-12-12 16:49:03,311 INFO [main] mothercareCI.ELC_RunnerTest.elc_registeredUserCheckoutByCreditCardTest(ELC_RunnerTest.java:432) - elc_registeredUserCheckoutByCreditCardTest -Nice
+2018-12-12 16:49:25,938 INFO [main] mothercareCI.ELC_RunnerTest.elc_addingChildToBigBirthdayClubTest(ELC_RunnerTest.java:476) - elc_addingChildToBigBirthdayClubTest -Nice
+2018-12-12 16:49:50,342 INFO [main] mothercareCI.ELC_RunnerTest.elc_addingNewAddressForJustRegisteredUserTest(ELC_RunnerTest.java:513) - elc_addingNewAddressForJustRegisteredUserTest -Nice
+2018-12-12 16:50:04,133 INFO [main] mothercareCI.ELC_RunnerTest.elc_findingStoresUsingPostcodeViaStoreLocator(ELC_RunnerTest.java:533) - elc_findingStoresUsingPostcodeViaStoreLocator -Nice
+2018-12-12 16:50:19,865 INFO [main] mothercareCI.ELC_RunnerTest.elc_creatingNewAccountTest(ELC_RunnerTest.java:144) - elc_creatingNewAccountTest -Nice
+2018-12-12 16:51:34,964 INFO [main] mothercareCI.ELC_RunnerTest.elc_guestCheckoutByPaypalTest(ELC_RunnerTest.java:230) - elc_guestCheckoutByPaypalTest -Nice
+2018-12-12 16:51:58,109 INFO [main] mothercareCI.ELC_RunnerTest.elc_requestingCatalogueTest(ELC_RunnerTest.java:262) - elc_requestingCatalogueTest -Nice
+2018-12-12 16:53:31,514 INFO [main] mothercareCI.MC_RunnerTest.mc_guest2CheckoutByCreditCardTest(MC_RunnerTest.java:231) - mc_guest2CheckoutByCreditCardTest-Nice!
+2018-12-12 16:55:09,605 INFO [main] mothercareCI.MC_RunnerTest.mc_addingProductToWishlistFromPDPTest(MC_RunnerTest.java:340) - mc_addingProductToWishlistFromPDPTest-Nice!
+2018-12-12 16:57:08,280 INFO [main] mothercareCI.MC_RunnerTest.mc_registeredUserCheckoutByPaypalTest(MC_RunnerTest.java:395) - mc_registeredUserCheckoutByPaypalTest -Nice
+2018-12-12 16:58:30,076 INFO [main] mothercareCI.MC_RunnerTest.mc_registeredUserCheckoutBySavedCreditCardTest(MC_RunnerTest.java:446) - mc_registeredUserCheckoutBySavedCreditCardTest-Nice!
+2018-12-12 16:58:58,287 INFO [main] mothercareCI.MC_RunnerTest.mc_contactUsLinkOpeningInNewTabTest(MC_RunnerTest.java:464) - mc_contactUsLinkOpeningInNewTabTest-Nice!
+2018-12-12 17:00:50,098 INFO [main] mothercareCI.MC_RunnerTest.mc_addingVariationProductToGiftlistTest(MC_RunnerTest.java:510) - addingVariationProductToGiftlistTest-Nice!
+2018-12-12 17:01:43,213 INFO [main] mothercareCI.MC_RunnerTest.mc_addingProductToCartFromQuickViewTest(MC_RunnerTest.java:575) - mc_addingProductToCartFromQuickViewTest-Nice!
+2018-12-12 17:03:36,752 INFO [main] mothercareCI.MC_RunnerTest.mc_clickingBackToTopButtonOnPLPTest(MC_RunnerTest.java:597) - mc_clickingBackToTopButtonOnPLPTest-Nice!
+2018-12-12 17:04:39,699 INFO [main] mothercareCI.MC_RunnerTest.mc_removingJustAddedProductFromCartTest(MC_RunnerTest.java:627) - mc_removingJustAddedProductFromCartTest-Nice!
+2018-12-12 17:05:41,742 INFO [main] mothercareCI.MC_RunnerTest.mc_creatingAccountLogOutAndLoginAgainTest(MC_RunnerTest.java:663) - mc_creatingAccountLogOutAndLoginAgainTest-Nice!
+2018-12-12 17:06:21,017 INFO [main] mothercareCI.MC_RunnerTest.mc_changeNumberOfProductsOnPLPTest(MC_RunnerTest.java:680) - mc_changeNumberOfProductsOnPLPTest-Nice!
+2018-12-12 17:08:19,760 INFO [main] mothercareCI.MC_RunnerTest.mc_guestCheckoutByPaypalTest(MC_RunnerTest.java:276) - mc_guestCheckoutByPaypalTest -Nice
+2018-12-12 17:08:55,330 INFO [main] mothercareCI.MC_RunnerTest.mc_requestingCatalogueTest(MC_RunnerTest.java:308) - mc_requestingCatalogueTest-Nice!
+2018-12-12 17:10:28,955 INFO [main] mothercareCI.MC_RunnerTest.mc_guestCheckoutByCreditCardTest(MC_RunnerTest.java:180) - mc_guestCheckoutByCreditCardTest-Nice!
+2018-12-12 17:11:02,877 INFO [main] mothercareCI.MC_RunnerTest.mc_creatingNewAccountTest(MC_RunnerTest.java:131) - mc_creatingNewAccountTest-Nice!
+2018-12-12 17:11:34,070 INFO [main] mothercareCI.MC_RunnerTest.mc_SignUpToEmailSubscriptionTest(MC_RunnerTest.java:112) - mc_SignUpToEmailSubscriptionTest-Nice!
+2018-12-12 17:12:06,573 INFO [main] mothercareCI.MC_RunnerTest.mc_loginWithValidCredentialsTest(MC_RunnerTest.java:91) - mc_loginWithValidCredentialsTest -Nice
+2018-12-12 17:12:48,632 INFO [main] mothercareCI.MC_RunnerTest.mc_joiningMyMothercareFlowTest(MC_RunnerTest.java:547) - mc_joiningMyMothercareFlowTest-Nice!

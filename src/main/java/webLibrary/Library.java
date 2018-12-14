@@ -137,7 +137,7 @@ public class Library {
 	}
 
 	// VERIFYING IS ELEMENT PRESENT AND UNIQUE
-	public static boolean isElementPresentAndUnique(WebDriver driver, String xpath) throws Exception {
+	public static boolean isElementPresentAndUniqueUsingXpath(WebDriver driver, String xpath) throws Exception {
 
 		List<WebElement> elements = driver.findElements(By.xpath(xpath));
 
@@ -176,7 +176,7 @@ public class Library {
 	}
 
 	// RETURNING BACK IN BROWSER
-	public static void returnBack(WebDriver driver) {
+	public static void returnBackInBrowser(WebDriver driver) {
 
 		driver.navigate().back();
 
