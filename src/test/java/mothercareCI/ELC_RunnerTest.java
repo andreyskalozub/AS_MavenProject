@@ -81,7 +81,7 @@ public class ELC_RunnerTest extends Library {
 		LoginPage.loginAction_ELC(driver);
 
 		LoginPage loginPage = new LoginPage(driver);
-		assertTrue(loginPage.assertMyAccount.isDisplayed());
+		assertTrue("true", loginPage.assertMyAccount.isDisplayed());
 
 		logger.info(name.getMethodName() + " -Nice");
 
@@ -99,7 +99,7 @@ public class ELC_RunnerTest extends Library {
 
 		Actions actions = new Actions(driver);
 		actions.moveToElement(loginPage.signInButton).click().perform();
-		isElementPresentAndUnique(driver, "//*[@class='form-row f_error_message']");
+		isElementPresentAndUniqueUsingXpath(driver, "//*[@class='form-row f_error_message']");
 
 		assertEquals("Sorry, this does not match our records. Check your spelling and try again.",
 				loginPage.errorWhileSigninMessage.getAttribute("innerText"));
