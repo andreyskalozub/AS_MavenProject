@@ -1,4 +1,4 @@
 *.jpg
 *.png
 *.txt
-/resources
+/.config.properties
