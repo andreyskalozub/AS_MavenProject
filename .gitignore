@@ -1,6 +1,6 @@
 *.png
 *.jpg
-/screenshots
-.config.properties
-.errors.txt
-.info_warning_debug.txt
+/screenshots/
+*.config.properties
+*.errors.txt
+*.info_warning_debug.txt
