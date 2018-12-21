@@ -1,4 +1,4 @@
 *.png
 *.jpg
 /.screenshots
-/.config.properties
+.config.properties
