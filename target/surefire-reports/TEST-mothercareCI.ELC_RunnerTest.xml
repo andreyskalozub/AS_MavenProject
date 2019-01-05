@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="13" failures="0" name="mothercareCI.ELC_RunnerTest" time="498.449" errors="0" skipped="0">
+<testsuite tests="13" failures="0" name="mothercareCI.ELC_RunnerTest" time="604.306" errors="0" skipped="0">
   <properties>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="JOB_NAME" value="ci_eclipse"/>
@@ -12,7 +12,7 @@
     <property name="POM_ARTIFACTID" value="My_Maven_Project"/>
     <property name="os.name" value="Windows 7"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_151\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_151\jre\classes"/>
-    <property name="EXECUTOR_NUMBER" value="1"/>
+    <property name="EXECUTOR_NUMBER" value="0"/>
     <property name="sun.desktop" value="windows"/>
     <property name="PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
@@ -27,8 +27,8 @@
     <property name="ProgramFiles" value="C:\Program Files (x86)"/>
     <property name="user.language" value="en"/>
     <property name="JOB_BASE_NAME" value="ci_eclipse"/>
-    <property name="RUN_CHANGES_DISPLAY_URL" value="http://localhost:8080/job/ci_eclipse/154/display/redirect?page=changes"/>
-    <property name="BUILD_DISPLAY_NAME" value="#154"/>
+    <property name="RUN_CHANGES_DISPLAY_URL" value="http://localhost:8080/job/ci_eclipse/156/display/redirect?page=changes"/>
+    <property name="BUILD_DISPLAY_NAME" value="#156"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_151\jre\bin"/>
     <property name="LOCALAPPDATA" value="C:\Windows\system32\config\systemprofile\AppData\Local"/>
     <property name="java.version" value="1.8.0_151"/>
@@ -39,7 +39,7 @@
     <property name="NODE_NAME" value="master"/>
     <property name="PROCESSOR_ARCHITEW6432" value="AMD64"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_151\jre\lib\endorsed"/>
-    <property name="BUILD_ID" value="154"/>
+    <property name="BUILD_ID" value="156"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="file.encoding.pkg" value="sun.io"/>
@@ -54,7 +54,7 @@
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_151\jre"/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="os.version" value="6.1"/>
-    <property name="RUN_DISPLAY_URL" value="http://localhost:8080/job/ci_eclipse/154/display/redirect"/>
+    <property name="RUN_DISPLAY_URL" value="http://localhost:8080/job/ci_eclipse/156/display/redirect"/>
     <property name="POM_VERSION" value="0.0.1-SNAPSHOT"/>
     <property name="TMP" value="C:\Windows\TEMP"/>
     <property name="path.separator" value=";"/>
@@ -76,7 +76,7 @@
     <property name="POM_GROUPID" value="AS"/>
     <property name="user.home" value="C:\Windows\system32\config\systemprofile"/>
     <property name="PUBLIC" value="C:\Users\Public"/>
-    <property name="BUILD_TAG" value="jenkins-ci_eclipse-154"/>
+    <property name="BUILD_TAG" value="jenkins-ci_eclipse-156"/>
     <property name="JENKINS_SERVER_COOKIE" value="2ef9b5513ebbf680"/>
     <property name="HUDSON_URL" value="http://localhost:8080/"/>
     <property name="ProgramData" value="C:\ProgramData"/>
@@ -90,7 +90,7 @@
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="maven.home" value="C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven"/>
     <property name="java.class.path" value="C:\Program Files (x86)\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven35-agent-1.12-alpha-1.jar;C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven\boot\plexus-classworlds-2.5.2.jar;C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven/conf/logging"/>
-    <property name="sun.java.command" value="jenkins.maven3.agent.Maven35Main C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven C:\Program Files (x86)\Jenkins\war\WEB-INF\lib\remoting-3.10.2.jar C:\Program Files (x86)\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven35-interceptor-1.12-alpha-1.jar C:\Program Files (x86)\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven3-interceptor-commons-1.12-alpha-1.jar 64209"/>
+    <property name="sun.java.command" value="jenkins.maven3.agent.Maven35Main C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven C:\Program Files (x86)\Jenkins\war\WEB-INF\lib\remoting-3.10.2.jar C:\Program Files (x86)\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven35-interceptor-1.12-alpha-1.jar C:\Program Files (x86)\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven3-interceptor-commons-1.12-alpha-1.jar 50352"/>
     <property name="Path" value="C:\Program Files\Java\jdk1.8.0_151/bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Last ChromeDriver;D:\Flash\geckodriver-v0.19.1-win64;D:\Flash\IEDriverServer_x64_3.8.0;D:\Git\cmd;C:\Program Files (x86)\OpenVPN\bin;"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="PROCESSOR_ARCHITECTURE" value="x86"/>
@@ -105,7 +105,7 @@
     <property name="HUDSON_HOME" value="C:\Program Files (x86)\Jenkins"/>
     <property name="PATH+MAVEN" value="C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven/bin"/>
     <property name="ProgramFiles(x86)" value="C:\Program Files (x86)"/>
-    <property name="BUILD_URL" value="http://localhost:8080/job/ci_eclipse/154/"/>
+    <property name="BUILD_URL" value="http://localhost:8080/job/ci_eclipse/156/"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="os.arch" value="amd64"/>
@@ -119,7 +119,7 @@
 "/>
     <property name="MAVEN_HOME" value="C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="BUILD_NUMBER" value="154"/>
+    <property name="BUILD_NUMBER" value="156"/>
     <property name="BASE" value="C:\Program Files (x86)\Jenkins"/>
     <property name="JENKINS_URL" value="http://localhost:8080/"/>
     <property name="PROCESSOR_REVISION" value="1706"/>
@@ -134,17 +134,17 @@
     <property name="java.specification.version" value="1.8"/>
     <property name="PSModulePath" value="C:\Windows\system32\WindowsPowerShell\v1.0\Modules\"/>
   </properties>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_addingProductToWishlistFromPDPAndCheckoutByPaypalTest" time="115.748"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_loginWithIncorrectCredentialsTest" time="16.1"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_loginWithValidCredentialsTest" time="15.787"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_signupToEmailSubscriptionTest" time="16.24"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_guestCheckoutByCreditCardTest" time="41.944"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_registeredUserCheckoutByPaypalTest" time="75.302"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_registeredUserCheckoutByCreditCardTest" time="42.557"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_addingChildToBigBirthdayClubTest" time="22.78"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_addingNewAddressForJustRegisteredUserTest" time="24.243"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_findingStoresUsingPostcodeViaStoreLocator" time="13.863"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_creatingNewAccountTest" time="15.694"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_guestCheckoutByPaypalTest" time="75.043"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_requestingCatalogueTest" time="23.148"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_loginWithIncorrectCredentialsTest" time="25.785"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_loginWithValidCredentialsTest" time="20.745"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_signupToEmailSubscriptionTest" time="20.426"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_guestCheckoutByCreditCardTest" time="59.818"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_registeredUserCheckoutByPaypalTest" time="94.062"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_registeredUserCheckoutByCreditCardTest" time="53.892"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_addingChildToBigBirthdayClubTest" time="29.935"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_addingNewAddressForJustRegisteredUserTest" time="30.96"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_findingStoresUsingPostcodeViaStoreLocator" time="19.503"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_creatingNewAccountTest" time="20.967"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_guestCheckoutByPaypalTest" time="92.745"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_requestingCatalogueTest" time="24.688"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_addingProductToWishlistFromPDPAndCheckoutByPaypalTest" time="110.78"/>
 </testsuite>
