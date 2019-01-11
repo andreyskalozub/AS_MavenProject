@@ -82,7 +82,7 @@ public class MC_RunnerTest extends Library {
 		LoginPage loginPage = new LoginPage(driver);
 		assertTrue(loginPage.assertMyAccount.isDisplayed());
 
-		logger.info(name.getMethodName() + " -Nice");
+		logger.info(name.getMethodName() + " -Passed");
 	}
 
 	@Test
@@ -103,7 +103,7 @@ public class MC_RunnerTest extends Library {
 				loginPage.signUpConfirmationPopup.getAttribute("textContent")
 						.equals("Thank you for signing up to mothercare emails"));
 
-		logger.info(name.getMethodName() + "-Nice!");
+		logger.info(name.getMethodName() + "-Passed!");
 
 	}
 
@@ -122,7 +122,7 @@ public class MC_RunnerTest extends Library {
 				loginPage.registrationConfirmation.getAttribute("textContent")
 						.equals("thank you for registering with mothercare"));
 
-		logger.info(name.getMethodName() + "-Nice!");
+		logger.info(name.getMethodName() + "-Passed!");
 	}
 
 	@Test
@@ -171,7 +171,7 @@ public class MC_RunnerTest extends Library {
 						+ "Thank you for your order",
 				checkoutPage.confirmation.getAttribute("textContent").equals("Thank you for your order"));
 
-		logger.info(name.getMethodName() + "-Nice!");
+		logger.info(name.getMethodName() + "-Passed!");
 
 	}
 
@@ -222,7 +222,7 @@ public class MC_RunnerTest extends Library {
 
 		assertEquals("Thank you for your order", checkoutPage.confirmation.getAttribute("textContent"));
 
-		logger.info(name.getMethodName() + "-Nice!");
+		logger.info(name.getMethodName() + "-Passed!");
 
 	}
 
@@ -267,7 +267,7 @@ public class MC_RunnerTest extends Library {
 						+ "Thank you for your order",
 				checkoutPage.confirmation.getAttribute("textContent").equals("Thank you for your order"));
 
-		logger.info(name.getMethodName() + " -Nice");
+		logger.info(name.getMethodName() + " -Passed");
 
 	}
 
@@ -299,7 +299,7 @@ public class MC_RunnerTest extends Library {
 						+ "Expected text is" + "thank You",
 				requestCataloguePage.thankYouMessage.getAttribute("textContent").equals("thank you"));
 
-		logger.info(name.getMethodName() + "-Nice!");
+		logger.info(name.getMethodName() + "-Passed!");
 
 	}
 
@@ -331,7 +331,7 @@ public class MC_RunnerTest extends Library {
 		WishlistPage wishlistPage = new WishlistPage(driver);
 		assertEquals("265738", wishlistPage.itemInWishlist_IDConfirmation.getAttribute("textContent"));
 
-		logger.info(name.getMethodName() + "-Nice!");
+		logger.info(name.getMethodName() + "-Passed!");
 
 	}
 
@@ -386,7 +386,7 @@ public class MC_RunnerTest extends Library {
 						+ "Thank you for your order",
 				checkoutPage.confirmation.getAttribute("textContent").equals("Thank you for your order"));
 
-		logger.info(name.getMethodName() + " -Nice");
+		logger.info(name.getMethodName() + " -Passed");
 
 	}
 
@@ -437,7 +437,7 @@ public class MC_RunnerTest extends Library {
 						+ "Thank you for your order",
 				checkoutPage.confirmation.getAttribute("textContent").equals("Thank you for your order"));
 
-		logger.info(name.getMethodName() + "-Nice!");
+		logger.info(name.getMethodName() + "-Passed!");
 
 	}
 
@@ -455,7 +455,7 @@ public class MC_RunnerTest extends Library {
 
 		assertEquals(rb.getString("contactUs_url"), newUrl);
 
-		logger.info(name.getMethodName() + "-Nice!");
+		logger.info(name.getMethodName() + "-Passed!");
 
 	}
 
@@ -501,7 +501,7 @@ public class MC_RunnerTest extends Library {
 						+ " expected colour is " + " White",
 				giftlistPage.assertionElementColour.getAttribute("innerText").equals("White"));
 
-		logger.info("addingVariationProductToGiftlistTest" + "-Nice!");
+		logger.info("addingVariationProductToGiftlistTest" + "-Passed!");
 	}
 
 	@Test
@@ -538,7 +538,7 @@ public class MC_RunnerTest extends Library {
 
 		assertTrue(joinMyMothercarePage.startShoppingButton.isDisplayed());
 
-		logger.info(name.getMethodName() + "-Nice!");
+		logger.info(name.getMethodName() + "-Passed!");
 
 	}
 
@@ -566,7 +566,7 @@ public class MC_RunnerTest extends Library {
 
 		assertEquals("2", cartPage.quantity.getAttribute("value"));
 
-		logger.info(name.getMethodName() + "-Nice!");
+		logger.info(name.getMethodName() + "-Passed!");
 
 	}
 
@@ -588,7 +588,7 @@ public class MC_RunnerTest extends Library {
 
 		assertTrue(homePage.brandLogo.isDisplayed());
 
-		logger.info(name.getMethodName() + "-Nice!");
+		logger.info(name.getMethodName() + "-Passed!");
 	}
 
 	@Test
@@ -618,7 +618,7 @@ public class MC_RunnerTest extends Library {
 
 		assertEquals("shopping basket is empty (0 items)", cartPage.yourbasketIsEmpty.getAttribute("outerText"));
 
-		logger.info(name.getMethodName() + "-Nice!");
+		logger.info(name.getMethodName() + "-Passed!");
 
 	}
 
@@ -654,7 +654,7 @@ public class MC_RunnerTest extends Library {
 
 		assertTrue(loginPage.assertMyAccount.isDisplayed());
 
-		logger.info(name.getMethodName() + "-Nice!");
+		logger.info(name.getMethodName() + "-Passed!");
 	}
 
 	@Test
@@ -671,7 +671,7 @@ public class MC_RunnerTest extends Library {
 		selectByIndex(plp_Page.switcherForPLP, 1);
 		assertTrue(isElementPresentUsingCSS(driver, "option[value$='sz=24'][selected='selected']"));
 
-		logger.info(name.getMethodName() + "-Nice!");
+		logger.info(name.getMethodName() + "-Passed!");
 
 	}
 

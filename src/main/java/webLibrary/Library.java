@@ -279,7 +279,7 @@ public class Library {
 
 		catch (Exception e) {
 
-			System.out.println("Error message is -" + e.getMessage());
+			System.out.println(e.getMessage());
 		}
 
 	}
@@ -296,7 +296,7 @@ public class Library {
 
 		catch (Exception e) {
 
-			System.out.println("Error message is -" + e.getMessage());
+			System.out.println(e.getMessage());
 		}
 
 	}
@@ -313,7 +313,7 @@ public class Library {
 
 		catch (Exception e) {
 
-			System.out.println("Error message is -" + e.getMessage());
+			System.out.println(e.getMessage());
 		}
 
 	}
@@ -330,7 +330,7 @@ public class Library {
 
 		catch (Exception e) {
 
-			System.out.println("Error message is -" + e.getMessage());
+			System.out.println(e.getMessage());
 		}
 
 	}
@@ -347,7 +347,7 @@ public class Library {
 
 		catch (Exception e) {
 
-			System.out.println("Error message is -" + e.getMessage());
+			System.out.println(e.getMessage());
 		}
 
 	}
@@ -355,8 +355,8 @@ public class Library {
 	// ADDING TO CART FIRST IN-STOCK STANDART PRODUCT(MOTHERCARE)
 	public static void mc_addToCartFirstInstockStandartProduct(WebDriver driver) {
 
-		String cssSelector = "div[class='b-search_result_items'] a[data-product-availabilitystatus='YES'][data-product-variation-attribute='']";
-		List<WebElement> elements = driver.findElements(By.cssSelector(cssSelector));
+		String instockProduct = "div[class='b-search_result_items'] a[data-product-availabilitystatus='YES'][data-product-variation-attribute='']";
+		List<WebElement> elements = driver.findElements(By.cssSelector(instockProduct));
 
 		WebElement first = elements.get(0);
 		clickByJavascript(driver, first);

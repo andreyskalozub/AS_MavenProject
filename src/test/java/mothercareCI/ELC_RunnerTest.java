@@ -83,7 +83,7 @@ public class ELC_RunnerTest extends Library {
 		LoginPage loginPage = new LoginPage(driver);
 		assertTrue("true", loginPage.assertMyAccount.isDisplayed());
 
-		logger.info(name.getMethodName() + " -Nice");
+		logger.info(name.getMethodName() + " -Passed");
 
 	}
 
@@ -104,7 +104,7 @@ public class ELC_RunnerTest extends Library {
 		assertEquals("Sorry, this does not match our records. Check your spelling and try again.",
 				loginPage.errorWhileSigninMessage.getAttribute("innerText"));
 
-		logger.info(name.getMethodName() + " -Nice");
+		logger.info(name.getMethodName() + " -Passed");
 
 	}
 
@@ -126,7 +126,7 @@ public class ELC_RunnerTest extends Library {
 				loginPage.signUpConfirmationPopup.getAttribute("textContent")
 						.equals("Thank you for signing up to ELC emails"));
 
-		logger.info(name.getMethodName() + " -Nice");
+		logger.info(name.getMethodName() + " -Passed");
 
 	}
 
@@ -141,7 +141,7 @@ public class ELC_RunnerTest extends Library {
 		LoginPage loginPage = new LoginPage(driver);
 		assertTrue(loginPage.assertMyAccount.isDisplayed());
 
-		logger.info(name.getMethodName() + " -Nice");
+		logger.info(name.getMethodName() + " -Passed");
 
 	}
 
@@ -185,7 +185,7 @@ public class ELC_RunnerTest extends Library {
 						+ "Thank you for your order",
 				checkoutPage.confirmation.getAttribute("textContent").equals("Thank you for your order"));
 
-		logger.info(name.getMethodName() + " -Nice");
+		logger.info(name.getMethodName() + " -Passed");
 
 	}
 
@@ -227,7 +227,7 @@ public class ELC_RunnerTest extends Library {
 						+ "Thank you for your order",
 				checkoutPage.confirmation.getAttribute("textContent").equals("Thank you for your order"));
 
-		logger.info(name.getMethodName() + " -Nice");
+		logger.info(name.getMethodName() + " -Passed");
 
 	}
 
@@ -259,7 +259,7 @@ public class ELC_RunnerTest extends Library {
 						+ "Expected text is" + "thank You",
 				requestCataloguePage.thankYouMessage.getAttribute("textContent").equals("thank you"));
 
-		logger.info(name.getMethodName() + " -Nice");
+		logger.info(name.getMethodName() + " -Passed");
 
 	}
 
@@ -330,7 +330,7 @@ public class ELC_RunnerTest extends Library {
 						+ "Thank you for your order",
 				checkoutPage.confirmation.getAttribute("textContent").equals("Thank you for your order"));
 
-		logger.info(name.getMethodName() + " -Nice");
+		logger.info(name.getMethodName() + " -Passed");
 
 	}
 
@@ -382,7 +382,7 @@ public class ELC_RunnerTest extends Library {
 						+ "Thank you for your order",
 				checkoutPage.confirmation.getAttribute("textContent").equals("Thank you for your order"));
 
-		logger.info(name.getMethodName() + " -Nice");
+		logger.info(name.getMethodName() + " -Passed");
 
 	}
 
@@ -429,7 +429,7 @@ public class ELC_RunnerTest extends Library {
 						+ "Thank you for your order",
 				checkoutPage.confirmation.getAttribute("textContent").equals("Thank you for your order"));
 
-		logger.info(name.getMethodName() + " -Nice");
+		logger.info(name.getMethodName() + " -Passed");
 
 	}
 
@@ -473,7 +473,7 @@ public class ELC_RunnerTest extends Library {
 		waitUntilElementIsVisible(driver, ma_BigBirthdayClubPage.babyNameValueDisplayed);
 		assertEquals(babyNameValue, ma_BigBirthdayClubPage.babyNameValueDisplayed.getAttribute("textContent"));
 
-		logger.info(name.getMethodName() + " -Nice");
+		logger.info(name.getMethodName() + " -Passed");
 
 	}
 
@@ -510,7 +510,7 @@ public class ELC_RunnerTest extends Library {
 
 		assertTrue(myAccountPage.preferredAddressInAddressBook.isDisplayed());
 
-		logger.info(name.getMethodName() + " -Nice");
+		logger.info(name.getMethodName() + " -Passed");
 
 	}
 
@@ -530,7 +530,7 @@ public class ELC_RunnerTest extends Library {
 
 		assertTrue(storeFinderPage.storesWereFoundMessage.isDisplayed());
 
-		logger.info(name.getMethodName() + " -Nice");
+		logger.info(name.getMethodName() + " -Passed");
 	}
 
 }
