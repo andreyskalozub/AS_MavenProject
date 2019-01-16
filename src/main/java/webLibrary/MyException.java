@@ -2,14 +2,14 @@ package webLibrary;
 
 public class MyException extends Exception {
 
-	public MyException(String msg) {
-		message = msg;
-	}
-
 	private String message;
 
+	public MyException(String msg) {
+		this.message = msg;
+	}
+
 	public String what() {
-		return message;
+		return "That trouble occured:" + message;
 	}
 
 }
