@@ -252,7 +252,6 @@ public class MC_RunnerTest extends Library {
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
 
-		clickByJavascript(driver, checkoutPage.logInToPayPal);
 		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, rb.getString("paypal_login"));
 		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
@@ -372,7 +371,6 @@ public class MC_RunnerTest extends Library {
 		waitUntilElementIsClickable(driver, checkoutPage.proceedToPaypal);
 		clickByJavascript(driver, checkoutPage.proceedToPaypal);
 
-		clickByJavascript(driver, checkoutPage.logInToPayPal);
 		overwriteCurrentInputValue(checkoutPage.paypalLoginUsername, rb.getString("paypal_login"));
 		setText(checkoutPage.paypalLoginPassword, rb.getString("paypal_password"));
 		clickElement(checkoutPage.loginPaypalButton);
