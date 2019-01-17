@@ -22,8 +22,11 @@ public class HomePage {
 	@FindBy(xpath = "//*[@id='cookiehint']/div[2]/div/button")
 	public WebElement cookieAccept;
 
-	@FindBy(css = "input[id='q']")
+	@FindBy(css = "#q")
 	public WebElement searchInput;
+	
+	@FindBy(css = "button[class$='i-search']")
+	public WebElement searchButton;
 
 	@FindBy(css = "div[class$='toplinks'] a[title='Go to: sign in/register']")
 	public WebElement signInRegisterLink;
@@ -78,5 +81,11 @@ public class HomePage {
 	
 	@FindBy(xpath = "*//div[@id='t017-close']")
 	public WebElement closePopup;
+	
+	
+	
+
+	
+	
 
 }

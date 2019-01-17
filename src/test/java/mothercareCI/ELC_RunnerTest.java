@@ -29,6 +29,7 @@ import pages.MyAccountPage;
 import pages.PDP_Page;
 import pages.PLP_Page;
 import pages.RequestCataloguePage;
+import pages.SearchResultsPage;
 import pages.StoreFinderPage;
 import pages.WishlistPage;
 import webLibrary.Library;
@@ -530,4 +531,21 @@ public class ELC_RunnerTest extends Library {
 		logger.info(name.getMethodName() + " -Passed");
 	}
 
+	
+	@Test
+	public void elc_searchByKeyword() {
+
+		String searchQuery = "horse";
+		HomePage homePage = new HomePage(driver);
+		setText(homePage.searchInput, searchQuery);
+		clickElement(homePage.searchButton);
+		
+		SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
+		assertTrue("Actual text is " + searchResultsPage.searchResultsTitle.getAttribute("innerText"), searchResultsPage.searchResultsTitle.getAttribute("innerText").contains(searchQuery));
+		
+
+		logger.info(name.getMethodName() + " -Passed");
+	}
+
+	
 }
