@@ -544,7 +544,8 @@ public class ELC_RunnerTest extends Library {
 		clickElement(homePage.searchButton);
 		
 		SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
-		assertTrue("Actual text is " + searchResultsPage.searchResultsTitle.getAttribute("innerText"), searchResultsPage.searchResultsTitle.getAttribute("innerText").contains(searchQuery) && searchResultsPage.searchResultsTitle.getAttribute("innerText").contains("returned"));
+		assertTrue("Actual text is " + searchResultsPage.searchResultsTitle.getAttribute("innerText"),
+				searchResultsPage.searchResultsTitle.getAttribute("innerText").contains(searchQuery) && 				searchResultsPage.searchResultsTitle.getAttribute("innerText").contains("returned"));
 		
 		logger.info(name.getMethodName() + " -Passed");
 	}
@@ -578,7 +579,7 @@ public class ELC_RunnerTest extends Library {
 		String paypalURL = "www.sandbox.paypal.com";
 		while(!currentURL.contains(paypalURL)) {
 			wait(1);
-			driver.getCurrentUrl();
+			currentURL = driver.getCurrentUrl();
 			break;
 		}
 		
