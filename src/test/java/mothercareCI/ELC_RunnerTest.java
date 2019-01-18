@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -28,6 +30,7 @@ import pages.MA_BigBirthdayClubPage;
 import pages.MyAccountPage;
 import pages.PDP_Page;
 import pages.PLP_Page;
+import pages.PayPalExpressPage;
 import pages.RequestCataloguePage;
 import pages.SearchResultsPage;
 import pages.StoreFinderPage;
@@ -541,11 +544,50 @@ public class ELC_RunnerTest extends Library {
 		clickElement(homePage.searchButton);
 		
 		SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
-		assertTrue("Actual text is " + searchResultsPage.searchResultsTitle.getAttribute("innerText"), searchResultsPage.searchResultsTitle.getAttribute("innerText").contains(searchQuery));
+		assertTrue("Actual text is " + searchResultsPage.searchResultsTitle.getAttribute("innerText"), searchResultsPage.searchResultsTitle.getAttribute("innerText").contains(searchQuery) && searchResultsPage.searchResultsTitle.getAttribute("innerText").contains("returned"));
 		
-
 		logger.info(name.getMethodName() + " -Passed");
 	}
 
-	
+	@Test
+	public void elc_guestCheckoutByPayPalExpress() {
+		
+		Actions actions = new Actions(driver);
+		HomePage homePage = new HomePage(driver);
+		actions.moveToElement(homePage.elc_learningAndBooks).click().perform();
+		actions.click().perform();
+
+		PLP_Page.elc_AddProductToCart(driver);
+
+		waitUntilElementIsClickable(driver, homePage.shoppingCart);
+		clickElement(homePage.shoppingCart);
+
+		CartPage cartPage = new CartPage(driver);
+		clickByJavascript(driver,cartPage.payPalExpressButton);
+		
+		PayPalExpressPage payPalExpressPage = new PayPalExpressPage(driver);
+		clickElement(payPalExpressPage.deliveryPopup_clickAndCollect);
+		clickElement(payPalExpressPage.deliveryPopup_continueButton);
+		setText(payPalExpressPage.paypalExpress_searchInput, pickRandomUKPostcode());
+		clickElement(payPalExpressPage.paypalExpress_findButton);
+		
+		payPalExpressPage.selectClickAndCollectStore(driver);
+		clickByJavascript(driver, payPalExpressPage.paypalExpress_continueToPaypal);
+		
+		String currentURL = driver.getCurrentUrl();
+		String paypalURL = "www.sandbox.paypal.com";
+		while(!currentURL.contains(paypalURL)) {
+			wait(1);
+			driver.getCurrentUrl();
+			break;
+		}
+		
+		assertTrue(
+				"actual URL is " + driver.getCurrentUrl() + " expected URL contains paypal.com ",
+						
+				driver.getCurrentUrl().contains("www.sandbox.paypal.com"));
+
+		logger.info(name.getMethodName() + " -Passed");
+		
+	}
 }

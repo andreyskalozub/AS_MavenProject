@@ -1,9 +1,11 @@
 package webLibrary;
 
-import java.util.concurrent.TimeUnit;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -16,13 +18,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import data.FakeData;
 
 public class Library {
-
+	
 	public static final Logger logger = LogManager.getLogger(Library.class.getName());
 
 	protected FakeData fakeData = new FakeData();
+	
 
 	// SETTING DRIVER:
 	public static void setDriverConfiguration(WebDriver driver, int implicitlyWaitInSeconds) {
@@ -52,11 +56,11 @@ public class Library {
 
 	// GENERATING RANDOM EMAIL
 	public static String generateRandomEmail(int length) {
-		Random rng = new Random();
+		Random rnd = new Random();
 		String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 		char[] text = new char[length];
 		for (int i = 0; i < length; i++) {
-			text[i] = characters.charAt(rng.nextInt(characters.length()));
+			text[i] = characters.charAt(rnd.nextInt(characters.length()));
 		}
 		String email = new String(text) + "@gmail.com";
 		return email;
@@ -284,7 +288,7 @@ public class Library {
 
 	}
 
-	// WAIT UNTIL ELEMENT IS INVISIBLE
+	// WAIT UNTIL ELEMENT IS VISIBLE
 	public static void waitUntilElementIsVisible(WebDriver driver, WebElement element) {
 
 		try
@@ -301,7 +305,7 @@ public class Library {
 
 	}
 
-	// WAIT UNTIL ELEMENT IS VISIBLE
+	// WAIT UNTIL ELEMENT IS INVISIBLE
 	public static void waitUntilElementIsInvisible(WebDriver driver, WebElement element) {
 
 		try
@@ -356,7 +360,7 @@ public class Library {
 	public static void mc_addToCartFirstInstockStandartProduct(WebDriver driver) {
 
 		String instockProduct = "div[class='b-search_result_items'] a[data-product-availabilitystatus='YES'][data-product-variation-attribute='']";
-		List<WebElement> elements = driver.findElements(By.cssSelector(instockProduct));
+		ArrayList<WebElement> elements = (ArrayList<WebElement>) driver.findElements(By.cssSelector(instockProduct));
 
 		WebElement first = elements.get(0);
 		clickByJavascript(driver, first);

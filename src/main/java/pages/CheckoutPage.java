@@ -223,4 +223,5 @@ public class CheckoutPage extends Library{
 	@FindBy(xpath = "//*[@id='main']/div/h1")
 	public WebElement confirmation;
 
+	
 }

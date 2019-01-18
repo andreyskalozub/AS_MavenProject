@@ -30,5 +30,8 @@ public class CartPage {
 
 	@FindBy(css = "h1[class='t-page-title']")
 	public WebElement yourbasketIsEmpty;
+	
+	@FindBy(css = "fieldset [data-page-url] .b-paypal_express-btn ")
+	public WebElement payPalExpressButton;
 
 }
