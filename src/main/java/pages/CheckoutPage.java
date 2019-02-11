@@ -54,7 +54,7 @@ public class CheckoutPage extends Library{
 
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		waitUntilElementIsClickable(driver, checkoutPage.choiceAuth);
-		scroolToThisElement(driver, checkoutPage.choiceAuth);
+		scrollToThisElement(driver, checkoutPage.choiceAuth);
 		clickByJavascript(driver, checkoutPage.choiceAuth);
 		
 		

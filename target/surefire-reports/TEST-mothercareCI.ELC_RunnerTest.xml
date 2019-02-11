@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="15" failures="1" name="mothercareCI.ELC_RunnerTest" time="700.431" errors="0" skipped="0">
+<testsuite tests="15" failures="0" name="mothercareCI.ELC_RunnerTest" time="511.375" errors="1" skipped="0">
   <properties>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="JOB_NAME" value="ci_eclipse"/>
@@ -12,7 +12,7 @@
     <property name="POM_ARTIFACTID" value="My_Maven_Project"/>
     <property name="os.name" value="Windows 7"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_151\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_151\jre\classes"/>
-    <property name="EXECUTOR_NUMBER" value="1"/>
+    <property name="EXECUTOR_NUMBER" value="0"/>
     <property name="sun.desktop" value="windows"/>
     <property name="PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
@@ -27,8 +27,8 @@
     <property name="ProgramFiles" value="C:\Program Files (x86)"/>
     <property name="user.language" value="en"/>
     <property name="JOB_BASE_NAME" value="ci_eclipse"/>
-    <property name="RUN_CHANGES_DISPLAY_URL" value="http://localhost:8080/job/ci_eclipse/161/display/redirect?page=changes"/>
-    <property name="BUILD_DISPLAY_NAME" value="#161"/>
+    <property name="RUN_CHANGES_DISPLAY_URL" value="http://localhost:8080/job/ci_eclipse/165/display/redirect?page=changes"/>
+    <property name="BUILD_DISPLAY_NAME" value="#165"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_151\jre\bin"/>
     <property name="LOCALAPPDATA" value="C:\Windows\system32\config\systemprofile\AppData\Local"/>
     <property name="java.version" value="1.8.0_151"/>
@@ -39,7 +39,7 @@
     <property name="NODE_NAME" value="master"/>
     <property name="PROCESSOR_ARCHITEW6432" value="AMD64"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_151\jre\lib\endorsed"/>
-    <property name="BUILD_ID" value="161"/>
+    <property name="BUILD_ID" value="165"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="file.encoding.pkg" value="sun.io"/>
@@ -54,7 +54,7 @@
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_151\jre"/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="os.version" value="6.1"/>
-    <property name="RUN_DISPLAY_URL" value="http://localhost:8080/job/ci_eclipse/161/display/redirect"/>
+    <property name="RUN_DISPLAY_URL" value="http://localhost:8080/job/ci_eclipse/165/display/redirect"/>
     <property name="POM_VERSION" value="0.0.1-SNAPSHOT"/>
     <property name="TMP" value="C:\Windows\TEMP"/>
     <property name="path.separator" value=";"/>
@@ -76,7 +76,7 @@
     <property name="POM_GROUPID" value="AS"/>
     <property name="user.home" value="C:\Windows\system32\config\systemprofile"/>
     <property name="PUBLIC" value="C:\Users\Public"/>
-    <property name="BUILD_TAG" value="jenkins-ci_eclipse-161"/>
+    <property name="BUILD_TAG" value="jenkins-ci_eclipse-165"/>
     <property name="JENKINS_SERVER_COOKIE" value="2ef9b5513ebbf680"/>
     <property name="HUDSON_URL" value="http://localhost:8080/"/>
     <property name="ProgramData" value="C:\ProgramData"/>
@@ -84,14 +84,14 @@
     <property name="USERPROFILE" value="C:\Windows\system32\config\systemprofile"/>
     <property name="CLASSPATH" value=""/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_151\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven/bin;C:\Program Files\Java\jdk1.8.0_151/bin;C:\Program Files\Java\jdk1.8.0_151/bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Last ChromeDriver;D:\Flash\geckodriver-v0.19.1-win64;D:\Flash\IEDriverServer_x64_3.8.0;D:\Git\cmd;C:\Program Files (x86)\OpenVPN\bin;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_151\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven/bin;C:\Program Files\Java\jdk1.8.0_151/bin;C:\Program Files\Java\jdk1.8.0_151/bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Last ChromeDriver;D:\Flash\geckodriver-v0.19.1-win64;D:\Flash\IEDriverServer_x64_3.8.0;D:\Git\cmd;C:\Program Files (x86)\OpenVPN\bin;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;;."/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="APPDATA" value="C:\Windows\system32\config\systemprofile\AppData\Roaming"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="maven.home" value="C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven"/>
     <property name="java.class.path" value="C:\Program Files (x86)\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven35-agent-1.12.jar;C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven\boot\plexus-classworlds-2.5.2.jar;C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven/conf/logging"/>
-    <property name="sun.java.command" value="jenkins.maven3.agent.Maven35Main C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven C:\Program Files (x86)\Jenkins\war\WEB-INF\lib\remoting-3.10.2.jar C:\Program Files (x86)\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven35-interceptor-1.12.jar C:\Program Files (x86)\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven3-interceptor-commons-1.12.jar 53197"/>
-    <property name="Path" value="C:\Program Files\Java\jdk1.8.0_151/bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Last ChromeDriver;D:\Flash\geckodriver-v0.19.1-win64;D:\Flash\IEDriverServer_x64_3.8.0;D:\Git\cmd;C:\Program Files (x86)\OpenVPN\bin;"/>
+    <property name="sun.java.command" value="jenkins.maven3.agent.Maven35Main C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven C:\Program Files (x86)\Jenkins\war\WEB-INF\lib\remoting-3.10.2.jar C:\Program Files (x86)\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven35-interceptor-1.12.jar C:\Program Files (x86)\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven3-interceptor-commons-1.12.jar 51499"/>
+    <property name="Path" value="C:\Program Files\Java\jdk1.8.0_151/bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Last ChromeDriver;D:\Flash\geckodriver-v0.19.1-win64;D:\Flash\IEDriverServer_x64_3.8.0;D:\Git\cmd;C:\Program Files (x86)\OpenVPN\bin;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="PROCESSOR_ARCHITECTURE" value="x86"/>
     <property name="PATH+JDK" value="C:\Program Files\Java\jdk1.8.0_151/bin"/>
@@ -105,7 +105,7 @@
     <property name="HUDSON_HOME" value="C:\Program Files (x86)\Jenkins"/>
     <property name="PATH+MAVEN" value="C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven/bin"/>
     <property name="ProgramFiles(x86)" value="C:\Program Files (x86)"/>
-    <property name="BUILD_URL" value="http://localhost:8080/job/ci_eclipse/161/"/>
+    <property name="BUILD_URL" value="http://localhost:8080/job/ci_eclipse/165/"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="os.arch" value="amd64"/>
@@ -119,7 +119,7 @@
 "/>
     <property name="MAVEN_HOME" value="C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\New_maven"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="BUILD_NUMBER" value="161"/>
+    <property name="BUILD_NUMBER" value="165"/>
     <property name="BASE" value="C:\Program Files (x86)\Jenkins"/>
     <property name="JENKINS_URL" value="http://localhost:8080/"/>
     <property name="PROCESSOR_REVISION" value="1706"/>
@@ -132,17 +132,61 @@
     <property name="maven3.interceptor.common" value="C:\Program Files (x86)\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven3-interceptor-commons-1.12.jar"/>
     <property name="WINSW_EXECUTABLE" value="C:\Program Files (x86)\Jenkins\jenkins.exe"/>
     <property name="java.specification.version" value="1.8"/>
-    <property name="PSModulePath" value="C:\Windows\system32\WindowsPowerShell\v1.0\Modules\"/>
+    <property name="PSModulePath" value="C:\Windows\system32\WindowsPowerShell\v1.0\Modules\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\PowerShell\Modules\"/>
   </properties>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_creatingNewAccountTest" time="29.173"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_guestCheckoutByPaypalTest" time="107.997"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_requestingCatalogueTest" time="25.977"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_searchByKeyword" time="23.024"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_guestCheckoutByPayPalExpress" time="39.643">
-    <failure message="actual URL is https://dev08-realm1-mothercare.demandware.net/on/demandware.store/Sites-ELCENGB-Site/default/PayPalExpress-CollectInStoreForm expected URL contains paypal.com " type="java.lang.AssertionError">java.lang.AssertionError: actual URL is https://dev08-realm1-mothercare.demandware.net/on/demandware.store/Sites-ELCENGB-Site/default/PayPalExpress-CollectInStoreForm expected URL contains paypal.com 
-	at org.junit.Assert.fail(Assert.java:91)
-	at org.junit.Assert.assertTrue(Assert.java:43)
-	at mothercareCI.ELC_RunnerTest.elc_guestCheckoutByPayPalExpress(ELC_RunnerTest.java:585)
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_loginWithIncorrectCredentialsTest" time="41.604"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_loginWithValidCredentialsTest" time="15.522"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_signupToEmailSubscriptionTest" time="15.068"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_guestCheckoutByCreditCardTest" time="49.906"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_registeredUserCheckoutByPaypalTest" time="67.187"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_registeredUserCheckoutByCreditCardTest" time="37.005"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_addingChildToBigBirthdayClubTest" time="20.886"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_addingNewAddressForJustRegisteredUserTest" time="21.568"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_findingStoresUsingPostcodeViaStoreLocator" time="14.038"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_creatingNewAccountTest" time="14.985"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_guestCheckoutByPaypalTest" time="65.305"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_requestingCatalogueTest" time="16.371"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_addingProductToWishlistFromPDPAndCheckoutByPaypalTest" time="78.204"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_searchByKeyword" time="19.899"/>
+  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_guestCheckoutByPayPalExpress" time="33.827">
+    <error message="element not interactable
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;ANDREY-PC&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_151&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.615291 (ec3682e3c9061c..., userDataDir: C:\Windows\TEMP\scoped_dir8...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:52366}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 2b52c1e8e47122c1b56b5ff506c5551c" type="org.openqa.selenium.ElementNotVisibleException">org.openqa.selenium.ElementNotVisibleException: element not interactable
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;ANDREY-PC&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_151&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.615291 (ec3682e3c9061c..., userDataDir: C:\Windows\TEMP\scoped_dir8...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:52366}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 2b52c1e8e47122c1b56b5ff506c5551c
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+	at sun.reflect.GeneratedMethodAccessor10.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy23.click(Unknown Source)
+	at webLibrary.Library.clickElement(Library.java:109)
+	at mothercareCI.ELC_RunnerTest.elc_guestCheckoutByPayPalExpress(ELC_RunnerTest.java:571)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -174,21 +218,11 @@
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</failure>
-    <system-err>Starting ChromeDriver 2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387) on port 40966
+</error>
+    <system-err>Starting ChromeDriver 2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387) on port 6770
 Only local connections are allowed.
-Jan 18, 2019 3:33:18 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Jan 29, 2019 5:05:55 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: OSS
 </system-err>
   </testcase>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_addingProductToWishlistFromPDPAndCheckoutByPaypalTest" time="110.068"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_loginWithIncorrectCredentialsTest" time="24.966"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_loginWithValidCredentialsTest" time="24.84"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_signupToEmailSubscriptionTest" time="25.553"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_guestCheckoutByCreditCardTest" time="62.613"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_registeredUserCheckoutByPaypalTest" time="84.541"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_registeredUserCheckoutByCreditCardTest" time="55.561"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_addingChildToBigBirthdayClubTest" time="32.216"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_addingNewAddressForJustRegisteredUserTest" time="35.862"/>
-  <testcase classname="mothercareCI.ELC_RunnerTest" name="elc_findingStoresUsingPostcodeViaStoreLocator" time="18.397"/>
 </testsuite>

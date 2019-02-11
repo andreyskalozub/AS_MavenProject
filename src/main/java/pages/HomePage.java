@@ -82,6 +82,8 @@ public class HomePage {
 	@FindBy(xpath = "*//div[@id='t017-close']")
 	public WebElement closePopup;
 	
+	@FindBy(css = "a[title='Gurgle']")
+	public WebElement gurgle_url;
 	
 	
 

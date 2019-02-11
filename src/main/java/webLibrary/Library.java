@@ -97,7 +97,7 @@ public class Library {
 	}
 
 	// SCROLLING TO THIS ELEMENT
-	public static void scroolToThisElement(WebDriver driver, WebElement element) {
+	public static void scrollToThisElement(WebDriver driver, WebElement element) {
 
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
 

@@ -1,7 +1,8 @@
 package pages;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -25,8 +26,7 @@ public class PayPalExpressPage extends Library {
 	public void selectClickAndCollectStore(WebDriver driver) {
 
 		String store = "button[class$='store-select']";
-		ArrayList<WebElement> storeList = (ArrayList<WebElement>) driver.findElements(By.cssSelector(store));
-
+		List<WebElement> storeList = driver.findElements(By.cssSelector(store));
 		
 		WebElement firstStore = storeList.get(0);
 		clickByJavascript(driver, firstStore);

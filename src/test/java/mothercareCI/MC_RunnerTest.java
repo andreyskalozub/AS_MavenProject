@@ -316,7 +316,7 @@ public class MC_RunnerTest extends Library {
 
 		selectByIndex(plp_Page.gridFilter, 4);
 		waitUntilElementIsClickable(driver, plp_Page.productLink2);
-		scroolToThisElement(driver, plp_Page.productLink2);
+		scrollToThisElement(driver, plp_Page.productLink2);
 		clickByJavascript(driver, plp_Page.productLink2);
 
 		PDP_Page pdp_Page = new PDP_Page(driver);
@@ -465,7 +465,7 @@ public class MC_RunnerTest extends Library {
 
 		LoginPage.creatingNewAccount(driver);
 
-		scroolToThisElement(driver, homePage.brandLogo);
+		scrollToThisElement(driver, homePage.brandLogo);
 		clickByJavascript(driver, homePage.brandLogo);
 
 		Actions actions = new Actions(driver);

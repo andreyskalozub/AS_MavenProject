@@ -7,8 +7,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.ResourceBundle;
-import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -497,7 +495,7 @@ public class ELC_RunnerTest extends Library {
 		clickByJavascript(driver, myAccountPage.newUKaddress);
 
 		setText(myAccountPage.phoneNumber, fakeData.phoneNumber);
-		scroolToThisElement(driver, myAccountPage.enterAddressManually);
+		scrollToThisElement(driver, myAccountPage.enterAddressManually);
 		clickByJavascript(driver, myAccountPage.enterAddressManually);
 
 		setText(myAccountPage.addressNickname, fakeData.nickname);
@@ -545,7 +543,8 @@ public class ELC_RunnerTest extends Library {
 		
 		SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
 		assertTrue("Actual text is " + searchResultsPage.searchResultsTitle.getAttribute("innerText"),
-				searchResultsPage.searchResultsTitle.getAttribute("innerText").contains(searchQuery) && 				searchResultsPage.searchResultsTitle.getAttribute("innerText").contains("returned"));
+				searchResultsPage.searchResultsTitle.getAttribute("innerText").contains(searchQuery) &&
+				searchResultsPage.searchResultsTitle.getAttribute("innerText").contains("returned"));
 		
 		logger.info(name.getMethodName() + " -Passed");
 	}
@@ -591,4 +590,17 @@ public class ELC_RunnerTest extends Library {
 		logger.info(name.getMethodName() + " -Passed");
 		
 	}
+	
+	@Test
+	public void elc_openGurgleSiteTest() {
+		
+		HomePage homePage = new HomePage(driver);
+		scrollToThisElement(driver, homePage.gurgle_url);
+		clickElement(homePage.gurgle_url);
+		switchToNewWindow(driver);
+		assertTrue(driver.getCurrentUrl().equals(rb.getString("gurgle_url")));
+		logger.info(name.getMethodName() + " -Passed");
+	}
+		
+	
 }
