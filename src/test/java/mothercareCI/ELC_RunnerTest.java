@@ -465,6 +465,7 @@ public class ELC_RunnerTest extends Library {
 		clickByJavascript(driver, ma_BigBirthdayClubPage.currentdate);
 
 		selectByIndex(ma_BigBirthdayClubPage.relationshipSelect, 2);
+		waitUntilElementIsClickable(driver, ma_BigBirthdayClubPage.addNewFamilyMemberButton);
 		clickElement(ma_BigBirthdayClubPage.addNewFamilyMemberButton);
 		waitUntilElementIsVisible(driver, ma_BigBirthdayClubPage.confirmationPopup);
 		clickByJavascript(driver, ma_BigBirthdayClubPage.backToClubButtonInPopup);
@@ -572,15 +573,18 @@ public class ELC_RunnerTest extends Library {
 		clickElement(payPalExpressPage.paypalExpress_findButton);
 		
 		payPalExpressPage.selectClickAndCollectStore(driver);
+		waitUntilElementIsClickable(driver, payPalExpressPage.paypalExpress_continueToPaypal);
 		clickByJavascript(driver, payPalExpressPage.paypalExpress_continueToPaypal);
 		
-		String currentURL = driver.getCurrentUrl();
 		String paypalURL = "www.sandbox.paypal.com";
-		while(!currentURL.contains(paypalURL)) {
+		String currentURL = driver.getCurrentUrl();
+		
+		while(currentURL.contains(paypalURL)!= true) {
 			wait(1);
-			currentURL = driver.getCurrentUrl();
+			driver.getCurrentUrl();
 			break;
-		}
+			}
+		
 		
 		assertTrue(
 				"actual URL is " + driver.getCurrentUrl() + " expected URL contains paypal.com ",
